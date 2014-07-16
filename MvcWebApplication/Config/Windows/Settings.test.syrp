@@ -8,16 +8,16 @@ Debug
 
 Paths
 	Application
-		LocalRoot				=	"C:/xampp/vhosts/shared/Wafl/AppTemplates/MvcWebApplication/"
+		LocalRoot				=	"C:/xampp/vhosts/t.myapp.tld/"
 		PublicWebFolder			=	"Public/"
 		DefaultPage				=	"LandingPage.php"
-		TempFolder				=	"C:/xampp/vhosts/shared/Wafl/AppTemplates/MvcWebApplication/Output/Temp/Test/"
-		UploadFolder			=	"Uploads/Dev/"
+		TempFolder				=	"C:/xampp/vhosts/t.myapp.tld/Output/Temp/"
+		UploadFolder			=	"Uploads/Test/"
 		GlobalEventHandlers		=	"GlobalEventHandlers.php"
 		GlobalScript			=	"GlobalScript.php"
 	Wafl
-		WaflFolder				=	"../../"
-		DblEjFolder				=	"../../../DblEj/"
+		WaflFolder				=	"../shared/Wafl/" //relative to LocalRoot
+		DblEjFolder				=	"../shared/DblEj/" //relative to LocalRoot
 
 Web
 	DomainName				=	"t.myapp.tld"
@@ -26,5 +26,5 @@ Web
 	WebUrlRelative			=	"/"
 	SiteEmail				=	"noreply@t.myapp.tld"
 	CookieLifetime			=	350000
-	SiteDisplayTitle		=	New Mvc Web Application
+	SiteDisplayTitle		=	New Modular Mvc Web Application
 	GlobalStylesheetHasTokens	=	0

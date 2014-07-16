@@ -2,22 +2,22 @@ Application
 	GuestGroupId			=	1
 
 Debug
-	SuppressErrors			=	0
-	DebugMode				=	1
+	SuppressErrors			=	1
+	DebugMode				=	0
 	AutoUpdateDb			=	0
 
 Paths
 	Application
-		LocalRoot				=	"C:/xampp/vhosts/shared/Wafl/AppTemplates/MvcWebApplication/"
+		LocalRoot				=	"C:/xampp/vhosts/myapp.tld/"
 		PublicWebFolder			=	"Public/"
 		DefaultPage				=	"LandingPage.php"
-		TempFolder				=	"C:/xampp/vhosts/shared/Wafl/AppTemplates/MvcWebApplication/Output/Temp/Prod/"
+		TempFolder				=	"C:/xampp/vhosts/myapp.tld/Output/Temp/"
 		UploadFolder			=	"Uploads/Prod/"
 		GlobalEventHandlers		=	"GlobalEventHandlers.php"
 		GlobalScript			=	"GlobalScript.php"
 	Wafl
-		WaflFolder				=	"../../"
-		DblEjFolder				=	"../../../DblEj/"
+		WaflFolder				=	"../shared/Wafl/" //relative to LocalRoot
+		DblEjFolder				=	"../shared/DblEj/" //relative to LocalRoot
 
 Web
 	DomainName				=	"myapp.tld"

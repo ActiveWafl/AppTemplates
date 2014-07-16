@@ -8,16 +8,16 @@ Debug
 
 Paths
 	Application
-		LocalRoot				=	"C:/xampp/vhosts/shared/Wafl/AppTemplates/MvcWebApplication/"
+		LocalRoot				=	"C:/xampp/vhosts/d.myapp.tld/"
 		PublicWebFolder			=	"Public/"
 		DefaultPage				=	"LandingPage.php"
-		TempFolder				=	"C:/xampp/vhosts/shared/Wafl/AppTemplates/MvcWebApplication/Output/Temp/Dev/"
+		TempFolder				=	"C:/xampp/vhosts/d.myapp.tld/Output/Temp/"
 		UploadFolder			=	"Uploads/Dev/"
 		GlobalEventHandlers		=	"GlobalEventHandlers.php"
 		GlobalScript			=	"GlobalScript.php"
 	Wafl
-		WaflFolder				=	"../../"
-		DblEjFolder				=	"../../../DblEj/"
+		WaflFolder				=	"../shared/Wafl/" //relative to LocalRoot
+		DblEjFolder				=	"../shared/DblEj/" //relative to LocalRoot
 
 Web
 	DomainName				=	"d.myapp.tld"

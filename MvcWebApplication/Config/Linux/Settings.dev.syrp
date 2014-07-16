@@ -11,14 +11,13 @@ Paths
 		LocalRoot				=	"/var/www/vhosts/d.myapp.tld/"
 		PublicWebFolder			=	"Public/"
 		DefaultPage				=	"LandingPage.php"
-		TempFolder				=	"/var/www/vhosts/d.myapp.tld/Output/Temp/Dev/"
+		TempFolder				=	"/var/www/vhosts/d.myapp.tld/Output/Temp/"
 		UploadFolder			=	"Uploads/Dev/"
 		GlobalEventHandlers		=	"GlobalEventHandlers.php"
 		GlobalScript			=	"GlobalScript.php"
 	Wafl
-		WaflFolder				=	"../../"
-		DblEjFolder				=	"../../../DblEj/"
-
+		WaflFolder				=	"../shared/Wafl/" //relative to LocalRoot
+		DblEjFolder				=	"../shared/DblEj/" //relative to LocalRoot
 Web
 	DomainName				=	"d.myapp.tld"
 	WebUrl					=	"http://d.myapp.tld/"

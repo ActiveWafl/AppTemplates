@@ -8,18 +8,18 @@ Debug
 
 Paths
 	Application
-		LocalRoot				=	"C:/xampp/vhosts/shared/Wafl/AppTemplates/WebApplication/Output/Build/AppRoot/"
+		LocalRoot				=	"C:/xampp/vhosts/b.myapp.tld/Output/Build/AppRoot/"
 //		LocalRoot				=	"c:/xampp/jenkins/jobs/b.myapp.tld/workspace/AppRoot/" //if using jenkins
 
 		PublicWebFolder			=	"Public/"
 		DefaultPage				=	"LandingPage.php"
-		TempFolder				=	"C:/xampp/vhosts/shared/Wafl/AppTemplates/WebApplication/Output/Temp/Build/"
+		TempFolder				=	"C:/xampp/vhosts/b.myapp.tld/Output/Build/AppRoot/Output/Temp/Build/"
 		UploadFolder			=	"Uploads/Build/"
 		GlobalEventHandlers		=	"GlobalEventHandlers.php"
 		GlobalScript			=	"GlobalScript.php"
 	Wafl
-		WaflFolder				=	"../../../../../"
-		DblEjFolder				=	"../../../../../../DblEj/"
+		WaflFolder				=	"../../../../shared/Wafl/" //relative to LocalRoot
+		DblEjFolder				=	"../../../../shared/DblEj/" //relative to LocalRoot
 
 Web
 	DomainName				=	"b.myapp.tld"
