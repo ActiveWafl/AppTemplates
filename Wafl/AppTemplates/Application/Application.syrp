@@ -1,0 +1,8 @@
+Application
+	Name					=	"MyApp"
+	Guid					=	"MyApp"                                   
+	RootNameSpace			=	"MyApp"	
+	Timezone				=	"America/Phoenix"
+Paths
+	Application
+		ConfigFolder		=	"Config/"

@@ -1,0 +1,32 @@
+Application
+	GuestGroupId			=	1
+
+Debug
+	SuppressErrors			=	0
+	DebugMode				=	1
+	AutoUpdateDb			=	0
+
+Paths
+	Application
+		LocalRoot				=	"C:/xampp/vhosts/shared/Wafl/AppTemplates/ModularMvcWebApplication/Output/Build/AppRoot/"
+//		LocalRoot				=	"c:/xampp/jenkins/jobs/b.myapp.tld/workspace/AppRoot/" //if using jenkins
+
+		PublicWebFolder			=	"Public/"
+		DefaultPage				=	"LandingPage.php"
+		TempFolder				=	"C:/xampp/vhosts/shared/Wafl/AppTemplates/ModularMvcWebApplication/Output/Temp/Build/"
+		UploadFolder			=	"Uploads/Build/"
+		GlobalEventHandlers		=	"GlobalEventHandlers.php"
+		GlobalScript			=	"GlobalScript.php"
+	Wafl
+		WaflFolder				=	"../../../../../"
+		DblEjFolder				=	"../../../../../../DblEj/"
+
+Web
+	DomainName				=	"b.myapp.tld"
+	WebUrl					=	"http://b.myapp.tld/"
+	WebUrlSecure			=	"https://b.myapp.tld/"
+	WebUrlRelative			=	"/"
+	SiteEmail				=	"noreply@b.myapp.tld"
+	CookieLifetime			=	350000
+	SiteDisplayTitle		=	New Modular Mvc Web Application
+	GlobalStylesheetHasTokens	=	0

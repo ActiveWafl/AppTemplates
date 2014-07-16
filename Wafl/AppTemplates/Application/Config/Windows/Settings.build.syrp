@@ -1,0 +1,17 @@
+Application
+	GuestGroupId			=	1
+
+Debug
+	SuppressErrors			=	0
+	DebugMode				=	1
+	AutoUpdateDb			=	0
+
+Paths
+	Application
+		LocalRoot				=	"C:/xampp/vhosts/shared/Wafl/AppTemplates/Application/Output/Build/AppRoot/"
+		TempFolder				=	"C:/xampp/vhosts/shared/Wafl/AppTemplates/Application/Output/Temp/Build/"
+		GlobalEventHandlers		=	"GlobalEventHandlers.php"
+		GlobalScript			=	"GlobalScript.php"
+	Wafl
+		WaflFolder				=	"../../../../../"
+		DblEjFolder				=	"../../../../../../DblEj/"

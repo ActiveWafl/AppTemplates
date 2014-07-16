@@ -1,0 +1,15 @@
+//Solr
+//	ServerAddress						=	http:\/\/localhost:8080/solr
+//	Indexes
+//		my_index1	
+//		my_index2
+
+//Predis
+//	ServerAddress						=	127.0.0.1
+//	ServerPort							=	6379
+
+//PhpUnit
+//	OutputLogFile	=	{$app->Get_Settings()->Get_Paths()->Get_Application()->Get_Temp().\"MyApp-UnitTest-Output.xml\"}
+//	TestsFolder		=	{$app->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot().\"MyApp/Tests/Unit\"}
+//	BootstrapFile	=	{$app->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot().\"MyApp/Tests/Bootstrapper.php\"}
+//	EchoOutput		=	{true}
