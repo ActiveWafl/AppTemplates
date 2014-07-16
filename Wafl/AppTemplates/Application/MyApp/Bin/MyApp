@@ -1,5 +1,0 @@
-#!/bin/bash
-echo Running app...
-
-/usr/bin/php ../MyApp.php
-
