@@ -1,3 +1,3 @@
-#ActiveWafl Untitled Application
+#My App Command Line Application
 ##0.0.1
-**ActiveWafl Untitled Application Common Template**
+**My App Command Line Application Version 1**
