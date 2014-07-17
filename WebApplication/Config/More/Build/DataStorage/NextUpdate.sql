@@ -1,2 +1,0 @@
-ALTER TABLE `Things`
-ADD COLUMN `Description` VARCHAR(4000) AFTER `Title`;
