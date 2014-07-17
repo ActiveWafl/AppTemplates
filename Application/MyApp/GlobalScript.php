@@ -1,3 +1,3 @@
 <?php
-\Wafl\Util\Router::AddRouter(new \MyApp\Routers\Example());
+\Wafl\Util\Router::AddRouter(new \{APPLICATION_NAMESPACE}\Routers\Example());
 ?>

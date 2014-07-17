@@ -1,23 +1,23 @@
 MainSection
 
 	LandingPage
-		Caption			=	"My App Home Page"
+		Caption			=	"{APPLICATION_NAME} Home Page"
 		Controller		=	LandingPage
 		Presentation	=	LandingPage
 		DisplayOrder	=	1
 		IsDefault		=	1
-		Description		=	"The home page for MyApp"
-		Keywords		=	MyApp My App Best ActiveWAFL Awesome Home Landing Start Php Framework
+		Description		=	"The home page for {APPLICATION_NAME}"
+		Keywords		=	{APPLICATION_NAME} My App Best ActiveWAFL Awesome Home Landing Start Php Framework
 		PreProcessCss	=	{false}
 	
 	ExamplePage
-		Caption			=	"My App Example Page"
+		Caption			=	"{APPLICATION_NAME} Example Page"
 		Controller		=	ExamplePage
 		Presentation	=	ExamplePage
 		DisplayOrder	=	2
 		IsDefault		=	1
-		Description		=	"An example page for MyApp"
-		Keywords		=	MyApp My App Best ActiveWAFL Awesome Php Framework
+		Description		=	"An example page for {APPLICATION_NAME}"
+		Keywords		=	{APPLICATION_NAME} My App Best ActiveWAFL Awesome Php Framework
 		PreProcessCss	=	{false}
 	
 SiteError

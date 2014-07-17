@@ -1,9 +1,8 @@
 <?php
 
-namespace MyApp\Logic;
+namespace {APPLICATION_NAMESPACE}\Logic;
 
 use DblEj\Application\IApplication,
-    DblEj\Communication\Request,
     DblEj\Communication\IRequestHandler,
     DblEj\Communication\Response;
 
@@ -15,7 +14,7 @@ implements IRequestHandler
     {
         if ($requestString == "v")
         {
-            return new Response("MyApp version 1!");
+            return new Response("{APPLICATION_NAME} version 1!");
         }
         else
         {

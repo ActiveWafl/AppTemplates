@@ -1,8 +1,8 @@
 Application
-	Name					=	"MyApp"
-	Guid					=	"MyApp"                                   
-	RootNameSpace			=	"MyApp"	
-	Timezone				=	"America/Phoenix"
+	Name					=	"{APPLICATION_NAME}"
+	Guid					=	"{APPLICATION_GUID}"                                   
+	RootNameSpace			=	"{APPLICATION_NAMESPACE}"	
+	Timezone				=	"{APPLICATION_TIMEZONE}"
 Paths
 	Application
 		ConfigFolder		=	"Config/"

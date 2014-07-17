@@ -1,6 +1,6 @@
 <?php
 
-use MyApp\ModularLoader,
+use {APPLICATION_NAMESPACE}\ModularLoader,
     Wafl\AppSupport\WebIndex,
     Wafl\Util\HttpRouter;
 

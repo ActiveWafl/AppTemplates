@@ -8,10 +8,10 @@ Debug
 
 Paths
 	Application
-		LocalRoot				=	"C:/some/path/MyApp/Output/Build/AppRoot/"
-		TempFolder				=	"C:/some/path/MyApp/Output/Temp/Build/"
+		LocalRoot				=	"{BUILD_LOCAL_ROOT}"
+		TempFolder				=	"{BUILD_TEMP_FOLDER}"
 		GlobalEventHandlers		=	"GlobalEventHandlers.php"
 		GlobalScript			=	"GlobalScript.php"
 	Wafl
-		WaflFolder				=	"../shared/Wafl/" //relative to LocalRoot
-		DblEjFolder				=	"../shared/DblEj/"
+		WaflFolder				=	"{BUILD_RELATIVE_WAFL_FOLDER}"
+		DblEjFolder				=	"{BUILD_RELATIVE_DBLEJ_FOLDER}"

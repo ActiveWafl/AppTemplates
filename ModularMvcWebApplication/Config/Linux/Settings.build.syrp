@@ -8,25 +8,25 @@ Debug
 
 Paths
 	Application
-		LocalRoot				=	"~/MyAppBuildWorkspace/AppRoot/"
-//		LocalRoot				=	"/var/lib/jenkins/jobs/b.myapp.tld/workspace/AppRoot/" //if using jenkins
+		LocalRoot				=	"~/{APPLICATION_NAMESPACE}BuildWorkspace/AppRoot/"
+//		LocalRoot				=	"/var/lib/jenkins/jobs/{APPLICATION_DOMAIN}/workspace/AppRoot/" //if using jenkins
 
 		PublicWebFolder			=	"Public/"
 		DefaultPage				=	"LandingPage.php"
-		TempFolder				=	"~/MyAppBuildWorkspace/AppRoot/Output/Temp/Build/"
+		TempFolder				=	"~/{APPLICATION_NAMESPACE}BuildWorkspace/AppRoot/Output/Temp/Build/"
 		UploadFolder			=	"Uploads/Build/"
 		GlobalEventHandlers		=	"GlobalEventHandlers.php"
 		GlobalScript			=	"GlobalScript.php"
 	Wafl
-		WaflFolder				=	".../../../Wafl/" //relative to LocalRoot
-		DblEjFolder				=	"../../../DblEj/" //relative to LocalRoot
+		WaflFolder				=	"{BUILD_RELATIVE_WAFL_FOLDER}" //relative to LocalRoot
+		DblEjFolder				=	"{BUILD_RELATIVE_DBLEJ_FOLDER}" //relative to LocalRoot
 
 Web
-	DomainName				=	"b.myapp.tld"
-	WebUrl					=	"http://b.myapp.tld/"
-	WebUrlSecure			=	"https://b.myapp.tld/"
+	DomainName				=	"{APPLICATION_DOMAIN}"
+	WebUrl					=	"http://{APPLICATION_DOMAIN}/"
+	WebUrlSecure			=	"https://{APPLICATION_DOMAIN}/"
 	WebUrlRelative			=	"/"
-	SiteEmail				=	"noreply@b.myapp.tld"
+	SiteEmail				=	"noreply@{APPLICATION_DOMAIN}"
 	CookieLifetime			=	350000
-	SiteDisplayTitle		=	New Modular Mvc Web Application
+	SiteDisplayTitle		=	{APPLICATION_NAME}
 	GlobalStylesheetHasTokens	=	0

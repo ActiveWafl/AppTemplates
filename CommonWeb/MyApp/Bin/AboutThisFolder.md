@@ -5,14 +5,14 @@ These helpful command-line scripts can be run in Windows (.bat) or Linux.
 Executes and pending database changes (from NextUpdate.sql by default), 
 archives the changes, and deletes the NextUpdate.sql contents (so as not to run more than once).
 
-##MyApp
+##{APPLICATION_NAMESPACE}
 If creating a non-web application, this file will execute the application (rename to match your app).
 
 ##RunIntegrationTests
-Use the registered integration testing extension (Selenium by default) to execute the application's integration tests (from MyApp/Tests)
+Use the registered integration testing extension (Selenium by default) to execute the application's integration tests (from {APPLICATION_NAMESPACE}/Tests)
 
 ##RunUnitTests
-Use the registered unit testing extension (PhpUnit by default) to execute the application's integration tests (from MyApp/Tests)
+Use the registered unit testing extension (PhpUnit by default) to execute the application's integration tests (from {APPLICATION_NAMESPACE}/Tests)
 
 ##UpdateDataModel
 Generate/update the application's data models from the configured data storage/database.

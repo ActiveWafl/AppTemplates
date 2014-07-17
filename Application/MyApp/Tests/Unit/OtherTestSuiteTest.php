@@ -1,6 +1,6 @@
 <?php
 
-namespace MyApp\Tests\Unit;
+namespace {APPLICATION_NAMESPACE}\Tests\Unit;
 
 class OtherTestSuite
 extends \Wafl\Extensions\PhpUnit\TestCase

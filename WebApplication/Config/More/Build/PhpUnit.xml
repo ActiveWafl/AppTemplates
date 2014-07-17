@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<phpunit bootstrap="../../../MyApp/Tests/Bootstrapper.php"
+<phpunit bootstrap="../../../{APPLICATION_NAMESPACE}/Tests/Bootstrapper.php"
          backupGlobals="false"
          backupStaticAttributes="false"
          strict="true"
          verbose="true">
        
     <testsuites>
-        <testsuite name="MyApp.tld Unit Tests">
+        <testsuite name="{APPLICATION_DOMAIN} Unit Tests">
             <directory suffix="Test.php">Tests/Unit/</directory>
         </testsuite>
-        <testsuite name="MyApp.tld Integration Tests">
+        <testsuite name="{APPLICATION_DOMAIN} Integration Tests">
             <directory suffix="Test.php">Tests/Integration/</directory>
         </testsuite>
     </testsuites>
 
     <logging>
-        <log type="coverage-html" target="../../../../AppRoot/Output/Build/Docs/Current/CoverageReportHtml" title="MyApp.tld Coverage Report"
+        <log type="coverage-html" target="{BUILD_LOCAL_ROOT}/Output/Build/Docs/Current/CoverageReportHtml" title="{APPLICATION_NAME} Coverage Report"
              charset="UTF-8" yui="true" highlight="true"
              lowUpperBound="35" highLowerBound="70"/>
-        <log type="coverage-clover" target="../../../../AppRoot/Output/Build/Docs/Current/BuildLogs/CoverageReport.xml"/>
-        <log type="junit" target="../../../../AppRoot/Output/Build/Docs/Current/BuildLogs/UnitTestResults.xml" logIncompleteSkipped="false"/>
+        <log type="coverage-clover" target="{BUILD_LOCAL_ROOT}/Output/Build/Docs/Current/BuildLogs/CoverageReport.xml"/>
+        <log type="junit" target="{BUILD_LOCAL_ROOT}/Output/Build/Docs/Current/BuildLogs/UnitTestResults.xml" logIncompleteSkipped="false"/>
     </logging>
 </phpunit>

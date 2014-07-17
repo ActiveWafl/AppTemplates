@@ -1,6 +1,6 @@
 <?php
 
-namespace MyApp\Logic;
+namespace {APPLICATION_NAMESPACE}\Logic;
 
 use DblEj\Application\IApplication,
     DblEj\Communication\IRequest,

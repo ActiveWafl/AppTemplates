@@ -1,3 +1,3 @@
-#My App Command Line Application
+#{APPLICATION_NAME} Command Line Application
 ##0.0.1
-**My App Command Line Application Version 1**
+**{APPLICATION_NAME} Command Line Application Version 1**

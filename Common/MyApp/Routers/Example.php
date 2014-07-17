@@ -1,6 +1,6 @@
 <?php
 
-namespace MyApp\Routers;
+namespace {APPLICATION_NAMESPACE}\Routers;
 
 use DblEj\Application\IApplication,
     DblEj\Communication\IRequest,
@@ -17,14 +17,14 @@ implements IRouter
         $usedRouter  = $this;
         if ($request->Get_Request() == "x")
         {
-            $returnRoute = new Route(["\\MyApp\\Logic\\ExampleRequestHandler",
+            $returnRoute = new Route(["\\{APPLICATION_NAMESPACE}\\Logic\\ExampleRequestHandler",
                 "HandleRequest"], [$request->Get_Request(),
                 $request,
                 $app]);
         }
         else
         {
-            $returnRoute = new Route(["\\MyApp\\Logic\\EntryPoint",
+            $returnRoute = new Route(["\\{APPLICATION_NAMESPACE}\\Logic\\EntryPoint",
                 "HandleRequest"], [$request->Get_Request(),
                 $request,
                 $app]);

@@ -1,5 +1,5 @@
 <phpdox xmlns="http://phpdox.de/config">
-    <project name="MyApp.tld" source="${basedir}/App" workdir="${basedir}/Temp">
+    <project name="{APPLICATION_NAME}" source="${basedir}/App" workdir="${basedir}/Temp">
         <collector publiconly="false">
             <include mask="*.php" />
             <exclude mask="*Autoload.php" />

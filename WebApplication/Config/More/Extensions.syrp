@@ -20,9 +20,9 @@ Smarty3
 //UserAuth
 //	TablePrefix							=	""
 //	NewUserGroupId						=	1
-//	UserClassName						=	\\MyApp\\FunctionalModel\\User
-//	UserGroupClassName					=	\\MyApp\\FunctionalModel\\UserGroup
-//	SessionClassName					=	\\MyApp\\FunctionalModel\\Session
+//	UserClassName						=	\\{APPLICATION_NAMESPACE}\\FunctionalModel\\User
+//	UserGroupClassName					=	\\{APPLICATION_NAMESPACE}\\FunctionalModel\\UserGroup
+//	SessionClassName					=	\\{APPLICATION_NAMESPACE}\\FunctionalModel\\Session
 //	UsernameFormField					=	EmailAddress
 //	PasswordFormField					=	UserPassword
 //	ActionRequestVariable				=	UserAuthAction
@@ -37,14 +37,14 @@ Smarty3
 //	UsernameColumn						=	EmailAddress
 
 PhpUnit
-	OutputLogFile	=	{$app->Get_Settings()->Get_Paths()->Get_Application()->Get_Temp().\"MyApp-UnitTest-Output.xml\"}
-	TestsFolder		=	{$app->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot().\"MyApp/Tests/Unit\"}
-	BootstrapFile	=	{$app->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot().\"MyApp/Tests/Bootstrapper.php\"}
+	OutputLogFile	=	{$app->Get_Settings()->Get_Paths()->Get_Application()->Get_Temp().\"{APPLICATION_NAMESPACE}-UnitTest-Output.xml\"}
+	TestsFolder		=	{$app->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot().\"{APPLICATION_NAMESPACE}/Tests/Unit\"}
+	BootstrapFile	=	{$app->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot().\"{APPLICATION_NAMESPACE}/Tests/Bootstrapper.php\"}
 	EchoOutput		=	{true}
 
 //Selenium
-//	OutputLogFile		=	{$app->Get_Settings()->Get_Paths()->Get_Application()->Get_Temp().\"MyApp-IntegrationTest-Output.xml\"}
-//	TestsFolder			=	{$app->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot().\"MyApp/Tests/Integration\"}
+//	OutputLogFile		=	{$app->Get_Settings()->Get_Paths()->Get_Application()->Get_Temp().\"{APPLICATION_NAMESPACE}-IntegrationTest-Output.xml\"}
+//	TestsFolder			=	{$app->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot().\"{APPLICATION_NAMESPACE}/Tests/Integration\"}
 //	EchoOutput			=	{true}
 //	BrowserToEmulate	=	{null}
 //	RemoteEngineUri		=	http:\/\/localhost:4444\/wd\/hub

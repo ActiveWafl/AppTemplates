@@ -91,7 +91,7 @@
 
                     <section class="Panel">
                         <h1>Edit this Page&apos;s Content</h1><a id="Html" href="#Html" class="NavJump"></a>
-                        <p>The HTML for this page is at ./<mark>MyApp/Presentation/Templates/LandingPage.tpl</mark>.&emsp;
+                        <p>The HTML for this page is at ./<mark>{APPLICATION_NAMESPACE}/Presentation/Templates/LandingPage.tpl</mark>.&emsp;
                             <br>Making changes to this file will update the contents you see here on this page.
 
                     </section>
@@ -111,7 +111,7 @@
 
                     <section class="Panel">
                         <h1>Create the data models</h1><a id="DataModels" href="#DataModels" class="NavJump"></a>
-                        <p>Create data models for your database automatically using the script ./<mark>MyApp/Bin/UpdateDataModels</mark>.
+                        <p>Create data models for your database automatically using the script ./<mark>{APPLICATION_NAMESPACE}/Bin/UpdateDataModels</mark>.
                         <aside class="Notification Info">
                             <i class="IconInfoSign"></i> Before you can generate the data models, you must
                             <ul>
@@ -125,7 +125,7 @@
 
                     <section class="Panel">
                         <h1>Add Functionality</h1><a id="Logic" href="#Logic" class="NavJump"></a>
-                        <p>Application logic for web applications is usually handled in the Functional Models or the <mark>MyApp/Controllers/[Pagename].php</mark> files.
+                        <p>Application logic for web applications is usually handled in the Functional Models or the <mark>{APPLICATION_NAMESPACE}/Controllers/[Pagename].php</mark> files.
                     </section>
                     <section class="Panel">
                         <h1>Learn More</h1><a href="#LearnMore" id="LearnMore" class="NavJump"></a>

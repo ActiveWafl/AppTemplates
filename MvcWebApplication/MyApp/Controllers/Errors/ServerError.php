@@ -1,6 +1,6 @@
 <?php
 
-namespace MyApp\Controllers;
+namespace {APPLICATION_NAMESPACE}\Controllers;
 
 class ServerError
 extends \DblEj\Mvc\ControllerBase

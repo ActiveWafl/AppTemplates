@@ -1,6 +1,6 @@
 <?php
 
-namespace MyApp;
+namespace {APPLICATION_NAMESPACE};
 
 use DblEj\Application\IApplication,
     DblEj\Application\IMvcWebApplication,

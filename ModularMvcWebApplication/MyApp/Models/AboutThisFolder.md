@@ -12,4 +12,4 @@ However, unlike data models, functional models are never over-written.
 #Creating the models automatically from a database
 To reverse-engineer your database into a data model, 
 first configure your database settings in Config/Settings.[environment].syrp
-and then run MyApp/Bin/UpdateDataModel.
+and then run {APPLICATION_NAMESPACE}/Bin/UpdateDataModel.

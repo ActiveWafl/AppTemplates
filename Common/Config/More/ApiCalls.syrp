@@ -2,9 +2,9 @@ ExampleApiCall
 	ApiCall			=	ExampleCalls.FirstExample
 	HandlerFunction	=	FirstExample
 	HandlerFile		=	Example.php
-	HandlerClass	=	\\MyApp\\Api\\Example
+	HandlerClass	=	\\{APPLICATION_NAMESPACE}\\Api\\Example
 ExampleApiCall2
 	ApiCall			=	ExampleCalls.SecondExample
 	HandlerFunction	=	SecondExample
 	HandlerFile		=	Example.php
-	HandlerClass	=	\\MyApp\\Api\\Example
+	HandlerClass	=	\\{APPLICATION_NAMESPACE}\\Api\\Example

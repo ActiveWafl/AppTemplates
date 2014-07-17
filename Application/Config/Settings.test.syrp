@@ -2,16 +2,16 @@ Application
 	GuestGroupId			=	1
 
 Debug
-	SuppressErrors			=	1
+	SuppressErrors			=	0
 	DebugMode				=	0
 	AutoUpdateDb			=	0
 
 Paths
 	Application
-		LocalRoot				=	"C:/some/path/MyApp-test/"
-		TempFolder				=	"Output/Temp/"
+		LocalRoot				=	"{TEST_LOCAL_ROOT}"
+		TempFolder				=	"{TEST_TEMP_FOLDER}"
 		GlobalEventHandlers		=	"GlobalEventHandlers.php"
 		GlobalScript			=	"GlobalScript.php"
 	Wafl
-		WaflFolder				=	"../shared/Wafl/"
-		DblEjFolder				=	"../shared/DblEj/"
+		WaflFolder				=	"{TEST_RELATIVE_WAFL_FOLDER}"
+		DblEjFolder				=	"{TEST_RELATIVE_DBLEJ_FOLDER}"

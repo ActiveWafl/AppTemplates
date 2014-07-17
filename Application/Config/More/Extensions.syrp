@@ -9,7 +9,7 @@
 //	ServerPort							=	6379
 
 //PhpUnit
-//	OutputLogFile	=	{$app->Get_Settings()->Get_Paths()->Get_Application()->Get_Temp().\"MyApp-UnitTest-Output.xml\"}
-//	TestsFolder		=	{$app->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot().\"MyApp/Tests/Unit\"}
-//	BootstrapFile	=	{$app->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot().\"MyApp/Tests/Bootstrapper.php\"}
+//	OutputLogFile	=	{$app->Get_Settings()->Get_Paths()->Get_Application()->Get_Temp().\"{APPLICATION_NAME}-UnitTest-Output.xml\"}
+//	TestsFolder		=	{$app->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot().\"{APPLICATION_NAME}/Tests/Unit\"}
+//	BootstrapFile	=	{$app->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot().\"{APPLICATION_NAME}/Tests/Bootstrapper.php\"}
 //	EchoOutput		=	{true}

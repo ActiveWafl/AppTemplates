@@ -8,12 +8,12 @@ Debug
 
 Paths
 	Application
-		LocalRoot				=	"~/MyAppBuildWorkspace/AppRoot/"
+		LocalRoot				=	"~/{APPLICATION_NAMESPACE}BuildWorkspace/AppRoot/"
 //		LocalRoot				=	"/var/lib/jenkins/jobs/b.myapp.tld/workspace/AppRoot/" //if using jenkins
 
 		PublicWebFolder			=	"Public/"
 		DefaultPage				=	"LandingPage.php"
-		TempFolder				=	"~/MyAppBuildWorkspace/AppRoot/Output/Temp/CiBuild/"
+		TempFolder				=	"~/{APPLICATION_NAMESPACE}BuildWorkspace/AppRoot/Output/Temp/CiBuild/"
 		UploadFolder			=	"Uploads/Build/"
 		GlobalEventHandlers		=	"GlobalEventHandlers.php"
 		GlobalScript			=	"GlobalScript.php"

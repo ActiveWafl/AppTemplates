@@ -1,6 +1,6 @@
 <?php
 
-namespace MyApp\Api;
+namespace {APPLICATION_NAMESPACE}\Api;
 
 use DblEj\Communication\Ajax\AjaxResult,
     DblEj\Data\ArrayModel;

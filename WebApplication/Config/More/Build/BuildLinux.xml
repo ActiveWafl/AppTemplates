@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project
-    name="MyApp"
+    name="{APPLICATION_NAME}"
     default="Build"
     xmlns:if="ant:if"
     xmlns:unless="ant:unless"
@@ -10,7 +10,7 @@
     <property name="phpFolder" value="/bin/php"/>
     <property name="dblejFolder" value="${baseFolder}/vhosts/shared/DblEj"/>
     <property name="waflFolder" value="${baseFolder}/vhosts/shared/Wafl"/>
-    <property name="webappFolder" value="${baseFolder}/vhosts/myapp.tld"/>
+    <property name="webappFolder" value="${baseFolder}/vhosts/{APPLICATION_DOMAIN}"/>
     <property name="outputFolder" value="${webappFolder}/Output"/>
 
     <!-- if using jenkins -->
@@ -32,7 +32,7 @@
             <arg value="--log" />
             <arg path="${outputFolder}/Build/Docs/Current/BuildLogs" />
             <arg value="--source" />
-            <arg path="${installFolder}/MyApp" />
+            <arg path="${installFolder}/{APPLICATION_NAMESPACE}" />
             <arg value="--output" />
             <arg path="${outputFolder}/Build/Docs/Current/CodeBrowser" />
         </exec>
@@ -46,7 +46,7 @@
             <arg value="--jdepend-xml=${outputFolder}/Build/Docs/Current/BuildLogs/AppMetrics.xml" />
             <arg value="--jdepend-chart=${outputFolder}/Build/Docs/Current/BuildLogs/AppMetricsChart.svg" />
             <arg value="--overview-pyramid=${outputFolder}/Build/Docs/Current/BuildLogs/OverviewPyramidChart.svg" />
-            <arg path="${installFolder}/MyApp" />
+            <arg path="${installFolder}/{APPLICATION_NAMESPACE}" />
         </exec>
     </target>
 
@@ -54,7 +54,7 @@
         <echo>Checking syntax for ${basedir} /App, /Public and, /Tests with php -l...</echo>
         <apply executable="php" failonerror="true">
             <arg value="-l" />
-            <fileset dir="${installFolder}/MyApp">
+            <fileset dir="${installFolder}/{APPLICATION_NAMESPACE}">
                 <include name="**/*.php" />
                 <modified />
             </fileset>
@@ -62,7 +62,7 @@
                 <include name="**/*.php" />
                 <modified />
             </fileset>
-            <fileset dir="${installFolder}/MyApp/Tests">
+            <fileset dir="${installFolder}/{APPLICATION_NAMESPACE}/Tests">
                 <include name="**/*.php" />
                 <modified />
             </fileset>
@@ -79,13 +79,13 @@
         <exec executable="phpcpd.bat" dir="${phpFolder}">
             <arg value="--log-pmd" />
             <arg value="${outputFolder}/Build/Docs/Current/BuildLogs/DuplicateCodeReport.xml" />
-            <arg path="${installFolder}/MyApp" />
+            <arg path="${installFolder}/{APPLICATION_NAMESPACE}" />
         </exec>
     </target>
 
     <target name="DetectPhpMesses" description="Perform project mess detection using phpmd creating a log file for the continuous integration server">
         <exec executable="phpmd.bat" dir="${phpFolder}">
-            <arg path="${installFolder}/MyApp" />
+            <arg path="${installFolder}/{APPLICATION_NAMESPACE}" />
             <arg value="xml" />
             <arg path="${waflFolder}/CodingStandards/Wafl1Md/ruleset.xml" />
             <arg value="--reportfile" />
@@ -120,7 +120,7 @@
         <exec executable="phploc.bat" dir="${phpFolder}"> <!-- you'll need to create a .bat file that calls php phpcb.phar -->
             <arg value="--log-csv" />
             <arg path="${outputFolder}/Build/Docs/Current/BuildLogs/ProjectSizeReport.csv" />
-            <arg path="${installFolder}/MyApp" />
+            <arg path="${installFolder}/{APPLICATION_NAMESPACE}" />
         </exec>
     </target>
 	
@@ -130,7 +130,7 @@
         <mkdir dir="${outputFolder}/Build/Docs/Current/BuildLogs"/>
         <mkdir dir="${outputFolder}/Build/Docs/Current/CoverageReportHtml"/>
         <mkdir dir="${installFolder}"/>
-        <mkdir dir="${installFolder}/MyApp"/>
+        <mkdir dir="${installFolder}/{APPLICATION_NAMESPACE}"/>
         <mkdir dir="${workspace}/shared"/>
         <mkdir dir="${waflFolder}"/>
         <mkdir dir="${dblejFolder}"/>
@@ -153,8 +153,8 @@
         <copy todir="${installFolder}/Public" >
             <fileset dir="${webappFolder}/Public" includes="**"/>
         </copy>
-        <copy todir="${installFolder}/MyApp" >
-            <fileset dir="${webappFolder}/MyApp" includes="**"/>
+        <copy todir="${installFolder}/{APPLICATION_NAMESPACE}" >
+            <fileset dir="${webappFolder}/{APPLICATION_NAMESPACE}" includes="**"/>
         </copy>
         <copy todir="${installFolder}/Config" >
             <fileset dir="${webappFolder}/Config" includes="**.syrp"/>
@@ -206,7 +206,7 @@
             <env key="WAFL_ENVIRONMENT" value="build" />
             <arg line="--configuration" />
             <arg path="${webappFolder}/Config/More/Build/PhpUnit.xml" />
-            <fileset dir="${installFolder}/MyApp/Tests/Unit" includes="*.php"/>
+            <fileset dir="${installFolder}/{APPLICATION_NAMESPACE}/Tests/Unit" includes="*.php"/>
         </apply>
         <echo message="done" />
     </target>
@@ -219,18 +219,18 @@
             <arg value="--report=checkstyle" />
             <arg value='--report-file="${outputFolder}/Build/Docs/Current/BuildLogs/CodeStandardViolations.xml"' />
             <arg value='--standard="${waflFolder}/CodingStandards/Wafl1/ruleset.xml"' />
-            <arg path="${installFolder}/MyApp" />
+            <arg path="${installFolder}/{APPLICATION_NAMESPACE}" />
             <arg value="--output" />
             <arg path="${outputFolder}/Build/Docs/Current/CodeBrowser" />
         </exec>
     </target>
     <target name="DeployToStagingServer" description="Deploy the website to staging">
-        <delete dir="${baseFolder}/vhosts/s.myapp.tld/Config" failonerror="false" verbose="true" />
-        <delete dir="${baseFolder}/vhosts/s.myapp.tld/MyApp" failonerror="false" verbose="true" />
-        <delete dir="${baseFolder}/vhosts/s.myapp.tld/Public" failonerror="false" verbose="true" />
-        <mkdir dir="${baseFolder}/vhosts/s.myapp.tld/Config"/>
-        <mkdir dir="${baseFolder}/vhosts/s.myapp.tld/MyApp"/>
-        <mkdir dir="${baseFolder}/vhosts/s.myapp.tld/Public"/>
+        <delete dir="${baseFolder}/vhosts/s.{APPLICATION_DOMAIN}/Config" failonerror="false" verbose="true" />
+        <delete dir="${baseFolder}/vhosts/s.{APPLICATION_DOMAIN}/{APPLICATION_NAMESPACE}" failonerror="false" verbose="true" />
+        <delete dir="${baseFolder}/vhosts/s.{APPLICATION_DOMAIN}/Public" failonerror="false" verbose="true" />
+        <mkdir dir="${baseFolder}/vhosts/s.{APPLICATION_DOMAIN}/Config"/>
+        <mkdir dir="${baseFolder}/vhosts/s.{APPLICATION_DOMAIN}/{APPLICATION_NAMESPACE}"/>
+        <mkdir dir="${baseFolder}/vhosts/s.{APPLICATION_DOMAIN}/Public"/>
 
         <echo message="Copying in new files..." />		
         <copy todir="${baseFolder}/vhosts/shared/Wafl" >  
@@ -240,50 +240,50 @@
             <fileset dir="${dblejFolder}" includes="**"/>  
         </copy>
 		  
-        <copy todir="${baseFolder}/vhosts/s.myapp.tld/Config" >  
+        <copy todir="${baseFolder}/vhosts/s.{APPLICATION_DOMAIN}/Config" >  
             <fileset dir="${installFolder}/Config" includes="**"/>  
         </copy>
-        <copy todir="${baseFolder}/vhosts/s.myapp.tld/Public" >  
+        <copy todir="${baseFolder}/vhosts/s.{APPLICATION_DOMAIN}/Public" >  
             <fileset dir="${installFolder}/Public" includes="**"/>  
         </copy>
-        <copy todir="${baseFolder}/vhosts/s.myapp.tld/MyApp" >  
-            <fileset dir="${installFolder}/MyApp" includes="**"/>  
+        <copy todir="${baseFolder}/vhosts/s.{APPLICATION_DOMAIN}/{APPLICATION_NAMESPACE}" >  
+            <fileset dir="${installFolder}/{APPLICATION_NAMESPACE}" includes="**"/>  
         </copy>
-        <copy file="${installFolder}/AppSupport.phar" tofile="${baseFolder}/vhosts/s.myapp.tld/AppSupport.phar" />
-        <copy file="${installFolder}/Application.syrp" tofile="${baseFolder}/vhosts/s.myapp.tld/Application.syrp" />
-        <copy file="${installFolder}/Readme.md" tofile="${baseFolder}/vhosts/s.myapp.tld/Readme.md" />
+        <copy file="${installFolder}/AppSupport.phar" tofile="${baseFolder}/vhosts/s.{APPLICATION_DOMAIN}/AppSupport.phar" />
+        <copy file="${installFolder}/Application.syrp" tofile="${baseFolder}/vhosts/s.{APPLICATION_DOMAIN}/Application.syrp" />
+        <copy file="${installFolder}/Readme.md" tofile="${baseFolder}/vhosts/s.{APPLICATION_DOMAIN}/Readme.md" />
 				
         <echo message="Setting htaccess environment to 'stage'..." />		
-        <replace file="${baseFolder}/vhosts/s.myapp.tld/Public/.htaccess" token="SetEnv WAFL_ENVIRONMENT dev" value="SetEnv WAFL_ENVIRONMENT stage"/>		
+        <replace file="${baseFolder}/vhosts/s.{APPLICATION_DOMAIN}/Public/.htaccess" token="SetEnv WAFL_ENVIRONMENT dev" value="SetEnv WAFL_ENVIRONMENT stage"/>		
     </target>
     <target name="DeployToTestServer" description="Deploy the website to test">
         <echo message="Clearing out old files..." />
-        <delete dir="${baseFolder}/vhosts/t.myapp.tld/Config" failonerror="false" verbose="true" />
-        <delete dir="${baseFolder}/vhosts/t.myapp.tld/MyApp" failonerror="false" verbose="true" />
-        <delete dir="${baseFolder}/vhosts/t.myapp.tld/Public" failonerror="false" verbose="true" />
-        <mkdir dir="${baseFolder}/vhosts/t.myapp.tld/Config"/>
-        <mkdir dir="${baseFolder}/vhosts/t.myapp.tld/MyApp"/>
-        <mkdir dir="${baseFolder}/vhosts/t.myapp.tld/Public"/>
+        <delete dir="${baseFolder}/vhosts/t.{APPLICATION_DOMAIN}/Config" failonerror="false" verbose="true" />
+        <delete dir="${baseFolder}/vhosts/t.{APPLICATION_DOMAIN}/{APPLICATION_NAMESPACE}" failonerror="false" verbose="true" />
+        <delete dir="${baseFolder}/vhosts/t.{APPLICATION_DOMAIN}/Public" failonerror="false" verbose="true" />
+        <mkdir dir="${baseFolder}/vhosts/t.{APPLICATION_DOMAIN}/Config"/>
+        <mkdir dir="${baseFolder}/vhosts/t.{APPLICATION_DOMAIN}/{APPLICATION_NAMESPACE}"/>
+        <mkdir dir="${baseFolder}/vhosts/t.{APPLICATION_DOMAIN}/Public"/>
 		
         <echo message="Copying in new files..." />		
-        <copy todir="${baseFolder}/vhosts/t.myapp.tld/Config" >  
+        <copy todir="${baseFolder}/vhosts/t.{APPLICATION_DOMAIN}/Config" >  
             <fileset dir="${installFolder}/Config" includes="**"/>  
         </copy>
-        <copy todir="${baseFolder}/vhosts/t.myapp.tld/Public" >  
+        <copy todir="${baseFolder}/vhosts/t.{APPLICATION_DOMAIN}/Public" >  
             <fileset dir="${installFolder}/Public" includes="**"/>  
         </copy>
-        <copy todir="${baseFolder}/vhosts/t.myapp.tld/MyApp" >  
-            <fileset dir="${installFolder}/MyApp" includes="**"/>  
+        <copy todir="${baseFolder}/vhosts/t.{APPLICATION_DOMAIN}/{APPLICATION_NAMESPACE}" >  
+            <fileset dir="${installFolder}/{APPLICATION_NAMESPACE}" includes="**"/>  
         </copy>
-        <copy todir="${baseFolder}/vhosts/t.myapp.tld" >  
+        <copy todir="${baseFolder}/vhosts/t.{APPLICATION_DOMAIN}" >  
             <fileset dir="${installFolder}" includes="**.php"/>  
         </copy>
-        <copy file="${installFolder}/AppSupport.phar" tofile="${baseFolder}/vhosts/t.myapp.tld/AppSupport.phar" />
-        <copy file="${installFolder}/Application.syrp" tofile="${baseFolder}/vhosts/t.myapp.tld/Application.syrp" />
-        <copy file="${installFolder}/Readme.md" tofile="${baseFolder}/vhosts/t.myapp.tld/Readme.md" />
+        <copy file="${installFolder}/AppSupport.phar" tofile="${baseFolder}/vhosts/t.{APPLICATION_DOMAIN}/AppSupport.phar" />
+        <copy file="${installFolder}/Application.syrp" tofile="${baseFolder}/vhosts/t.{APPLICATION_DOMAIN}/Application.syrp" />
+        <copy file="${installFolder}/Readme.md" tofile="${baseFolder}/vhosts/t.{APPLICATION_DOMAIN}/Readme.md" />
 		
         <echo message="Setting htaccess environment to 'test'..." />		
-        <replace file="${baseFolder}/vhosts/t.myapp.tld/Public/.htaccess" token="SetEnv WAFL_ENVIRONMENT dev" value="SetEnv WAFL_ENVIRONMENT test"/>		
+        <replace file="${baseFolder}/vhosts/t.{APPLICATION_DOMAIN}/Public/.htaccess" token="SetEnv WAFL_ENVIRONMENT dev" value="SetEnv WAFL_ENVIRONMENT test"/>		
     </target>
     <target name="DeployToProductionServer" description="Deploy the website to live production">
         <echo message="Saving the version information to a sql database..." />		
@@ -305,8 +305,8 @@
         <copy todir="${webappFolder}/Public" >  
             <fileset dir="${installFolder}/Public" includes="**"/>  
         </copy>
-        <copy todir="${webappFolder}/MyApp" >  
-            <fileset dir="${installFolder}/MyApp" includes="**"/>  
+        <copy todir="${webappFolder}/{APPLICATION_NAMESPACE}" >  
+            <fileset dir="${installFolder}/{APPLICATION_NAMESPACE}" includes="**"/>  
         </copy>
         <copy file="${installFolder}/AppSupport.phar" tofile="${webappFolder}/AppSupport.phar" />
         <copy file="${installFolder}/Application.syrp" tofile="${webappFolder}/Application.syrp" />

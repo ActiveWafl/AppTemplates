@@ -8,18 +8,18 @@ Debug
 
 Paths
 	Application
-		LocalRoot				=	"~/MyAppBuildWorkspace/AppRoot/"
+		LocalRoot				=	"~/{APPLICATION_NAMESPACE}BuildWorkspace/AppRoot/"
 //		LocalRoot				=	"/var/lib/jenkins/jobs/b.myapp.tld/workspace/AppRoot/" //if using jenkins
 
 		PublicWebFolder			=	"Public/"
 		DefaultPage				=	"LandingPage.php"
-		TempFolder				=	"~/MyAppBuildWorkspace/AppRoot/Output/Temp/CiBuild/"
+		TempFolder				=	"~/{APPLICATION_NAMESPACE}BuildWorkspace/AppRoot/Output/Temp/CiBuild/"
 		UploadFolder			=	"Uploads/Build/"
 		GlobalEventHandlers		=	"GlobalEventHandlers.php"
 		GlobalScript			=	"GlobalScript.php"
 	Wafl
-		WaflFolder				=	".../../../Wafl/" //relative to LocalRoot
-		DblEjFolder				=	"../../../DblEj/" //relative to LocalRoot
+		WaflFolder				=	"{BUILD_RELATIVE_WAFL_FOLDER}" //relative to LocalRoot
+		DblEjFolder				=	"{BUILD_RELATIVE_DBLEJ_FOLDER}" //relative to LocalRoot
 
 Web
 	DomainName				=	"b.myapp.tld"

@@ -1,9 +1,9 @@
 Application
-	Name					=	"MyApp"
-	Guid					=	"MyApp"                                   
-	RootNameSpace			=	"MyApp"	
+	Name					=	"{APPLICATION_NAME}"
+	Guid					=	"{APPLICATION_GUID}"                                   
+	RootNameSpace			=	"{APPLICATION_NAMESPACE}"	
 	SiteArea				=	"MainSection"
-	Timezone				=	"America/Phoenix"
+	Timezone				=	"{APPLICATION_TIMEZONE}"
 	DefaultUserClass		=	\\Wafl\\Users\\User
 	DefaultUserGroupClass	=	\\Wafl\\Users\\UserGroup
 Paths

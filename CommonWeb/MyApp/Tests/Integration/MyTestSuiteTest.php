@@ -1,6 +1,6 @@
 <?php
 
-namespace MyApp\Tests\Integration;
+namespace {APPLICATION_NAMESPACE}\Tests\Integration;
 
 class MyTestSuiteTest
 extends \Wafl\Extensions\Selenium\TestCase

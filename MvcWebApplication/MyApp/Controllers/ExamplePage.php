@@ -1,6 +1,6 @@
 <?php
 
-namespace MyApp\Controllers;
+namespace {APPLICATION_NAMESPACE}\Controllers;
 
 use DblEj\Application\IMvcWebApplication,
     DblEj\Communication\Http\Request,
