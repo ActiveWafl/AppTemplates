@@ -8,25 +8,23 @@ Debug
 
 Paths
 	Application
-		LocalRoot				=	"C:/xampp/vhosts/b.myapp.tld/Output/Build/AppRoot/"
-//		LocalRoot				=	"c:/xampp/jenkins/jobs/b.myapp.tld/workspace/AppRoot/" //if using jenkins
-
+		LocalRoot				=	"{BUILD_LOCAL_ROOT}/"
 		PublicWebFolder			=	"Public/"
 		DefaultPage				=	"LandingPage.php"
-		TempFolder				=	"C:/xampp/vhosts/b.myapp.tld/Output/Build/AppRoot/Output/Temp/Build/"
-		UploadFolder			=	"Uploads/Build/"
+		TempFolder				=	"{BUILD_TEMP_FOLDER}"
+		UploadFolder			=	"Uploads/"
 		GlobalEventHandlers		=	"GlobalEventHandlers.php"
 		GlobalScript			=	"GlobalScript.php"
 	Wafl
-		WaflFolder				=	"../../../../shared/Wafl/" //relative to LocalRoot
-		DblEjFolder				=	"../../../../shared/DblEj/" //relative to LocalRoot
+		WaflFolder				=	"{BUILD_RELATIVE_WAFL_FOLDER}" //relative to LocalRoot
+		DblEjFolder				=	"{BUILD_RELATIVE_DBLEJ_FOLDER}" //relative to LocalRoot
 
 Web
-	DomainName				=	"b.myapp.tld"
-	WebUrl					=	"http://b.myapp.tld/"
-	WebUrlSecure			=	"https://b.myapp.tld/"
+	DomainName				=	"b.{APPLICATION_DOMAIN}"
+	WebUrl					=	"http://b.{APPLICATION_DOMAIN}/"
+	WebUrlSecure			=	"https://b.{APPLICATION_DOMAIN}/"
 	WebUrlRelative			=	"/"
-	SiteEmail				=	"noreply@b.myapp.tld"
+	SiteEmail				=	"noreply@b.{APPLICATION_DOMAIN}"
 	CookieLifetime			=	350000
-	SiteDisplayTitle		=	New Modular Mvc Web Application
+	SiteDisplayTitle		=	{APPLICATION_NAME}
 	GlobalStylesheetHasTokens	=	0

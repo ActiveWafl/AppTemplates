@@ -2,29 +2,29 @@ Application
 	GuestGroupId			=	1
 
 Debug
-	SuppressErrors			=	1
-	DebugMode				=	0
+	SuppressErrors			=	0
+	DebugMode				=	1
 	AutoUpdateDb			=	0
 
 Paths
 	Application
-		LocalRoot				=	"C:/xampp/vhosts/myapp.tld/"
+		LocalRoot				=	"{LOCAL_ROOT}/"
 		PublicWebFolder			=	"Public/"
 		DefaultPage				=	"LandingPage.php"
-		TempFolder				=	"C:/xampp/vhosts/myapp.tld/Output/Temp/"
-		UploadFolder			=	"Uploads/Prod/"
+		TempFolder				=	"{TEMP_FOLDER}"
+		UploadFolder			=	"Uploads/"
 		GlobalEventHandlers		=	"GlobalEventHandlers.php"
 		GlobalScript			=	"GlobalScript.php"
 	Wafl
-		WaflFolder				=	"../shared/Wafl/" //relative to LocalRoot
-		DblEjFolder				=	"../shared/DblEj/" //relative to LocalRoot
+		WaflFolder				=	"{RELATIVE_WAFL_FOLDER}" //relative to LocalRoot
+		DblEjFolder				=	"{RELATIVE_DBLEJ_FOLDER}" //relative to LocalRoot
 
 Web
-	DomainName				=	"myapp.tld"
-	WebUrl					=	"http://myapp.tld/"
-	WebUrlSecure			=	"https://myapp.tld/"
+	DomainName				=	"{APPLICATION_DOMAIN}"
+	WebUrl					=	"http://{APPLICATION_DOMAIN}/"
+	WebUrlSecure			=	"https://{APPLICATION_DOMAIN}/"
 	WebUrlRelative			=	"/"
-	SiteEmail				=	"noreply@myapp.tld"
+	SiteEmail				=	"noreply@{APPLICATION_DOMAIN}"
 	CookieLifetime			=	350000
-	SiteDisplayTitle		=	New Modular Mvc Web Application
+	SiteDisplayTitle		=	{APPLICATION_NAME}
 	GlobalStylesheetHasTokens	=	0

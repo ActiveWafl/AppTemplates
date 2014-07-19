@@ -1,1 +1,0 @@
-If you use Linux, replace the files in Config/ with the files in this directory.
