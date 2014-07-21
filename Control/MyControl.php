@@ -2,7 +2,7 @@
 
 namespace {CONTROLS_NAMESPACE}\{CONTROL_NAME};
 
-class MyControl extends \DblEj\Extensibility\ControlBase
+class {CONTROL_NAME} extends \DblEj\Extensibility\ControlBase
 {
 
 	public function Initialize($width, $height, &$params)
