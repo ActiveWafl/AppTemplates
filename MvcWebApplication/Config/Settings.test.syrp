@@ -16,8 +16,8 @@ Paths
 		GlobalEventHandlers		=	"GlobalEventHandlers.php"
 		GlobalScript			=	"GlobalScript.php"
 	Wafl
-		WaflFolder				=	"{$TEST_RELATIVE_WAFL_FOLDER}" //relative to LocalRoot
-		DblEjFolder				=	"{$TEST_RELATIVE_WAFL_FOLDER}" //relative to LocalRoot
+		WaflFolder				=	"{TEST_RELATIVE_WAFL_FOLDER}"
+		DblEjFolder				=	"{TEST_RELATIVE_DBLEJ_FOLDER}"
 
 Web
 	DomainName				=	"t.{APPLICATION_DOMAIN}"

@@ -16,11 +16,11 @@ Paths
 		GlobalEventHandlers		=	"GlobalEventHandlers.php"
 		GlobalScript			=	"GlobalScript.php"
 	Wafl
-		WaflFolder				=	"{$DEV_RELATIVE_WAFL_FOLDER}" //relative to LocalRoot
-		DblEjFolder				=	"{$DEV_RELATIVE_WAFL_FOLDER}" //relative to LocalRoot
+		WaflFolder				=	"{DEV_RELATIVE_WAFL_FOLDER}"
+		DblEjFolder				=	"{DEV_RELATIVE_DBLEJ_FOLDER}"
 
 Web
-	DomainName				=	"t.{APPLICATION_DOMAIN}"
+	DomainName				=	"d.{APPLICATION_DOMAIN}"
 	WebUrl					=	"http://d.{APPLICATION_DOMAIN}/"
 	WebUrlSecure			=	"https://d.{APPLICATION_DOMAIN}/"
 	WebUrlRelative			=	"/"

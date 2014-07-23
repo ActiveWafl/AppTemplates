@@ -8,7 +8,7 @@ use {APPLICATION_NAMESPACE}\ModularLoader,
 //Maybe someone can handle it right away with no need for all the init stuff.
 $preAppRouter = null;
 require_once(__DIR__ . "/../AppSupport.phar");
-$application  = WebIndex::BootstrapModularApplication(__DIR__ . "/../Application.syrp", null, "\\Wafl\\Application\\ModularMvcWebApplication", "c:/xampp/tmp/AppPerformance.log");
+$application  = WebIndex::BootstrapModularApplication(__DIR__ . "/../Application.syrp", null, "\\Wafl\\Application\\ModularMvcWebApplication");
 $requestUri   = $_SERVER["REQUEST_URI"]; //@todo do all http servers use this header?  Tested in apache. And what about REDIRECT_URL, I was checking that as well elsewhere
 HttpRouter::RouteThruNonAppCalls($requestUri, $preAppRouter);
 
