@@ -17,7 +17,7 @@ Paths
 		GlobalScript			=	"GlobalScript.php"
 	Wafl
 		WaflFolder				=	"{$TEST_RELATIVE_WAFL_FOLDER}" //relative to LocalRoot
-		DblEjFolder				=	"{$TEST_RELATIVE_WAFL_FOLDER}" //relative to LocalRoot
+		DblEjFolder				=	"{$TEST_RELATIVE_DBLEJ_FOLDER}" //relative to LocalRoot
 
 Web
 	DomainName				=	"t.{APPLICATION_DOMAIN}"

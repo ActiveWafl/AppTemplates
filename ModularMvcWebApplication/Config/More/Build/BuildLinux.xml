@@ -6,8 +6,8 @@
     xmlns:unless="ant:unless"
 >
 
-    <property name="baseFolder" value="{BASE_WEB_FOLDER}"/>
-    <property name="phpFolder" value="{PHP_PATH}"/>
+    <property name="baseFolder" value="/var/www"/>
+    <property name="phpFolder" value="/usr/bin"/>
     <property name="dblejFolder" value="${baseFolder}/vhosts/shared/DblEj"/>
     <property name="waflFolder" value="${baseFolder}/vhosts/shared/Wafl"/>
     <property name="webappFolder" value="${baseFolder}/vhosts/{APPLICATION_DOMAIN}"/>
