@@ -42,6 +42,7 @@ DblEj
 		UI/Mouse/DragDrop.js
 		UI/Mouse/ResizeInfo.js
 		UI/Mouse/Resize.js
+		UI/Mouse.js
 		UI/Dialog.js
 		UI/Lightbox.js
 		Security/OAuth2/Client.js

@@ -34,6 +34,7 @@ DblEj
 		Util/StringValidator.js
 		UI/Utils.js
 		UI/Effects.js
+		UI/Mouse.js
 		UI/Mouse/DragData.js
 		UI/Mouse/DragDropSettings.js
 		UI/Mouse/DropTarget.js
