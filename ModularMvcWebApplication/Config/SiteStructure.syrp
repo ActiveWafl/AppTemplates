@@ -1,27 +1,27 @@
 MainSection
 
-	LandingPage
-		Caption			=	"{APPLICATION_NAME} Home Page"
-		Controller		=	LandingPage
-		Presentation	=	LandingPage
-		DisplayOrder	=	1
-		IsDefault		=	1
-		Description		=	"The home page for {APPLICATION_NAME}"
-		Keywords		=	{APPLICATION_NAME} My App Best ActiveWAFL Awesome Home Landing Start Php Framework
-		PreProcessCss	=	{false}
-	
-	ExamplePage
-		Caption			=	"{APPLICATION_NAME} Example Page"
-		Controller		=	ExamplePage
-		Presentation	=	ExamplePage
-		DisplayOrder	=	2
-		IsDefault		=	1
-		Description		=	"An example page for {APPLICATION_NAME}"
-		Keywords		=	{APPLICATION_NAME} My App Best ActiveWAFL Awesome Php Framework
-		PreProcessCss	=	{false}
-	
+    LandingPage
+        Caption         =   "{APPLICATION_NAME} Home Page"
+        Logic           =   LandingPage
+        Presentation    =   LandingPage
+        DisplayOrder    =   1
+        IsDefault       =   1
+        Description     =   "The home page for {APPLICATION_NAME}"
+        Keywords        =   {APPLICATION_NAME} My App Best ActiveWAFL Awesome Home Landing Start Php Framework
+        PreProcessCss   =   {false}
+
+    ExamplePage
+        Caption         =   "{APPLICATION_NAME} Example Page"
+        Logic           =   ExamplePage
+        Presentation    =   ExamplePage
+        DisplayOrder    =   2
+        IsDefault       =   1
+        Description     =   "An example page for {APPLICATION_NAME}"
+        Keywords        =   {APPLICATION_NAME} My App Best ActiveWAFL Awesome Php Framework
+        PreProcessCss   =   {false}
+
 SiteError
-	Caption			=	"Site Error"
-	Controller		=	Errors/ServerError
-	Presentation	=	Errors/ServerError
-	DisplayOrder	=	{false}
+    Caption         =   "Site Error"
+    Logic           =   Errors/ServerError
+    Presentation    =   Errors/ServerError
+    DisplayOrder    =   {false}

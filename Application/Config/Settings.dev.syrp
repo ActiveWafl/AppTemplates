@@ -1,17 +1,17 @@
 Application
-	GuestGroupId			=	1
+    GuestGroupId            =   1
 
 Debug
-	SuppressErrors			=	0
-	DebugMode				=	1
-	AutoUpdateDb			=	0
+    SuppressErrors          =   0
+    DebugMode               =   1
+    AutoUpdateDb            =   0
 
 Paths
-	Application
-		LocalRoot				=	"{DEV_LOCAL_ROOT}"
-		TempFolder				=	"{DEV_TEMP_FOLDER}"
-		GlobalEventHandlers		=	"GlobalEventHandlers.php"
-		GlobalScript			=	"GlobalScript.php"
-	Wafl
-		WaflFolder				=	"{DEV_RELATIVE_WAFL_FOLDER}"
-		DblEjFolder				=	"{DEV_RELATIVE_DBLEJ_FOLDER}"
+    Application
+        LocalRoot               =   "{DEV_LOCAL_ROOT}"
+        TempFolder              =   "{DEV_TEMP_FOLDER}"
+        GlobalEventHandlers     =   "GlobalEventHandlers.php"
+        GlobalScript            =   "GlobalScript.php"
+    Wafl
+        WaflFolder              =   "{DEV_RELATIVE_WAFL_FOLDER}"
+        DblEjFolder             =   "{DEV_RELATIVE_DBLEJ_FOLDER}"

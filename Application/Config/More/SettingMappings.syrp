@@ -1,49 +1,48 @@
 Application
-	RootNameSpace			=	RootNameSpace
-	Name					=	AppName
-	Skin					=	ALL_SKINS
-	GuestGroupId			=	GuestGroupId
-	Timezone				=	Timezone
-	Guid					=	Guid
-	DefaultUserClass		=	DefaultUserClass
-	DefaultUserGroupClass	=	DefaultUserGroupClass
-	DefaultUserGroupId		=	DefaultUsergroupId
+    RootNameSpace           =   RootNameSpace
+    Name                    =   AppName
+    Skin                    =   ALL_SKINS
+    GuestGroupId            =   GuestGroupId
+    Timezone                =   Timezone
+    Guid                    =   Guid
+    DefaultUserClass        =   DefaultUserClass
+    DefaultUserGroupClass   =   DefaultUserGroupClass
+    DefaultUserGroupId      =   DefaultUsergroupId
 Paths
-	Application
-		Presentation			=	Presentation
-		LocalRoot				=	LocalRoot
-		TempFolder				=	Temp
-		ApiHandlerFolder		=	ApiHandlerFolder
-		GlobalEventHandlers		=	GlobalEventHandlers
-		GlobalScript			=	GlobalScript
-		ConfigFolder			=	Config
-	Wafl
-		WaflFolder				=	WaflFolder
-		DblEjFolder				=	DblEjFolder
-		Extensions				=	ExtensionsFolder
-		Util					=	UtilFolder
+    Application
+        Presentation            =   Presentation
+        TempFolder              =   Temp
+        ApiHandlerFolder        =   ApiHandlerFolder
+        GlobalEventHandlers     =   GlobalEventHandlers
+        GlobalScript            =   GlobalScript
+        ConfigFolder            =   Config
+    Wafl
+        WaflFolder              =   WaflFolder
+        DblEjFolder             =   DblEjFolder
+        Extensions              =   ExtensionsFolder
+        Util                    =   UtilFolder
 
 Database
-	DatabaseCreateScript		=	CreateScript
+    DatabaseCreateScript    =   CreateScript
 
 DataStorage
-	Common
-		LoadBalanced			=	LoadBalanced
-	ConnectionTemplate
-		Uri					=	Uri
-		Catalog				=	Catalog
-		Username			=	Username
-		Password			=	Password
-		CreateScript		=	CreateScript
-		UpdateScript		=	UpdateScript
-		ReplicationRole		=	ReplicationRole
-		PersistModels		=	PersistModels
-		ModelGroup			=	ModelGroup
-		RequiredLocation	=	RequiredLocation
-		AccessScope			=	AccessScope
-		EngineDriverPath	=	EngineDriverPath
-		CharacterEncoding	=	CharacterEncoding
+    Common
+        LoadBalanced        =   LoadBalanced
+    ConnectionTemplate
+        Uri                 =   Uri
+        Catalog             =   Catalog
+        Username            =   Username
+        Password            =   Password
+        CreateScript        =   CreateScript
+        UpdateScript        =   UpdateScript
+        ReplicationRole     =   ReplicationRole
+        PersistModels       =   PersistModels
+        ModelGroup          =   ModelGroup
+        RequiredLocation    =   RequiredLocation
+        AccessScope         =   AccessScope
+        EngineDriverPath    =   EngineDriverPath
+        CharacterEncoding   =   CharacterEncoding
 Debug
-	SuppressErrors				=	SuppressErrors
-	DebugMode					=	DebugMode
-	AutoUpdateDb				=	AutoUpdateDb
+    SuppressErrors          =   SuppressErrors
+    DebugMode               =   DebugMode
+    AutoUpdateDb            =   AutoUpdateDb

@@ -1,13 +1,13 @@
 PreRegisterControls
-	Docking
-	FullHeight
-	DropdownMenu
-	DatePicker
-	Spinner
-	Rotator
-	ModelList
-	ModelEditor
-	LoginForm
-	MicroLoginForm
-	FormValidator
-	Captcha
+    Docking
+    FullHeight
+    DropdownMenu
+    DatePicker
+    Spinner
+    Rotator
+    ModelList
+    ModelEditor
+    LoginForm
+    MicroLoginForm
+    FormValidator
+    Captcha

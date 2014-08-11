@@ -1,50 +1,46 @@
 Smarty3
-	CompileFolder	=	{$app->Get_Settings()->Get_Paths()->Get_Application()->Get_Temp().\"TemplateCompiles\"}
-	CacheFolder		=	{$app->Get_Settings()->Get_Paths()->Get_Application()->Get_Temp().\"TemplateCache\"}
-	TemplateFolders	=	//added in view engine currently
-	PluginFolders	=	//added in view engine currently
-	EnableCaching	=	//this should be set in code for view engine
-	ErrorReporting	=	{E_ALL}
-	ForceCompile	=	{false}
+    CompileFolder   =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_Temp().\"TemplateCompiles\"}
+    CacheFolder     =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_Temp().\"TemplateCache\"}
+    TemplateFolders =   //added in view engine currently
+    PluginFolders   =   //added in view engine currently
+    EnableCaching   =   //this should be set in code for view engine
+    ErrorReporting  =   {E_ALL}
+    ForceCompile    =   {false}
 
 //Solr
-//	ServerAddress						=	http:\/\/localhost:8080/solr
-//	Indexes
-//		my_index1	
-//		my_index2
+//  ServerAddress                       =   http:\/\/localhost:8080/solr
+//  Indexes
+//      my_index1
+//      my_index2
 
 //Predis
-//	ServerAddress						=	127.0.0.1
-//	ServerPort							=	6379
+//  ServerAddress                       =   127.0.0.1
+//  ServerPort                          =   6379
 
-//UserAuth
-//	TablePrefix							=	""
-//	NewUserGroupId						=	1
-//	UserClassName						=	\\{APPLICATION_NAMESPACE}\\FunctionalModel\\User
-//	UserGroupClassName					=	\\{APPLICATION_NAMESPACE}\\FunctionalModel\\UserGroup
-//	SessionClassName					=	\\{APPLICATION_NAMESPACE}\\FunctionalModel\\Session
-//	UsernameFormField					=	EmailAddress
-//	PasswordFormField					=	UserPassword
-//	ActionRequestVariable				=	UserAuthAction
-//	ActionRequestVariableNewUserValue	=	NewAccount
-//	AllowTableOverwrite					=	true
-//	RequiresCaptcha						=	true
-//	ConfirmPasswordFormField			=	{null}
-//	UsernameLabel						=	email address
-//	UserGroupTable						=	UserGroups
-//	UserGroupField						=	UserGroupId
-//	SessionIdField						=	SessionId
-//	UsernameColumn						=	EmailAddress
+//UserAuthentication
+//    FormField1                          =   Username
+//    FormField2                          =   Password
+//    ActionRequestVariable               =   UserAuthAction
+//    ActionRequestVariableNewUserValue   =   NewAccount
+//    ActionRequestVariableLogoutValue    =   Logout
+//    RequiresCaptcha                     =   false
+//    UserTable                           =   Users
+//    UsernameColumn                      =   Username
+//    PasswordColumn                      =   Password
+//    UserTableKeyField                   =   UserId
+//    LogoutRedirect                      =   /SomePostLogoutPage
+//    DataConnection                      =   Master
+//    UserClass                           =   \\{APPLICATION_NAMESPACE}\\FunctionalModel\\User
 
-PhpUnit
-	OutputLogFile	=	{$app->Get_Settings()->Get_Paths()->Get_Application()->Get_Temp().\"{APPLICATION_NAMESPACE}-UnitTest-Output.xml\"}
-	TestsFolder		=	{$app->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot().\"{APPLICATION_NAMESPACE}/Tests/Unit\"}
-	BootstrapFile	=	{$app->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot().\"{APPLICATION_NAMESPACE}/Tests/Bootstrapper.php\"}
-	EchoOutput		=	{true}
+//PhpUnit
+//  OutputLogFile   =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_Temp().\"{APPLICATION_NAMESPACE}-UnitTest-Output.xml\"}
+//  TestsFolder     =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot().\"{APPLICATION_NAMESPACE}/Tests/Unit\"}
+//  BootstrapFile   =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot().\"{APPLICATION_NAMESPACE}/Tests/Bootstrapper.php\"}
+//  EchoOutput      =   {true}
 
 //Selenium
-//	OutputLogFile		=	{$app->Get_Settings()->Get_Paths()->Get_Application()->Get_Temp().\"{APPLICATION_NAMESPACE}-IntegrationTest-Output.xml\"}
-//	TestsFolder			=	{$app->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot().\"{APPLICATION_NAMESPACE}/Tests/Integration\"}
-//	EchoOutput			=	{true}
-//	BrowserToEmulate	=	{null}
-//	RemoteEngineUri		=	http:\/\/localhost:4444\/wd\/hub
+//  OutputLogFile       =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_Temp().\"{APPLICATION_NAMESPACE}-IntegrationTest-Output.xml\"}
+//  TestsFolder         =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot().\"{APPLICATION_NAMESPACE}/Tests/Integration\"}
+//  EchoOutput          =   {true}
+//  BrowserToEmulate    =   {null}
+//  RemoteEngineUri     =   http:\/\/localhost:4444\/wd\/hub

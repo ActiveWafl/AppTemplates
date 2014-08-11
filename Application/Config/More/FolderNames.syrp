@@ -1,7 +1,7 @@
 Paths
-	Application
-		Presentation			=	"Presentation/"
-		ApiHandlerFolder		=	"Api/"
-	Wafl
-		Extensions	=	"Extensions/"
-		Util		=	"Util/"
+    Application
+        Presentation            =   "Presentation/"
+        ApiHandlerFolder        =   "Api/"
+    Wafl
+        Extensions  =   "Extensions/"
+        Util        =   "Util/"

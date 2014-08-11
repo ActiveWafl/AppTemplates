@@ -1,8 +1,8 @@
 Code
-	us
+    us
 Dictionary
-	WelcomeMessage  =  Welcome to My App!
-	TermsOfService
-		These are the US English terms of service. I hope you enjoy them very much!
-	Copyright
-		(C)2014 {APPLICATION_NAME}
+    WelcomeMessage  =  Welcome to My App!
+    TermsOfService
+        These are the US English terms of service. I hope you enjoy them very much!
+    Copyright
+        (C)2014 {APPLICATION_NAME}

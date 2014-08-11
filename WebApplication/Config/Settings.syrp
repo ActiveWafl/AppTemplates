@@ -1,30 +1,30 @@
 Application
-	GuestGroupId			=	1
+    GuestGroupId            =   1
 
 Debug
-	SuppressErrors			=	0
-	DebugMode				=	1
-	AutoUpdateDb			=	0
+    SuppressErrors          =   0
+    DebugMode               =   1
+    AutoUpdateDb            =   0
 
 Paths
-	Application
-		LocalRoot				=	"{LOCAL_ROOT}/"
-		PublicWebFolder			=	"Public/"
-		DefaultPage				=	"LandingPage.php"
-		TempFolder				=	"{TEMP_FOLDER}"
-		UploadFolder			=	"Uploads/"
-		GlobalEventHandlers		=	"GlobalEventHandlers.php"
-		GlobalScript			=	"GlobalScript.php"
-	Wafl
-		WaflFolder				=	"{RELATIVE_WAFL_FOLDER}"
-		DblEjFolder				=	"{RELATIVE_DBLEJ_FOLDER}"
+    Application
+        LocalRoot               =   "{LOCAL_ROOT}/"
+        PublicWebFolder         =   "Public/"
+        DefaultPage             =   "LandingPage.php"
+        TempFolder              =   "{TEMP_FOLDER}"
+        UploadFolder            =   "Uploads/"
+        GlobalEventHandlers     =   "GlobalEventHandlers.php"
+        GlobalScript            =   "GlobalScript.php"
+    Wafl
+        WaflFolder              =   "{RELATIVE_WAFL_FOLDER}"
+        DblEjFolder             =   "{RELATIVE_DBLEJ_FOLDER}"
 
 Web
-	DomainName				=	"{APPLICATION_DOMAIN}"
-	WebUrl					=	"http://{APPLICATION_DOMAIN}/"
-	WebUrlSecure			=	"https://{APPLICATION_DOMAIN}/"
-	WebUrlRelative			=	"/"
-	SiteEmail				=	"noreply@{APPLICATION_DOMAIN}"
-	CookieLifetime			=	350000
-	SiteDisplayTitle		=	{APPLICATION_NAME}
-	GlobalStylesheetHasTokens	=	0
+    DomainName              =   "{APPLICATION_DOMAIN}"
+    WebUrl                  =   "http://{APPLICATION_DOMAIN}/"
+    WebUrlSecure            =   "https://{APPLICATION_DOMAIN}/"
+    WebUrlRelative          =   "/"
+    SiteEmail               =   "noreply@{APPLICATION_DOMAIN}"
+    CookieLifetime          =   350000
+    SiteDisplayTitle        =   {APPLICATION_NAME}
+    GlobalStylesheetHasTokens   =   0

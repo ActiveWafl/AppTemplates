@@ -1,30 +1,30 @@
 Application
-	GuestGroupId			=	1
+    GuestGroupId            =   1
 
 Debug
-	SuppressErrors			=	0
-	DebugMode				=	1
-	AutoUpdateDb			=	0
+    SuppressErrors          =   0
+    DebugMode               =   1
+    AutoUpdateDb            =   0
 
 Paths
-	Application
-		LocalRoot				=	"{BUILD_LOCAL_ROOT}/"
-		PublicWebFolder			=	"Public/"
-		DefaultPage				=	"LandingPage.php"
-		TempFolder				=	"{BUILD_TEMP_FOLDER}"
-		UploadFolder			=	"Uploads/"
-		GlobalEventHandlers		=	"GlobalEventHandlers.php"
-		GlobalScript			=	"GlobalScript.php"
-	Wafl
-		WaflFolder				=	"{BUILD_RELATIVE_WAFL_FOLDER}"
-		DblEjFolder				=	"{BUILD_RELATIVE_DBLEJ_FOLDER}"
+    Application
+        LocalRoot               =   "{BUILD_LOCAL_ROOT}/"
+        PublicWebFolder         =   "Public/"
+        DefaultPage             =   "LandingPage.php"
+        TempFolder              =   "{BUILD_TEMP_FOLDER}"
+        UploadFolder            =   "Uploads/"
+        GlobalEventHandlers     =   "GlobalEventHandlers.php"
+        GlobalScript            =   "GlobalScript.php"
+    Wafl
+        WaflFolder              =   "{BUILD_RELATIVE_WAFL_FOLDER}"
+        DblEjFolder             =   "{BUILD_RELATIVE_DBLEJ_FOLDER}"
 
 Web
-	DomainName				=	"b.{APPLICATION_DOMAIN}"
-	WebUrl					=	"http://b.{APPLICATION_DOMAIN}/"
-	WebUrlSecure			=	"https://b.{APPLICATION_DOMAIN}/"
-	WebUrlRelative			=	"/"
-	SiteEmail				=	"noreply@b.{APPLICATION_DOMAIN}"
-	CookieLifetime			=	350000
-	SiteDisplayTitle		=	{APPLICATION_NAME}
-	GlobalStylesheetHasTokens	=	0
+    DomainName              =   "b.{APPLICATION_DOMAIN}"
+    WebUrl                  =   "http://b.{APPLICATION_DOMAIN}/"
+    WebUrlSecure            =   "https://b.{APPLICATION_DOMAIN}/"
+    WebUrlRelative          =   "/"
+    SiteEmail               =   "noreply@b.{APPLICATION_DOMAIN}"
+    CookieLifetime          =   350000
+    SiteDisplayTitle        =   {APPLICATION_NAME}
+    GlobalStylesheetHasTokens   =   0
