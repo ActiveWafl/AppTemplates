@@ -12,7 +12,7 @@ class {EXTENSION_NAME} extends ExtensionBase
 	
 	public function Initialize(\DblEj\Application\IApplication $app)
 	{
-        $allsiteAreas = $app->Get_Sitemap()->GetSiteAreas();
+        $allsiteAreas = $app->Get_SiteMap()->GetSiteAreas();
         if (count($allsiteAreas)>0)
         {
             $siteArea = array_pop($allsiteAreas);
