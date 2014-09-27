@@ -11,7 +11,7 @@ Paths
         LocalRoot               =   "{DEV_LOCAL_ROOT}/"
         PublicWebFolder         =   "Public/"
         DefaultPage             =   "LandingPage.php"
-        TempFolder              =   "{DEV_TEMP_FOLDER}"
+        TempFolder              =   "{DEV_TEMP_FOLDER}/"
         UploadFolder            =   "Uploads/"
         GlobalEventHandlers     =   "GlobalEventHandlers.php"
         GlobalScript            =   "GlobalScript.php"
