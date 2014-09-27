@@ -25,20 +25,20 @@
                             Your application is installed at <b>{$LOCAL_ROOT}</b>.
                         </p>
                         <section>
-                            <h3>Some important directories</h3>
+                            <h3>Some important files &amp; directories</h3>
                             <dl>
-                                <dt>App config file</dt>
+                                <dt>Application configuration file</dt>
                                 <dd>{$APP_CONFIG_FILE}</dd>
 
-                                <dt>Environment config file</dt>
+                                <dt>Environment-specific configuration file</dt>
                                 <dd>{$ENV_CONFIG_FILE}</dd>
                                 <dt>Public Web Folder
                                 <dd>{$LOCAL_WEB_ROOT}
 
-                                <dt>ActiveWAFL Folder
+                                <dt>ActiveWAFL Framework
                                 <dd>{$LOCAL_WAFL_FOLDER}
 
-                                <dt>DblEj Folder
+                                <dt>DblEj Library
                                 <dd>{$LOCAL_DBLEJ_FOLDER}
                             </dl>
                         </section>
@@ -48,7 +48,7 @@
                         <h1>What&apos;s Next?</h1><a href="#WhatsNext" id="WhatsNext" class="NavJump"></a>
                         <p>
                             In order to run the new application, ActiveWAFL needs to know what environment (dev, test, stage, prod, etc.) it is running on.&emsp;
-                            You can specify the ActiveWAFL environment by setting the <a href="http://www.activewafl.com/GettingStarted/Installation#Environment">WAFL_ENVIRONMENT environment variable</a>.
+                            You can specify the ActiveWAFL environment by setting the <a href="http://activewafl.com/Manual/GettingStarted/Installation#Environment">WAFL_ENVIRONMENT environment variable</a>.
                         </p>
                         <br>
                         <aside class="Notification">
@@ -73,7 +73,7 @@
                             <h3>Single-environment deployments</h3> 
                             <p><i class="IconInfoSign"></i> If you have a machine dedicated to a single application instance, you can set the environment variable globally for the web server (or its parent service / daemon) user or machine-wide for all users.&emsp;
                                 This can be done using the tools provided by the OS.&emsp;
-                                <a href="http://www.activewafl.com/GettingStarted/Installation#Environment">More details can be found here</a>.</p>
+                                <a href="http://activewafl.com/Manual/GettingStarted/Installation#Environment">More details can be found here</a>.</p>
                         </aside>
                         <aside class="Notification Warning">
                             <h3>URL Rewrites on non-Apache Web Servers</h3>
@@ -84,21 +84,21 @@
                             </p>
                         </aside>
 
-                        <p>If you have not already done so, double-check that all of the <a href="http://www.activewafl.com/GettingStarted/Configuration#AppConfigure">application settings</a> in [Installation Folder]<mark>/Config/Application.syrp</mark> and [Installation Folder]<mark>/Config/Settings.[environment].syrp</mark> are set to the correct values.&emsp;
+                        <p>If you have not already done so, double-check that all of the <a href="http://activewafl.com/Manual/GettingStarted/Configuration#AppConfigure">application settings</a> in [Installation Folder]<mark>/Config/Application.syrp</mark> and [Installation Folder]<mark>/Config/Settings.[environment].syrp</mark> are set to the correct values.&emsp;
                             Some of those values are listed in the side-bar on this page.
 
                     </section>
 
                     <section class="Panel">
                         <h1>Edit this Page&apos;s Content</h1><a id="Html" href="#Html" class="NavJump"></a>
-                        <p>The HTML for this page is at ./<mark>{APPLICATION_NAMESPACE}/Presentation/Templates/LandingPage.tpl</mark>.&emsp;
+                        <p>The HTML, or the <a href="http://activewafl.com/Manual/Ui/Views"><i>Presentation Template</i></a> for this page is at ./<mark>{APPLICATION_NAMESPACE}/Presentation/Templates/LandingPage.tpl</mark>.&emsp;
                             <br>Making changes to this file will update the contents you see here on this page.
 
                     </section>
 
                     <section class="Panel">
                         <h1>Setup the Site Structure</h1><a id="SiteStructure" href="#SiteStructure" class="NavJump"></a>
-                        <p>Edit the ./<mark>Config/SiteStructure.syrp</mark> file to make changes to the <a href="http://www.activewafl.com/GettingStarted/SiteStructure">site structure</a>.&emsp;
+                        <p>Edit the ./<mark>Config/SiteStructure.syrp</mark> file to make changes to the <a href="http://activewafl.com/Manual/GettingStarted/SiteStructure">site structure</a>.&emsp;
 
                     </section>
 
@@ -125,15 +125,15 @@
 
                     <section class="Panel">
                         <h1>Add Functionality</h1><a id="Logic" href="#Logic" class="NavJump"></a>
-                        <p>Application logic for web applications is usually handled in the Functional Models or the <mark>{APPLICATION_NAMESPACE}/Controllers/[Pagename].php</mark> files.
+                        <p>Application logic for web applications is usually handled in <a href="http://activewafl.com/Manual/AppProgramming/FunctionalModel">Functional Models</a> or in <mark>{APPLICATION_NAMESPACE}/Controllers/[Pagename].php</mark> files.
                     </section>
                     <section class="Panel">
                         <h1>Learn More</h1><a href="#LearnMore" id="LearnMore" class="NavJump"></a>
                         <ul>
                             <li><a href="http://activewafl.com">Online Documentation</a>
-                            <li><a href="http://activewafl.com/CrashCourse/">Crash Course</a>
-                            <li><a href="http://activewafl.com/Blog/">Blog</a>
-                            <li><a href="http://activewafl.com/ApiDocs/">API Docs</a>
+                            <li><a href="http://activewafl.com/CrashCourse/Intro">Crash Course</a>
+                            <li><a href="http://activewafl.com/Resources/Blog/">Blog</a>
+                            <li><a href="http://activewafl.com/Api-Reference">API Docs</a>
                         </ul>
                     </section>					
                     <section class="Panel">
@@ -149,18 +149,12 @@
                             By default, everything output to the browser is automatically minified.&emsp;
                             This includes HTML, Javascript, and CSS.
                         </p>
-                        <aside class="Notification Warning">
-                            <i class="IconInfoSign"></i>&emsp;
-                            In HTML, double-spaces will be collapsed down to nothing during minification.&emsp;
-                            To use double-spaces within text content, use the &amp;emsp&semi; entity.
-                        </aside>
-
                         <h2>Server-side Caches</h2>
                         <p>
                             By default, a static version of everything output to the browser is stored on disk.&emsp;
                             Subsequent requests to the same URL will result in the cached static data being served.&emsp;
                             If you make a change to the HTML (.tpl files) then the cache for that content will be invalidated and the output will be freshly rendered.&emsp;
-                            Other ways to get a fresh render include: delete the cache file(s) from disk, programatically clear the cache file(s), marking certain content as being non-cachable on the server-side, or completely disabling server-side caching (not recommended).&emsp;
+                            Other ways to get a fresh render include: delete the cache file(s) from disk, use the command in the debug dropdown, programatically clear the cache file(s), marking certain content as being non-cachable on the server-side, or completely disabling server-side caching (not recommended).&emsp;
                         </p>
                         <aside class="Notification Info">
                             <i class="IconInfoSign"></i>&emsp;
@@ -175,9 +169,8 @@
                         <h1>Support</h1><a href="#Support" id="Support" class="NavJump"></a>
                         <p>There are a few ways to get help.</p>
                         <ul>
-                            <li>Look over the <a href="http://www.activewafl.com">online documentation</a> and the <a href="http://www.activewafl.com/ApiDocs/">API docs</a>.</li>
-                            <li>Ask a question (or see previously answered questions) from the <a href="http://www.activewafl.com/Answers">ActiveWAFL Answer Database</a></li>
-                            <li>Report a bug or request a feature using the <a href="http://www.activewafl.com/Issues">ActiveWAFL Issue Tracker</a></li>
+                            <li>Look over the <a href="http://activewafl.com">online documentation</a> and the <a href="http://activewafl.com/Api-Reference">API docs</a>.</li>
+                            <li><a href="http://activewafl.com/Support/Feedback">Submit feedback</a> or <a href="http://activewafl.com/Support/BugReport">file a bug report</a></li>
                         </ul>
                     </section>
 
