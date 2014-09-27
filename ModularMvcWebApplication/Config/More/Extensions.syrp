@@ -1,4 +1,4 @@
-Smarty3
+Templating\\Smarty3
     CompileFolder   =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_Temp().\"TemplateCompiles\"}
     CacheFolder     =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_Temp().\"TemplateCache\"}
     TemplateFolders =   //added in view engine currently
@@ -7,17 +7,23 @@ Smarty3
     ErrorReporting  =   {E_ALL}
     ForceCompile    =   {false}
 
-//Solr
-//  ServerAddress                       =   http:\/\/localhost:8080/solr
+//Search\\Solr
+//  ServerAddress   =   http:\/\/localhost:8080/solr
 //  Indexes
 //      my_index1
 //      my_index2
 
-//Predis
-//  ServerAddress                       =   127.0.0.1
-//  ServerPort                          =   6379
+//Search\\Predis\\Predis
+//  ServerAddress   =   127.0.0.1
+//  ServerPort      =   6379
 
-//UserAuthentication
+//Testing\\PhpUnit\\PhpUnit
+//  OutputLogFile   =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_Temp().\"{APPLICATION_NAME}-UnitTest-Output.xml\"}
+//  TestsFolder     =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot().\"{APPLICATION_NAME}/Tests/Unit\"}
+//  BootstrapFile   =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot().\"{APPLICATION_NAME}/Tests/Bootstrapper.php\"}
+//  EchoOutput      =   {true}
+
+//Users\\UserAuthentication\\UserAuthentication
 //    FormField1                          =   Username
 //    FormField2                          =   Password
 //    ActionRequestVariable               =   UserAuthAction
@@ -32,13 +38,7 @@ Smarty3
 //    DataConnection                      =   Master
 //    UserClass                           =   \\{APPLICATION_NAMESPACE}\\FunctionalModel\\User
 
-//PhpUnit
-//  OutputLogFile   =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_Temp().\"{APPLICATION_NAMESPACE}-UnitTest-Output.xml\"}
-//  TestsFolder     =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot().\"{APPLICATION_NAMESPACE}/Tests/Unit\"}
-//  BootstrapFile   =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot().\"{APPLICATION_NAMESPACE}/Tests/Bootstrapper.php\"}
-//  EchoOutput      =   {true}
-
-//Selenium
+//Testing\\Selenium\\Selenium
 //  OutputLogFile       =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_Temp().\"{APPLICATION_NAMESPACE}-IntegrationTest-Output.xml\"}
 //  TestsFolder         =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot().\"{APPLICATION_NAMESPACE}/Tests/Integration\"}
 //  EchoOutput          =   {true}
