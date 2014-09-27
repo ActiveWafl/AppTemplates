@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "ActiveWAFL environment is set to $WAFL_PATH"
+errorlevel=0
+RUNPATH=$WAFL_PATH
