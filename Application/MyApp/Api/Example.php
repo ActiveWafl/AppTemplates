@@ -24,7 +24,7 @@ class Example
         {
             
         }
-        if (isset($headers["some-header"]) && $args["some-header"] == "some-value") //hypthetical logic
+        if (isset($headers["some-header"]) && $args["some-arg"] == "some-value") //hypthetical logic
         {
             
         }
@@ -53,7 +53,7 @@ class Example
         {
             
         }
-        if (isset($headers["some-header"]) && $args["some-header"] == "some-value") //hypthetical logic
+        if (isset($headers["some-header"]) && $args["some-arg"] == "some-value") //hypthetical logic
         {
             
         }
