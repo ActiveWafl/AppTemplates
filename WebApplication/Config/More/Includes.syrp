@@ -4,11 +4,10 @@ DblEj
         Class.js
         EventHandling/Events.js
         EventHandling/EventHandler.js
-        Logging/ErrorHandler.js
         Logging/Tracing.js
         Util/WebBrowser.js
-        NativeExtensions/ElementEx.js
         NativeExtensions/FunctionEx.js
+        NativeExtensions/ElementEx.js
         NativeExtensions/ListEx.js
         NativeExtensions/MathEx.js
         NativeExtensions/DateEx.js
@@ -34,7 +33,6 @@ DblEj
         Util/StringValidator.js
         UI/Utils.js
         UI/Effects.js
-        UI/Mouse/Mouse.js
         UI/Mouse/DragData.js
         UI/Mouse/DragDropSettings.js
         UI/Mouse/DropTarget.js
@@ -43,6 +41,8 @@ DblEj
         UI/Mouse/DragDrop.js
         UI/Mouse/ResizeInfo.js
         UI/Mouse/Resize.js
+        UI/Mouse/Mouse.js
         UI/Dialog.js
         UI/Lightbox.js
         Security/OAuth2/Client.js
+        DblEj.js
