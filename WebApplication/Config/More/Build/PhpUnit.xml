@@ -5,7 +5,7 @@
          backupStaticAttributes="false"
          strict="true"
          verbose="true">
-       
+
     <testsuites>
         <testsuite name="{APPLICATION_DOMAIN} Unit Tests">
             <directory suffix="Test.php">Tests/Unit/</directory>
@@ -16,10 +16,10 @@
     </testsuites>
 
     <logging>
-        <log type="coverage-html" target="{BUILD_LOCAL_ROOT}/Output/Build/Docs/Current/CoverageReportHtml" title="{APPLICATION_NAME} Coverage Report"
+        <log type="coverage-html" target="../../../../BuildOutput/CoverageReportHtml" title="{APPLICATION_DOMAIN} Coverage Report"
              charset="UTF-8" yui="true" highlight="true"
              lowUpperBound="35" highLowerBound="70"/>
-        <log type="coverage-clover" target="{BUILD_LOCAL_ROOT}/Output/Build/Docs/Current/BuildLogs/CoverageReport.xml"/>
-        <log type="junit" target="{BUILD_LOCAL_ROOT}/Output/Build/Docs/Current/BuildLogs/UnitTestResults.xml" logIncompleteSkipped="false"/>
+        <log type="coverage-clover" target="../../../../BuildOutput/CoverageReport.xml"/>
+        <log type="junit" target="../../../../BuildOutput/UnitTestResults.xml" logIncompleteSkipped="false"/>
     </logging>
 </phpunit>
