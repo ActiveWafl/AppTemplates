@@ -22,6 +22,6 @@ MainSection
 
 SiteError
     Caption         =   "Site Error"
-    Logic           =   Errors/ServerError
+    Controller      =   Errors/ServerError
     Presentation    =   Errors/ServerError
     DisplayOrder    =   {false}
