@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project
-    name="{APPLICATION_NAME"
+    name="{APPLICATION_NAME}"
     default="Build"
     xmlns:if="ant:if"
     xmlns:unless="ant:unless"
 >
 
-    <property name="baseFolder" value="c:/xampp"/>
-    <property name="phpFolder" value="${baseFolder}/php"/>
-    <property name="dblejFolder" value="${baseFolder}/vhosts/shared/DblEj"/>
-    <property name="waflFolder" value="${baseFolder}/vhosts/shared/Wafl"/>
-    <property name="appFolder" value="${waflFolder}/AppTemplates/Application"/>
-    <property name="outputFolder" value="${appFolder}/Output"/>
+    <property name="phpFolder" value="c:/php"/>
+    <property name="dblejFolder" value="{DEV_LOCAL_ROOT}/{RELATIVE_DBLEJ_FOLDER}"/>
+    <property name="waflFolder" value="{DEV_LOCAL_ROOT}/{RELATIVE_WAFL_FOLDER}"/>
+    <property name="appFolder" value="{DEV_LOCAL_ROOT}"/>
 
     <!-- if using jenkins -->
     <!-- property environment="env"/ -->
@@ -20,33 +18,31 @@
     <!-- property name="buildid" value="${env.BUILD_ID}" / -->
 
     <!-- if not using jenkins -->
-    <property name="workspace" value="${outputFolder}/Build"/>
+    <property name="workspace" value="${appFolder}/Workspace"/>
     <property name="jobname" value="Demo App Windows Build" />
     <property name="buildid" value="Build1" />
 
-    <property name="installFolder" value="${workspace}/AppRoot"/>
-
 
     <target name="AggregateBuildReports" description="Aggregate tool output with PHP_CodeBrowser">
-        <exec executable="phpcb.bat" dir="${phpFolder}"> <!-- you'll need to create a .bat file that calls php phpcb.phar -->
+        <exec executable="phpcb" dir="${phpFolder}"> <!-- you'll need to create a file that calls php phpcb.phar -->
             <arg value="--log" />
-            <arg path="${outputFolder}/Build/Docs/Current/BuildLogs" />
+            <arg path="${workspace}/BuildOutput" />
             <arg value="--source" />
-            <arg path="${installFolder}/{APPLICATION_NAMESPACE}" />
+            <arg path="${appFolder}" />
             <arg value="--output" />
-            <arg path="${outputFolder}/Build/Docs/Current/CodeBrowser" />
+            <arg path="${workspace}/BuildOutput/CodeBrowser" />
         </exec>
     </target>
-	
+
     <target name="Build"
             depends="PrepareBuild,CheckPhpSyntax,MeasureProjectSize,CalculatePhpCodeQuality,DetectPhpMesses,ValidatePhpCodingStandard,DetectDuplicatePhpCode,RunDatabaseUpdates,RunUnitTests,AggregateBuildReports"/>
-	
+
     <target name="CalculatePhpCodeQuality" description="Calculate software metrics using PHP_Depend">
-        <exec executable="pdepend.bat" dir="${phpFolder}">
-            <arg value="--jdepend-xml=${outputFolder}/Build/Docs/Current/BuildLogs/AppMetrics.xml" />
-            <arg value="--jdepend-chart=${outputFolder}/Build/Docs/Current/BuildLogs/AppMetricsChart.svg" />
-            <arg value="--overview-pyramid=${outputFolder}/Build/Docs/Current/BuildLogs/OverviewPyramidChart.svg" />
-            <arg path="${installFolder}/{APPLICATION_NAMESPACE}" />
+        <exec executable="pdepend" dir="${phpFolder}">
+            <arg value="--jdepend-xml=${workspace}/BuildOutput/AppMetrics.xml" />
+            <arg value="--jdepend-chart=${workspace}/BuildOutput/AppMetricsChart.svg" />
+            <arg value="--overview-pyramid=${workspace}/BuildOutput/OverviewPyramidChart.svg" />
+            <arg path="${appFolder}" />
         </exec>
     </target>
 
@@ -54,11 +50,7 @@
         <echo>Checking syntax for ${basedir} /App and /Tests with php -l...</echo>
         <apply executable="php" failonerror="true">
             <arg value="-l" />
-            <fileset dir="${installFolder}/{APPLICATION_NAMESPACE}">
-                <include name="**/*.php" />
-                <modified />
-            </fileset>
-            <fileset dir="${installFolder}/{APPLICATION_NAMESPACE}/Tests">
+            <fileset dir="${appFolder}">
                 <include name="**/*.php" />
                 <modified />
             </fileset>
@@ -67,108 +59,49 @@
 
     <target name="Clean" description="Cleanup build artifacts">
         <echo message="Deleting workspace folders from previous build..."/>
-        <delete dir="${outputFolder}/Build"/>
-        <delete dir="${workspace}/shared"/>
+        <delete dir="${workspace}"/>
     </target>
-	
+
     <target name="DetectDuplicatePhpCode" description="Find duplicate code using phpcpd">
-        <exec executable="phpcpd.bat" dir="${phpFolder}">
+        <exec executable="phpcpd" dir="${phpFolder}">
             <arg value="--log-pmd" />
-            <arg value="${outputFolder}/Build/Docs/Current/BuildLogs/DuplicateCodeReport.xml" />
-            <arg path="${installFolder}/{APPLICATION_NAMESPACE}" />
+            <arg value="${workspace}/BuildOutput/DuplicateCodeReport.xml" />
+            <arg path="${appFolder}" />
         </exec>
     </target>
 
     <target name="DetectPhpMesses" description="Perform project mess detection using phpmd creating a log file for the continuous integration server">
-        <exec executable="phpmd.bat" dir="${phpFolder}">
-            <arg path="${installFolder}/{APPLICATION_NAMESPACE}" />
+        <exec executable="phpmd" dir="${phpFolder}">
+            <arg path="${appFolder}" />
             <arg value="xml" />
             <arg path="${waflFolder}/CodingStandards/Wafl1Md/ruleset.xml" />
             <arg value="--reportfile" />
-            <arg path="${outputFolder}/Build/Docs/Current/BuildLogs/MessDetectionLog.xml" />
+            <arg path="${workspace}/BuildOutput/MessDetectionLog.xml" />
         </exec>
     </target>
-	
-    <target name="GeneratePhpDocumentation" description="Generate API documentation using phpDox">
-        <exec executable="phpdoc.bat" dir="${phpFolder}">
-            <arg value="-f" />
-            <arg value="${basedir}/phpdox.xml" />
-        </exec>
-    </target>
-	
-    <target name="GetRevisionFromMercurialRepo">
-        <echo message="Getting the repo revision number for the App..."/>
-        <exec dir="${workspace}/AppRoot" executable="hg" outputproperty="AppHgSummary">
-            <arg line="summary"/>
-        </exec>
-        <echo>Got app hg summary ${AppHgSummary}</echo>
-        <propertyregex property="AppRevision"
-                       input="${AppHgSummary}"
-                       regexp="parent: ([0-9]*):([a-z0-9]*) tip"
-                       select="\1"
-                       defaultValue="AppRevision"
-                       casesensitive="false" />
-        <echo>Got app revision ${AppRevision}</echo>
-    </target>
-	
+
     <target name="MeasureProjectSize" description="Measure project size using phploc">
         <echo>Running phploc to get project size...</echo>
-        <exec executable="phploc.bat" dir="${phpFolder}"> <!-- you'll need to create a .bat file that calls php phpcb.phar -->
+        <exec executable="phploc" dir="${phpFolder}"> <!-- you'll need to create a  file that calls php phpcb.phar -->
             <arg value="--log-csv" />
-            <arg path="${outputFolder}/Build/Docs/Current/BuildLogs/ProjectSizeReport.csv" />
-            <arg path="${installFolder}/{APPLICATION_NAMESPACE}" />
+            <arg path="${workspace}/BuildOutput/ProjectSizeReport.csv" />
+            <arg path="${appFolder}" />
         </exec>
     </target>
-	
+
     <target name="PrepareBuild" depends="Clean" description="Prepare for the build">
         <echo message="Creating workspace folders needed for build..."/>
-        <mkdir dir="${outputFolder}/Build/Docs/Current/"/>
-        <mkdir dir="${outputFolder}/Build/Docs/Current/BuildLogs"/>
-        <mkdir dir="${outputFolder}/Build/Docs/Current/CoverageReportHtml"/>
-        <mkdir dir="${installFolder}"/>
-        <mkdir dir="${installFolder}/{APPLICATION_NAMESPACE}"/>
-        <mkdir dir="${workspace}/shared"/>
-        <mkdir dir="${waflFolder}"/>
-        <mkdir dir="${dblejFolder}"/>
-        <mkdir dir="${outputFolder}/Temp"/>
-        <mkdir dir="${outputFolder}/Temp/Build"/>
-
-        <echo message="Workspace: ${workspace}"/>
-
-        <!-- if using jenkins -->
-        <!--echo message="Job directory: ${workspace}../../jobs/${jobname}"/>
-        <echo message="Build data: ${workspace}../../jobs/${jobname}/build/${buildid}"/-->
-
-
-        <!-- if not using jenkins -->
-        <copy todir="${installFolder}" >
-            <fileset dir="${appFolder}" includes="**.phar"/>
-            <fileset dir="${appFolder}" includes="**.syrp"/>
-            <fileset dir="${appFolder}" includes="**.md"/>
-        </copy>
-        <copy todir="${installFolder}/{APPLICATION_NAMESPACE}" >
-            <fileset dir="${appFolder}/{APPLICATION_NAMESPACE}" includes="**"/>
-        </copy>
-        <copy todir="${installFolder}/Config" >
-            <fileset dir="${appFolder}/Config" includes="**.syrp"/>
-            <fileset dir="${appFolder}/Config" includes="**.md"/>
-        </copy>
-        <copy todir="${installFolder}/Config/More" >
-            <fileset dir="${appFolder}/Config/More" includes="**.syrp"/>
-            <fileset dir="${appFolder}/Config/More" includes="**.md"/>
-        </copy>
-        <copy todir="${installFolder}/Config/More/Locale" >
-            <fileset dir="${appFolder}/Config/More/Locale" includes="**"/>
-        </copy>
+        <mkdir dir="${workspace}"/>
+        <mkdir dir="${workspace}/BuildOutput"/>
     </target>
 
     <target name="RunDatabaseUpdates" description="Run database updates">
         <exec dir="${waflFolder}/Bin" executable="php" failonerror="true">
             <env key="WAFL_ENVIRONMENT" value="build" />
-            <arg line='DeployDatabaseChanges AppRoot="${installFolder}/" WaflEnvironment="build"' />
+            <arg line='DeployDatabaseChanges AppRoot="${appFolder}/" WaflEnvironment="build"' />
         </exec>
     </target>
-	
+
     <target name="RunIntegrationTests" description="Run integration tests with PHPUnit">
         <echo message="Starting Xvfb..." />
         <exec dir="${waflFolder}/Extensions/Selenium" executable="Xvfb" spawn="true">
@@ -185,34 +118,32 @@
         <echo message="Waiting for Selenium Server to finish starting..." />
         <sleep seconds="5"/>
         <echo message="Starting phpunit..." />
-        <exec dir="${phpFolder}" executable="phpunit.bat" failonerror="true">
+        <exec dir="${phpFolder}" executable="phpunit" failonerror="true">
             <env key="WAFL_ENVIRONMENT" value="build" />
             <env key="DISPLAY" value=":10" />
-            <arg line='--bootstrap="${installFolder}/Bootstrap.php"' />
+            <arg line='--bootstrap="${appFolder}/{APPLICATION_NAMESPACE}/Tests/Bootstrap.php"' />
             <arg path="./*" />
         </exec>
         <echo message="done" />
     </target>
-	
+
     <target name="RunUnitTests" description="Run unit tests with PHPUnit">
-        <apply executable="phpunit.bat" dir="${phpFolder}" parallel="true">
+        <apply executable="phpunit" dir="${phpFolder}" parallel="true">
             <env key="WAFL_ENVIRONMENT" value="build" />
             <arg line="--configuration" />
             <arg path="${appFolder}/Config/More/Build/PhpUnit.xml" />
-            <fileset dir="${installFolder}/{APPLICATION_NAMESPACE}/Tests/Unit" includes="*.php"/>
+            <fileset dir="${appFolder}/{APPLICATION_NAMESPACE}/Tests/Unit" includes="*.php"/>
         </apply>
         <echo message="done" />
     </target>
-	
+
     <target name="ValidatePhpCodingStandard" description="Find coding standard violations using PHP_CodeSniffer creating a log file for the continuous integration server">
-        <exec executable="cmd" dir="${phpFolder}">
-            <arg value="/c"/>
-            <arg value="phpcs.bat" />
+        <exec executable="phpcs" dir="${phpFolder}">
             <arg value="-v" />
             <arg value="--report=checkstyle" />
-            <arg value='--report-file="${outputFolder}/Build/Docs/Current/BuildLogs/CodeStandardViolations.xml"' />
+            <arg value='--report-file="${workspace}/BuildOutput/CodeStandardViolations.xml"' />
             <arg value='--standard="${waflFolder}/CodingStandards/Wafl1/ruleset.xml"' />
-            <arg path="${installFolder}/{APPLICATION_NAMESPACE}" />
+            <arg path="${appFolder}/{APPLICATION_NAMESPACE}" />
         </exec>
     </target>
 
