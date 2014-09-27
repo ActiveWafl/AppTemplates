@@ -2,7 +2,7 @@ MainSection
 
     LandingPage
         Caption         =   "{APPLICATION_NAME} Home Page"
-        Logic           =   LandingPage
+        Controller      =   LandingPage
         Presentation    =   LandingPage
         DisplayOrder    =   1
         IsDefault       =   1
@@ -12,7 +12,7 @@ MainSection
 
     ExamplePage
         Caption         =   "{APPLICATION_NAME} Example Page"
-        Logic           =   ExamplePage
+        Controller      =   ExamplePage
         Presentation    =   ExamplePage
         DisplayOrder    =   2
         IsDefault       =   1
