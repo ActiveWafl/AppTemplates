@@ -37,4 +37,5 @@ header img
     display: block;
     color: transparent;
     outline-color: transparent;
+    visibility: hidden;
 }
