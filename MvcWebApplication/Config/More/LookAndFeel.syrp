@@ -35,7 +35,7 @@ Skins
             Action          =   #3366aa
             ActiveAction    =   #225599
             Annotation      =   #666666
-            Inset           =   #d9edf7
+            Inset           =   #f9fdff
             Context
                 Info            =   #49afcd
                 InfoContrast    =   #ffffff
