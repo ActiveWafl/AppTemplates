@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, user-scalable=no">
         <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
         <link rel="shortcut icon" type="image/x-icon" href="/Resources/Images/favicon.ico">
-        {if isset($SKIN) && $SKIN->Get_MainFont()->Get_Provider()->Get_StylesheetBaseUrl()}
+        {if isset($SKIN) && $SKIN->Get_MainFont()->Get_Provider() && $SKIN->Get_MainFont()->Get_Provider()->Get_StylesheetBaseUrl()}
             <link rel="stylesheet" type="text/css" href="{$SKIN->Get_MainFont()->GetStylesheetUrl()}">
         {/if}
         {foreach $STYLESHEETS as $SHEETOBJECT}
