@@ -20,6 +20,9 @@ implements IInternalRouter
     {
         $returnRoute = false;
         $usedRouter  = $this;
+
+        //if the requested page is x (http://example.com/x), then route the request to the ExampleRequestHandler controller.
+        //Otherwise, route all requests to the EntryPoint controller.
         if ($request->Get_Request() == "x")
         {
             $returnRoute = new Route(["\\{APPLICATION_NAMESPACE}\\Controllers\\ExampleRequestHandler",
@@ -27,6 +30,8 @@ implements IInternalRouter
                 $request,
                 $app]);
         }
+        //Note: You don't need a catch-all "else" like we have here.  There is a set of default
+        //routers already installed that will handle most normal routing needs.
         else
         {
             $returnRoute = new Route(["\\{APPLICATION_NAMESPACE}\\Controllers\\EntryPoint",
