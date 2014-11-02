@@ -1,6 +1,6 @@
-Namespace("ActiveWaflWeb.Controllers.Ui");
+Namespace("{APPLICATION_NAMESPACE}.Controllers");
 
-ActiveWaflWeb.Controllers.Ui.Components = DblEj.Mvc.ControllerBase.extend({
+{APPLICATION_NAMESPACE}.Controllers.LandingPage = DblEj.Mvc.ControllerBase.extend({
     init: function()
     {
         this._setMenuClassFromUrl = function()
