@@ -9,12 +9,10 @@ use DblEj\Application\IMvcWebApplication,
 class LandingPage
 extends ControllerBase
 {
-
     public function DefaultAction(Request $request, IMvcWebApplication $app)
     {
         $app->SetLocaleByCode("us");
         return $this->createResponseFromRequest($request, $app);
     }
-
 }
 ?>
