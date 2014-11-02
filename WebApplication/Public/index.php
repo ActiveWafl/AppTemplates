@@ -8,8 +8,7 @@ use Wafl\AppSupport\WebIndex,
 $preAppRouter = null;
 require_once(__DIR__ . "/../AppSupport.phar");
 $application  = WebIndex::BootstrapApplication(__DIR__ . "/../Application.syrp", null, "\\Wafl\\Application\\WebApplication");
-$requestUri   = $_SERVER["REQUEST_URI"]; //@todo do all http servers use this header?  Tested in apache. And what about REDIRECT_URL, I was checking that as well elsewhere
-
+$requestUri   = $_SERVER["REQUEST_URI"]; //@todo do all http servers use this header?
 $requestDomain = $_SERVER["SERVER_NAME"];
 if (strtolower($requestDomain) != strtolower($application->Get_Settings()->Get_Web()->Get_DomainName()))
 {
