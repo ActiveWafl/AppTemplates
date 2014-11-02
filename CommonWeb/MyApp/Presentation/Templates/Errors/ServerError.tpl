@@ -3,7 +3,7 @@
     <div class="Layout Grid">
         <div class="Row">
             <div class="Spans12">
-                {$ERROR_DETAILS}
+                {nocache}{$ERROR_DETAILS}{/nocache}
             </div>
         </div>
     </div>
