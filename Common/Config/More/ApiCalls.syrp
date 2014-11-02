@@ -8,3 +8,4 @@ ExampleApiCall2
     HandlerFunction =   SecondExample
     HandlerFile     =   Example.php
     HandlerClass    =   \\{APPLICATION_NAMESPACE}\\Api\\Example
+    ReindexModelArrays  =   0
