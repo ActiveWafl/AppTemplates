@@ -5,9 +5,17 @@
         <meta name="viewport" content="width=device-width, user-scalable=no">
         <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
         <link rel="shortcut icon" type="image/x-icon" href="/Resources/Images/favicon.ico">
-        {if isset($SKIN) && $SKIN->Get_MainFont()->Get_Provider() && $SKIN->Get_MainFont()->Get_Provider()->Get_StylesheetBaseUrl()}
+        {display_condition isset($SKIN)}
+            {display_condition $SKIN->Get_MainFont() && $SKIN->Get_MainFont()->Get_Provider() && $SKIN->Get_MainFont()->Get_Provider()->Get_StylesheetBaseUrl()}
             <link rel="stylesheet" type="text/css" href="{$SKIN->Get_MainFont()->GetStylesheetUrl()}">
-        {/if}
+            {/display_condition}
+            {display_condition $SKIN->Get_HeadingFont() && $SKIN->Get_HeadingFont()->Get_Provider() && $SKIN->Get_HeadingFont()->Get_Provider()->Get_StylesheetBaseUrl()}
+            <link rel="stylesheet" type="text/css" href="{$SKIN->Get_HeadingFont()->GetStylesheetUrl()}">
+            {/display_condition}
+            {display_condition $SKIN->Get_SubFont() && $SKIN->Get_SubFont()->Get_Provider() && $SKIN->Get_SubFont()->Get_Provider()->Get_StylesheetBaseUrl()}
+            <link rel="stylesheet" type="text/css" href="{$SKIN->Get_SubFont()->GetStylesheetUrl()}">
+            {/display_condition}
+        {/display_condition}
         {foreach $STYLESHEETS as $SHEETOBJECT}
             {if $SHEETOBJECT->Get_SkinName() == ""}
                 <link id="{$SHEETOBJECT->GetUniqueId()}-Stylesheet" rel="stylesheet" type="text/css" href="{$SHEETOBJECT->Get_Filename()}" />
