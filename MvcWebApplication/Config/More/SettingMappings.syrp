@@ -1,69 +1,70 @@
 Application
-    RootNameSpace           =   RootNameSpace
-    Name                    =   AppName
-    Skin                    =   ALL_SKINS
-    GuestGroupId            =   GuestGroupId
-    Timezone                =   Timezone
-    Guid                    =   Guid
-    SiteArea                =   SiteArea
-    DefaultUserClass        =   DefaultUserClass
-    DefaultUserGroupClass   =   DefaultUserGroupClass
-    DefaultUserGroupId      =   DefaultUsergroupId
+    RootNameSpace           =    RootNameSpace
+    Name                    =    AppName
+    Skin                    =    ALL_SKINS
+    GuestGroupId            =    GuestGroupId
+    Timezone                =    Timezone
+    Guid                    =    Guid
+    SiteArea                =    SiteArea
+    DefaultUserClass        =    DefaultUserClass
+    DefaultUserGroupClass   =    DefaultUserGroupClass
+    DefaultUserGroupId      =    DefaultUsergroupId
 Web
-    DomainName      =   DomainName
-    WebUrl          =   WebUrl
-    WebUrlSecure    =   WebUrlSecure
-    WebUrlRelative  =   WebUrlRelative
-    SiteEmail       =   SiteEmail
-    CookieLifetime  =   CookieLifetime
-    SiteDisplayTitle    =   SiteDisplayTitle
-    GlobalStylesheetHasTokens   =   GlobalStylesheetHasTokens
+    DomainName          =    DomainName
+    WebUrl              =    WebUrl
+    WebUrlSecure        =    WebUrlSecure
+    WebUrlRelative      =    WebUrlRelative
+    SiteEmail           =    SiteEmail
+    CookieLifetime      =    CookieLifetime
+    CookieDomainPrefix  =   CookieDomainPrefix
+    SiteDisplayTitle    =    SiteDisplayTitle
+    GlobalStylesheetHasTokens   =    GlobalStylesheetHasTokens
 Paths
     Application
-        Presentation            =   Presentation
-        Html                    =   Html        //relative to the Presentation folder defined above
-        Stylesheets             =   Stylesheets //relative to the Presentation folder defined above
-        LocalRoot               =   LocalRoot
-        PublicWebFolder         =   PublicWeb
-        DefaultPage             =   DefaultPage
-        TemplateCompilesFolder  =   TemplateCompiles
-        TemplateCacheFolder     =   TemplateCache
-        FuncModelsClientFolder  =   FunctionalModelsClient
-        FuncModelsServerFolder  =   FunctionalModelsServer
-        TempFolder              =   Temp
-        ApiHandlerFolder        =   ApiHandlerFolder
-        UploadFolder            =   UploadFolder
-        GlobalEventHandlers     =   GlobalEventHandlers
-        GlobalScript            =   GlobalScript
-        ConfigFolder            =   Config
+        Presentation            =    Presentation
+        Html                    =    Html           //relative to the Presentation folder defined above
+        Stylesheets             =    Stylesheets    //relative to the Presentation folder defined above
+        LocalRoot               =    LocalRoot
+        PublicWebFolder         =    PublicWeb
+        DefaultPage             =    DefaultPage
+        FuncModelsClientFolder  =    FunctionalModelsClient
+        FuncModelsServerFolder  =    FunctionalModelsServer
+        TemplateCompilesFolder  =    TemplateCompiles
+        TemplateCacheFolder     =    TemplateCache
+        TempFolder              =    Temp
+        ApiHandlerFolder        =    ApiHandlerFolder
+        UploadFolder            =    UploadFolder
+        GlobalEventHandlers     =    GlobalEventHandlers
+        GlobalScript            =    GlobalScript
+        ConfigFolder            =    Config
     Wafl
-        WaflFolder              =   WaflFolder
-        DblEjFolder             =   DblEjFolder
-        Controls                =   ControlsFolder
-        Extensions              =   ExtensionsFolder
-        Util                    =   UtilFolder
+        WaflFolder              =    WaflFolder
+        DblEjFolder             =    DblEjFolder
+        Controls                =    ControlsFolder
+        Extensions              =    ExtensionsFolder
+        Util                    =    UtilFolder
 
 Database
-    DatabaseCreateScript        =   CreateScript
+    DatabaseCreateScript        =    CreateScript
 
 DataStorage
     Common
-        LoadBalanced            =   LoadBalanced
+        LoadBalanced            =    LoadBalanced
     ConnectionTemplate
-        Uri                 =   Uri
-        Catalog             =   Catalog
-        Username            =   Username
-        Password            =   Password
-        CreateScript        =   CreateScript
-        UpdateScript        =   UpdateScript
-        ReplicationRole     =   ReplicationRole
-        PersistModels       =   PersistModels
-        ModelGroup          =   ModelGroup
-        RequiredLocation    =   RequiredLocation
-        AccessScope         =   AccessScope
-        EngineDriverPath    =   EngineDriverPath
-        CharacterEncoding   =   CharacterEncoding
+        Uri                     =    Uri
+        Catalog                 =    Catalog
+        Username                =    Username
+        Password                =    Password
+        CreateScript            =    CreateScript
+        UpdateScript            =    UpdateScript
+        ReplicationRole         =    ReplicationRole
+        PersistModels           =    PersistModels
+        ModelGroup              =    ModelGroup
+        RequiredLocation        =    RequiredLocation
+        AccessScope             =    AccessScope
+        EngineDriverPath        =    EngineDriverPath
+        CharacterEncoding       =    CharacterEncoding
 Debug
-    SuppressErrors          =   SuppressErrors
-    DebugMode               =   DebugMode
-    AutoUpdateDb            =   AutoUpdateDb
+    SuppressErrors              =    SuppressErrors
+    DebugMode                   =    DebugMode
+    AutoUpdateDb                =    AutoUpdateDb

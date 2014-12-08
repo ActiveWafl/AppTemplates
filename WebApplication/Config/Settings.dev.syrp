@@ -26,5 +26,6 @@ Web
     WebUrlRelative          =   "/"
     SiteEmail               =   "noreply@d.{APPLICATION_DOMAIN}"
     CookieLifetime          =   350000
+    CookieDomainPrefix      =   "."
     SiteDisplayTitle        =   {APPLICATION_NAME}
     GlobalStylesheetHasTokens   =   0
