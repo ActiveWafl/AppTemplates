@@ -1,8 +1,8 @@
 Application
-	Name					=	"{APPLICATION_NAME}"
-	Guid					=	"{APPLICATION_GUID}"                                   
-	RootNameSpace			=	"{APPLICATION_NAMESPACE}"	
-	Timezone				=	"{APPLICATION_TIMEZONE}"
+    Name                    =   "{APPLICATION_NAME}"
+    Guid                    =   "{APPLICATION_GUID}"
+    RootNameSpace           =   "{APPLICATION_NAMESPACE}"
+    Timezone                =   "{APPLICATION_TIMEZONE}"
 Paths
-	Application
-		ConfigFolder		=	"Config/"
+    Application
+        ConfigFolder        =   "Config/"

@@ -1,11 +1,11 @@
 Application
-	Name					=	"{APPLICATION_NAME}"
-	Guid					=	"{APPLICATION_GUID}"                                   
-	RootNameSpace			=	"{APPLICATION_NAMESPACE}"	
-	SiteArea				=	"MainSection"
-	Timezone				=	"{APPLICATION_TIMEZONE}"
-	DefaultUserClass		=	\\Wafl\\Users\\User
-	DefaultUserGroupClass	=	\\Wafl\\Users\\UserGroup
+    Name                    =   "{APPLICATION_NAME}"
+    Guid                    =   "{APPLICATION_GUID}"
+    RootNameSpace           =   "{APPLICATION_NAMESPACE}"
+    SiteArea                =   "MainSection"
+    Timezone                =   "{APPLICATION_TIMEZONE}"
+    DefaultUserClass        =   \\Wafl\\Users\\User
+    DefaultUserGroupClass   =   \\Wafl\\Users\\UserGroup
 Paths
-	Application
-		ConfigFolder		=	"Config/"
+    Application
+        ConfigFolder        =   "Config/"
