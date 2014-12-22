@@ -1,6 +1,12 @@
 {extends file="./Html5.tpl"}
 {block "HTML_HEAD"}
     <head>
+        {if isset($PAGE)}
+            <title>{block "HTML_HEAD_PAGE_AREA"}{$SITE_DISPLAY_TITLE}{/block} - {block "HTML_HEAD_PAGE_NAME"}{$PAGE->Get_FullTitle()}{/block}</title>
+        {else}
+            <title>{block "HTML_HEAD_PAGE_AREA"}{$SITE_DISPLAY_TITLE}{/block}</title>
+        {/if}
+        <meta name="description" content="{block name="PAGE_DESCRIPTION"}{$PAGE->Get_FullTitle()}{/block}">
         <meta charset='UTF-8'>
         <meta name="viewport" content="width=device-width, user-scalable=no">
         <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
@@ -28,28 +34,23 @@
 
         <link id="SitewideControls-Stylesheet" rel="stylesheet" type="text/css" href="{$WEB_ROOT_RELATIVE}SitewideControls.css" />
         <link id="WaflGlobal-Stylesheet" rel="stylesheet" type="text/css" href="{$WEB_ROOT_RELATIVE}Wafl.css" />
-
+        {nocache}
         <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}Wafl/DblEj/{$CURRENT_SITEPAGE->GetClientLogicFile()}"></script>
         <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}Wafl.js"></script>
         <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}SitewideControls.js"></script>
         <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}WaflAppConfig.js"></script>
         <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}{$CURRENT_SITEPAGE->GetClientLogicFile()}"></script>
-
         <script type="text/javascript">
             {foreach $CURRENT_SITEPAGE->Get_JavascriptIncludesLib() as $JAVASCRIPT}
             DblEj.SiteStructure.SitePage.SetFileIncluded("{$JAVASCRIPT}");
             {/foreach}
         </script>
-        {if isset($PAGE)}
-            <title>{block "HTML_HEAD_PAGE_AREA"}{$SITE_DISPLAY_TITLE}{/block} - {block "HTML_HEAD_PAGE_NAME"}{$PAGE->Get_FullTitle()}{/block}</title>
-        {else}
-            <title>{block "HTML_HEAD_PAGE_AREA"}{$SITE_DISPLAY_TITLE}{/block}</title>
-        {/if}
-    {if isset($ADDITIONAL_RAW_HEAD_HTML)}{$ADDITIONAL_RAW_HEAD_HTML}{/if}
+        {if isset($ADDITIONAL_RAW_HEAD_HTML)}{$ADDITIONAL_RAW_HEAD_HTML}{/if}
+        {/nocache}
 
     {nominify}
     <script type="text/javascript">
-        document.CurrentUserDisplayName = "{if isset($CURRENT_USER) && $CURRENT_USER}{$CURRENT_USER->Get_Username()}{else}No User{/if}";
+        {nocache}document.CurrentUserDisplayName = "{if isset($CURRENT_USER) && $CURRENT_USER}{$CURRENT_USER->Get_Username()}{else}No User{/if}";{/nocache}
     </script>
     {/nominify}
 </head>
