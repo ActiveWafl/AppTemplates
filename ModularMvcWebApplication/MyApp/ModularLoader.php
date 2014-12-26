@@ -86,7 +86,7 @@ implements IModularLoader
             $this->_resourcePermissions = new ResourcePermissionCollection();
             foreach ($this->GetResources() as $restrictedResource)
             {
-                $this->_resourcePermissions->SetPermission($examplePrivelegedUser, $restrictedResource, \DblEj\Resources\ResourcePermission::RESOURCE_PERMISSION_OWN);
+                $this->_resourcePermissions->SetPermission($examplePrivelegedUser, $restrictedResource, \DblEj\Resources\ResourcePermission::RESOURCE_PERMISSION_DELETE);
             }
         }
         return $this->_resourcePermissions;
