@@ -39,7 +39,9 @@
         <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}Wafl.js"></script>
         <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}SitewideControls.js"></script>
         <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}WaflAppConfig.js"></script>
-        <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}{$CURRENT_SITEPAGE->GetClientLogicFile()}"></script>
+        {if $CURRENT_SITEPAGE->DoesClientControllerExist($APP)}
+        <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}{$CURRENT_SITEPAGE->GetClientLogicFile()}.js"></script>
+        {/if}
         <script type="text/javascript">
             {foreach $CURRENT_SITEPAGE->Get_JavascriptIncludesLib() as $JAVASCRIPT}
             DblEj.SiteStructure.SitePage.SetFileIncluded("{$JAVASCRIPT}");
