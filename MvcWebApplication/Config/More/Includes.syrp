@@ -5,6 +5,8 @@ DblEj
         EventHandling/Events.js
         EventHandling/EventHandler.js
         Logging/Tracing.js
+        Logging/TraceHandlerBase.js
+        Logging/BrowserConsoleTraceHandler.js
         Util/WebBrowser.js
         NativeExtensions/FunctionEx.js
         NativeExtensions/ElementEx.js
