@@ -16,6 +16,11 @@ Templating\\Smarty3
 //Search\\Predis\\Predis
 //  ServerAddress   =   127.0.0.1
 //  ServerPort      =   6379
+//  StoreId         =   MyAppMemCache
+//  Timeout         =   3600
+
+//Storage\\GenericDiskStore
+//  StoreId         =   MyAppDiskCache
 
 //Testing\\PhpUnit\\PhpUnit
 //  OutputLogFile   =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_Temp().\"{APPLICATION_NAME}-UnitTest-Output.xml\"}
