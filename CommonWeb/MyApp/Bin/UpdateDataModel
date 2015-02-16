@@ -1,2 +1,4 @@
 #!/bin/bash
-/usr/bin/php ../../Wafl/Cli/UpdateDataModel.php Countries=Country MarketCategories=MarketCategory MarketFacilities=MarketFacility MarketStreetAddresses=MarketStreetAddress OrderStatuses=OrderStatus PaymentStatuses=PaymentStatuses ProductCategories=ProductCategory ShipmentServiceCountries=ShipmentServiceCountry ThirdPartyMarketplaceCategories=ThirdPartyMarketplaceCategory Users.Superclass=\\Wafl\\Extensions\\UserAuth\\FunctionalModel\\User UserGroups.Superclass=\\Wafl\\Extensions\\UserAuth\\FunctionalModel\\UserGroup Sessions.Superclass=\\Wafl\\Extensions\\UserAuth\\FunctionalModel\\Session
+./WaflCliBootstrap $1
+SCRIPT_DIR=$( dirname "${BASH_SOURCE[0]}" )
+php "$SCRIPT_DIR/../../../Wafl/Cli/UpdateDataModel.php" AppRoot="$SCRIPT_DIR/../../" WaflEnvironment=$1
