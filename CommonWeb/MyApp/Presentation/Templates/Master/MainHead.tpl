@@ -34,26 +34,18 @@
 
         <link id="SitewideControls-Stylesheet" rel="stylesheet" type="text/css" href="{$WEB_ROOT_RELATIVE}SitewideControls.css" />
         <link id="WaflGlobal-Stylesheet" rel="stylesheet" type="text/css" href="{$WEB_ROOT_RELATIVE}Wafl.css" />
-        {nocache}
-        <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}Wafl/DblEj/{$CURRENT_SITEPAGE->GetClientLogicFile()}"></script>
+
+        <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}DblEj.js"></script>
         <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}Wafl.js"></script>
         <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}SitewideControls.js"></script>
         <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}WaflAppConfig.js"></script>
-        {if $CURRENT_SITEPAGE->DoesClientControllerExist($APP)}
-        <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}{$CURRENT_SITEPAGE->GetClientLogicFile()}.js"></script>
-        {/if}
         <script type="text/javascript">
-            {foreach $CURRENT_SITEPAGE->Get_JavascriptIncludesLib() as $JAVASCRIPT}
-            DblEj.SiteStructure.SitePage.SetFileIncluded("{$JAVASCRIPT}");
-            {/foreach}
+            DblEj.StartApp();
         </script>
+
+        {nocache}
         {if isset($ADDITIONAL_RAW_HEAD_HTML)}{$ADDITIONAL_RAW_HEAD_HTML}{/if}
         {/nocache}
 
-    {nominify}
-    <script type="text/javascript">
-        {nocache}document.CurrentUserDisplayName = "{if isset($CURRENT_USER) && $CURRENT_USER}{$CURRENT_USER->Get_Username()}{else}No User{/if}";{/nocache}
-    </script>
-    {/nominify}
 </head>
 {/block}
