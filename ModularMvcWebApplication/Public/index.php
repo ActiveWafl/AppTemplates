@@ -30,7 +30,10 @@ try
         {
             include($localAppFolder . $application->Get_Settings()->Get_Paths()->Get_Application()->Get_GlobalScript());
         }
-        WebIndex::RunModularApplication($application, new ModularLoader());
+
+        $exitCode = null;
+        WebIndex::RunModularApplication($application, new ModularLoader(), $exitCode);
+        exit($exitCode);
     }
 }
 catch (\Exception $e)
