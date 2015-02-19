@@ -41,8 +41,8 @@
         <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}WaflAppConfig.js"></script>
 
         {nocache}
-        {if $CURRENT_SITEPAGE->DoesClientControllerExist($APP)}
-            <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}{$CURRENT_SITEPAGE->Get_ControllerPath()}.js"></script>
+        {if $CURRENT_SITEPAGE->DoesClientLogicExist($APP)}
+            <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}{$CURRENT_SITEPAGE->GetClientLogicFile()}"></script>
         {/if}
         {if isset($ADDITIONAL_RAW_HEAD_HTML)}{$ADDITIONAL_RAW_HEAD_HTML}{/if}
         {/nocache}
