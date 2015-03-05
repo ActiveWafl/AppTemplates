@@ -1,6 +1,9 @@
 <?php
 
-namespace {APPLICATION_NAMESPACE};
+namespace
+{
+    APPLICATION_NAMESPACE
+};
 
 use DblEj\Application\IApplication,
     DblEj\Application\IMvcWebApplication,
@@ -20,20 +23,20 @@ implements IModularLoader
 
     /**
      * A collection of this loaders resources.
-     * 
-     * @var DblEj\Resources\ResourceCollection 
+     *
+     * @var DblEj\Resources\ResourceCollection
      */
     private $_resources;
 
     /**
      * A collection of this loaders resource permissions.
-     * 
-     * @var DblEj\Resources\ResourcePermissionCollection 
+     *
+     * @var DblEj\Resources\ResourcePermissionCollection
      */
     private $_resourcePermissions;
 
     /**
-     * 
+     *
      * @param IMvcWebApplication $application
      * @return Module[]
      */
@@ -74,7 +77,7 @@ implements IModularLoader
 
     /**
      * Get all resource permissions.
-     * 
+     *
      * @return ResourcePermissionCollection
      */
     public function GetResourcePermissions()
