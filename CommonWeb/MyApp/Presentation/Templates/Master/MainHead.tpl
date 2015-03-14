@@ -21,6 +21,9 @@
             {display_condition $SKIN->Get_SubFont() && $SKIN->Get_SubFont()->Get_Provider() && $SKIN->Get_SubFont()->Get_Provider()->Get_StylesheetBaseUrl()}
             <link rel="stylesheet" type="text/css" href="{$SKIN->Get_SubFont()->GetStylesheetUrl()}">
             {/display_condition}
+            {display_condition $SKIN->Get_AccentFont() && $SKIN->Get_AccentFont()->Get_Provider() && $SKIN->Get_SubFont()->Get_Provider()->Get_StylesheetBaseUrl()}
+            <link rel="stylesheet" type="text/css" href="{$SKIN->Get_AccentFont()->GetStylesheetUrl()}">
+            {/display_condition}
         {/display_condition}
         {foreach $STYLESHEETS as $SHEETOBJECT}
             {if $SHEETOBJECT->Get_SkinName() == ""}
