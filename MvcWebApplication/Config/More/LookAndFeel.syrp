@@ -8,15 +8,22 @@ Skins
                 Fallback    =   sans-serif
                 BaseSize    =   18px
                 Weight      =   normal
-                ProviderArgumentString  =   :400,700,400italic
+                ProviderArgumentString  =   :400,700,400
             HeadingFont
                 Family      =   "Ubuntu"
                 Provider    =   \\Wafl\\Extensions\\Fonts\\GoogleFonts
                 Fallback    =   serif
                 BaseSize    =   20px
                 Weight      =   bold
-                ProviderArgumentString  =   :400,700,400italic
+                ProviderArgumentString  =   :400,700,400
             SubFont
+                Family      =   "Pt Sans"
+                Provider    =   \\Wafl\\Extensions\\Fonts\\GoogleFonts
+                Fallback    =   serif
+                BaseSize    =   14px
+                Weight      =   normal
+                ProviderArgumentString  =   :400,700,400
+            AccentFont
                 Family      =   "Pt Sans"
                 Provider    =   \\Wafl\\Extensions\\Fonts\\GoogleFonts
                 Fallback    =   serif
@@ -31,6 +38,7 @@ Skins
             Base            =   #333333
             Heading         =   #333333
             Sub             =   #333333
+            Accent          =   #333333
             Title           =   #000000
             Action          =   #3366aa
             ActiveAction    =   #225599
