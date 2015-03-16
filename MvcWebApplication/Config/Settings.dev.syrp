@@ -1,5 +1,7 @@
 Application
     GuestGroupId            =   1
+    DefaultSiteAreaPermission   =   2
+    DefaultSitePagePermission   =   2
 
 Debug
     SuppressErrors          =   0
