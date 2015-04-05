@@ -11,8 +11,8 @@
         <meta name="viewport" content="width=device-width, user-scalable=no">
         <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
         <link rel="shortcut icon" type="image/x-icon" href="/Resources/Images/favicon.ico">
-        {display_condition isset($SKIN) && $SKIN->Get_MainFont() && $SKIN->Get_MainFont()->Get_Provider()}
-            <link rel="stylesheet" type="text/css" href="/AppFonts.css">
+        {display_condition isset($SKIN) && $SKIN->Get_MainFont()}
+            <link rel="stylesheet" type="text/css" href="{$SKIN->Get_MainFont()->GetStylesheetUrl()}">
         {/display_condition}
         {foreach $STYLESHEETS as $SHEETOBJECT}
             {if $SHEETOBJECT->Get_SkinName() == ""}
@@ -37,6 +37,7 @@
             <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}{$CURRENT_SITEPAGE->GetClientLogicFile()}"></script>
         {/if}
         {if isset($ADDITIONAL_RAW_HEAD_HTML)}{$ADDITIONAL_RAW_HEAD_HTML}{/if}
+        {block "APPEND_HEAD"}{/block}
         {/nocache}
 </head>
 {/block}
