@@ -18,8 +18,8 @@ Paths
         GlobalEventHandlers     =   "GlobalEventHandlers.php"
         GlobalScript            =   "GlobalScript.php"
     Wafl
-        WaflFolder              =   "{RELATIVE_WAFL_FOLDER}"
-        DblEjFolder             =   "{RELATIVE_DBLEJ_FOLDER}"
+        WaflFolder              =   "{WAFL_FOLDER}"
+        DblEjFolder             =   "{DBLEJ_FOLDER}"
 
 Web
     DomainName              =   "{APPLICATION_DOMAIN}"

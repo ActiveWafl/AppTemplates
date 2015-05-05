@@ -7,8 +7,8 @@
 >
 
     <property name="phpFolder" value="/usr/php"/>
-    <property name="dblejFolder" value="{DEV_LOCAL_ROOT}/{RELATIVE_DBLEJ_FOLDER}"/>
-    <property name="waflFolder" value="{DEV_LOCAL_ROOT}/{RELATIVE_WAFL_FOLDER}"/>
+    <property name="dblejFolder" value="{DEV_DBLEJ_FOLDER}"/>
+    <property name="waflFolder" value="{DEV_WAFL_FOLDER}"/>
     <property name="appFolder" value="{DEV_LOCAL_ROOT}"/>
 
     <!-- if using jenkins -->

@@ -13,5 +13,5 @@ Paths
         GlobalEventHandlers     =   "GlobalEventHandlers.php"
         GlobalScript            =   "GlobalScript.php"
     Wafl
-        WaflFolder              =   "{TEST_RELATIVE_WAFL_FOLDER}"
-        DblEjFolder             =   "{TEST_RELATIVE_DBLEJ_FOLDER}"
+        WaflFolder              =   "{TEST_WAFL_FOLDER}"
+        DblEjFolder             =   "{TEST_DBLEJ_FOLDER}"
