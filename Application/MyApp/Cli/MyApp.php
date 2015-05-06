@@ -2,7 +2,7 @@
 
 use Wafl\AppSupport\Application;
 
-require_once(__DIR__ . "/../../AppSupport.phar");
+require_once(__DIR__ . "/../../Application.php");
 
 $application = Application::BootstrapApplication(__DIR__ . "/../../Application.syrp", null, "\\Wafl\\Application\\Application");
 

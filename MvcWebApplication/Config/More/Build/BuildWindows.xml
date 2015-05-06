@@ -167,7 +167,7 @@
         <copy todir="${vhostFolder}/{APPLICATION_DOMAIN}/{APPLICATION_NAMESPACE}" >
             <fileset dir="${appFolder}/{APPLICATION_NAMESPACE}" includes="**"/>
         </copy>
-        <copy file="${appFolder}/AppSupport.phar" tofile="${vhostFolder}/{APPLICATION_DOMAIN}/AppSupport.phar" />
+        <copy file="${appFolder}/Application.php" tofile="${vhostFolder}/{APPLICATION_DOMAIN}/Application.php" />
         <copy file="${appFolder}/Application.syrp" tofile="${vhostFolder}/{APPLICATION_DOMAIN}/Application.syrp" />
         <copy file="${appFolder}/Readme.md" tofile="${vhostFolder}/{APPLICATION_DOMAIN}/Readme.md" />
 

@@ -4,18 +4,13 @@ use Wafl\AppSupport\WebIndex,
 try
 {
     require_once(__DIR__.DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."Application.php");
+    $requestUri   = $_SERVER["REQUEST_URI"]; //@todo do all http servers use this header?  Tested in apache. And what about REDIRECT_URL, I was checking that as well elsewhere
 
     if (WebIndex::OutputCachedStaticResources($requestUri)) //static resources such as images and scripts can be cached on disk
     {
         exit(0);
     } else {
         $application  = WebIndex::BootstrapApplication(__DIR__ . DIRECTORY_SEPARATOR ."..".DIRECTORY_SEPARATOR."Application.syrp", null, "\\Wafl\\Application\\MvcWebApplication");
-
-        if ($_SERVER["REQUEST_SCHEME"] == "http")
-        {
-            $domainName = $_SERVER["HTTP_HOST"];
-            \DblEj\Communication\Http\Util::HeaderRedirect("https://".$domainName.$requestUri, true, true, true);
-        }
 
         //delete old caches
         WebIndex::UncacheStaticResources(null, true);

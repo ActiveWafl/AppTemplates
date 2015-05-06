@@ -1,10 +1,8 @@
 <?php
-$requestUri   = $_SERVER["REQUEST_URI"]; //@todo do all http servers use this header?  Tested in apache. And what about REDIRECT_URL, I was checking that as well elsewhere
-
 $waflEnv = getenv("WAFL_ENVIRONMENT");
 if (!$waflEnv)
 {
-    die("You must set the WAFL_ENVIRONMENT environment variable");
+    $waflEnv = "dev";
 }
 $configFile = __DIR__.DIRECTORY_SEPARATOR."Config/Settings.$waflEnv.syrp";
 if (!file_exists($configFile))
