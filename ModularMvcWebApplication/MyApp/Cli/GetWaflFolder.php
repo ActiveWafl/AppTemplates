@@ -8,5 +8,5 @@ $application = Application::BootstrapApplication(__DIR__ . "/../../Application.s
 $localRoot      = $application->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot();
 $waflFolder      = $application->Get_Settings()->Get_Paths()->Get_Wafl()->Get_WaflFolder();
 
-print(realpath($localRoot.$waflFolder)).DIRECTORY_SEPARATOR;
+print(realpath($waflFolder)).DIRECTORY_SEPARATOR;
 exit(1);
