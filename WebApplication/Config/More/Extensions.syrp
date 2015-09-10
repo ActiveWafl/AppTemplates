@@ -13,7 +13,7 @@ Templating\\Smarty3
 //      my_index1
 //      my_index2
 
-//Search\\Predis\\Predis
+//Storage\\Predis
 //  ServerAddress   =   127.0.0.1
 //  ServerPort      =   6379
 //  StoreId         =   MyAppMemCache
@@ -22,28 +22,32 @@ Templating\\Smarty3
 //Storage\\GenericDiskStore
 //  StoreId         =   MyAppDiskCache
 
-//Testing\\PhpUnit\\PhpUnit
+//Testing\\PhpUnit
 //  OutputLogFile   =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_Temp().\"{APPLICATION_NAME}-UnitTest-Output.xml\"}
 //  TestsFolder     =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot().\"{APPLICATION_NAME}/Tests/Unit\"}
 //  BootstrapFile   =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot().\"{APPLICATION_NAME}/Tests/Bootstrapper.php\"}
 //  EchoOutput      =   {true}
 
-//Users\\UserAuthentication\\UserAuthentication
-//    FormField1                          =   Username
-//    FormField2                          =   Password
-//    ActionRequestVariable               =   UserAuthAction
-//    ActionRequestVariableNewUserValue   =   NewAccount
-//    ActionRequestVariableLogoutValue    =   Logout
-//    RequiresCaptcha                     =   false
-//    UserTable                           =   Users
-//    UsernameColumn                      =   Username
-//    PasswordColumn                      =   Password
-//    UserTableKeyField                   =   UserId
-//    LogoutRedirect                      =   /SomePostLogoutPage
-//    DataConnection                      =   Master
-//    UserClass                           =   \\{APPLICATION_NAMESPACE}\\FunctionalModel\\User
+//Users\\UserAuth
+    TablePrefix                             =    ""
+    NewUserGroupId                          =    99
+    UserClassName                           =    \\DjRapstar\\FunctionalModel\\User
+    UserGroupClassName                      =    \\DjRapstar\\FunctionalModel\\UserGroup
+    SessionClassName                        =    \\DjRapstar\\FunctionalModel\\Session
+    UsernameFormField                       =    EmailAddress
+    PasswordFormField                       =    UserPassword
+    ActionRequestVariable                   =    UserAuthAction
+    ActionRequestVariableNewUserValue       =    NewAccount
+    AllowTableOverwrite                     =    true
+    RequiresCaptcha                         =    true
+    ConfirmPasswordFormField                =    {null}
+    UsernameLabel                           =    email address
+    UserGroupTable                          =    UserGroups
+    UserGroupField                          =    UserGroupId
+    SessionIdField                          =    SessionId
+    UsernameColumn                          =    EmailAddress
 
-//Testing\\Selenium\\Selenium
+//Testing\\Selenium
 //  OutputLogFile       =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_Temp().\"{APPLICATION_NAMESPACE}-IntegrationTest-Output.xml\"}
 //  TestsFolder         =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot().\"{APPLICATION_NAMESPACE}/Tests/Integration\"}
 //  EchoOutput          =   {true}

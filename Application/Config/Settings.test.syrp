@@ -8,8 +8,8 @@ Debug
 
 Paths
     Application
-        LocalRoot               =   "{TEST_LOCAL_ROOT}/"
-        TempFolder              =   "{TEST_TEMP_FOLDER}/"
+        LocalRoot               =   "{TEST_LOCAL_ROOT}"
+        TempFolder              =   "{TEST_TEMP_FOLDER}"
         GlobalEventHandlers     =   "GlobalEventHandlers.php"
         GlobalScript            =   "GlobalScript.php"
     Wafl

@@ -10,10 +10,10 @@ Debug
 
 Paths
     Application
-        LocalRoot               =   "{TEST_LOCAL_ROOT}/"
+        LocalRoot               =   "{TEST_LOCAL_ROOT}"
         PublicWebFolder         =   "Public/"
         DefaultPage             =   "LandingPage.php"
-        TempFolder              =   "{TEST_TEMP_FOLDER}/"
+        TempFolder              =   "{TEST_TEMP_FOLDER}"
         UploadFolder            =   "Uploads/"
         GlobalEventHandlers     =   "GlobalEventHandlers.php"
         GlobalScript            =   "GlobalScript.php"
