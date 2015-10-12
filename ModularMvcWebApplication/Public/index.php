@@ -7,14 +7,15 @@ try
     require_once(__DIR__.DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."Application.php");
     $requestUri   = $_SERVER["REQUEST_URI"]; //@todo do all http servers use this header?  Tested in apache. And what about REDIRECT_URL, I was checking that as well elsewhere
 
-    if (WebIndex::OutputCachedStaticResources($requestUri)) //static resources such as images and scripts can be cached on disk
+    $appUid = "{APPLICATION_NAMESPACE}";
+    if (WebIndex::OutputCachedStaticResources($requestUri, 86400, $appUid)) //static resources such as images and scripts can be cached on disk
     {
         exit(0);
     } else {
         $application  = WebIndex::BootstrapModularApplication(__DIR__ . DIRECTORY_SEPARATOR ."..".DIRECTORY_SEPARATOR."Application.syrp", null, "\\Wafl\\Application\\ModularMvcWebApplication");
 
         //delete old caches
-        WebIndex::UncacheStaticResources(null, true);
+        WebIndex::UncacheStaticResources(null, true, $appUid);
 
         //first, let the router chain have a look at it.
         //Maybe someone can handle it right away with no need for all the init stuff.
@@ -24,7 +25,7 @@ try
         HttpRouter::RouteThruNonAppCalls($requestUri, $preAppRouter, $preappRawOutput, $preappOutputHash);
         if ($preAppRouter !== null)
         {
-            WebIndex::CacheRawStaticResource($requestUri, $preappRawOutput, $preappOutputHash);//static resources such as images and scripts can be cached on disk
+            WebIndex::CacheRawStaticResource($requestUri, $preappRawOutput, $preappOutputHash, $appUid);//static resources such as images and scripts can be cached on disk
             $exitCode = 0; //successful prerouting
         } else {
             $exitCode = -1;
@@ -36,7 +37,7 @@ try
             $result = WebIndex::RunModularApplication($application, new ModularLoader(), $exitCode);
             if ($result->Get_ResponseCode() == \DblEj\Communication\Http\Response::HTTP_OK_200)
             {
-                WebIndex::CacheStaticResource($requestUri, $result);//static resources such as images and scripts can be cached on disk
+                WebIndex::CacheStaticResource($requestUri, $result, $appUid);//static resources such as images and scripts can be cached on disk
             }
         }
         exit($exitCode);
