@@ -9,7 +9,18 @@ DblEj
         Logging/BrowserConsoleTraceHandler.js
         Util/WebBrowser.js
         NativeExtensions/FunctionEx.js
+        GlobalDataTypeChecks.js
+        GlobalCollection.js
+        GlobalStandards.js
         NativeExtensions/ElementEx.js
+        NativeExtensions/NodeEx.js
+        NativeExtensions/FormEx.js
+        NativeExtensions/InputEx.js
+        NativeExtensions/DocumentEx.js
+        NativeExtensions/TextEx.js
+        NativeExtensions/TextAreaEx.js
+        NativeExtensions/TemplateEx.js
+        NativeExtensions/ArrayEx.js
         NativeExtensions/ListEx.js
         NativeExtensions/MathEx.js
         NativeExtensions/DateEx.js
