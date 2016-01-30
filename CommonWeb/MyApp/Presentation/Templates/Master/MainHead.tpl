@@ -39,6 +39,7 @@
         <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}Wafl.js"></script>
         <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}SitewideControls.js"></script>
         <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}WaflAppConfig.js"></script>
+        <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}GlobalScript.js"></script>
 
         {nocache}
         {if $CURRENT_SITEPAGE->DoesClientLogicExist($APP)}
