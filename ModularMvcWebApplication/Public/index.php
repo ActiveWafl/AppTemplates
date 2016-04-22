@@ -49,7 +49,7 @@ catch (\DblEj\Communication\Http\Exception $e)
     {
         throw $e;
     }
-    WebIndex::OutputHttpException($e, __DIR__.DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."Static".DIRECTORY_SEPARATOR);
+    WebIndex::OutputHttpException($e, __DIR__.DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."Static".DIRECTORY_SEPARATOR."Errors".DIRECTORY_SEPARATOR);
 }
 catch (\Exception $e)
 {
@@ -57,6 +57,6 @@ catch (\Exception $e)
     {
         throw $e;
     }
-    WebIndex::OutputException($e, __DIR__.DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."Static".DIRECTORY_SEPARATOR);
+    WebIndex::OutputException($e, __DIR__.DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."Static".DIRECTORY_SEPARATOR."Errors".DIRECTORY_SEPARATOR);
 }
 ?>
