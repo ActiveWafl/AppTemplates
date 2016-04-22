@@ -1,4 +1,8 @@
 <?php
+use
+    Wafl\Routers\CaptchaImage,
+    Wafl\Routers\Glyphs;
+
 DblEj\Util\SystemEvents::AddSystemHandler(DblEj\Util\SystemEvents::AFTER_INITIALIZE, function()
 {
     $traceHandler = new \DblEj\Logging\PhpLogTraceHandler();
@@ -28,7 +32,8 @@ if (!defined("AM_WEBPAGE") || (AM_WEBPAGE === true))
             \Wafl\Application\Application::EVENT_APPLICATION_BEFORE_INITIALIZE,
             function(\DblEj\EventHandling\EventInfo $eventInfo)
             {
-                //do something
+                \Wafl\Util\HttpRouter::AddRouter(new CaptchaImage());
+                \Wafl\Util\HttpRouter::AddRouter(new Glyphs());
             }
         )
     );

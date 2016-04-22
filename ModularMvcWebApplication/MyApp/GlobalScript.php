@@ -14,15 +14,12 @@ use Wafl\Routers\Api,
     Wafl\Routers\WaflIncludes,
     Wafl\Util\HttpRouter;
 
-HttpRouter::AddRouter(new CaptchaImage());
 HttpRouter::AddRouter(new WaflIncludes());
 HttpRouter::AddRouter(new SitewideControls());
 HttpRouter::AddRouter(new ApplicationGlobal());
 HttpRouter::AddRouter(new ControlResource());
 HttpRouter::AddRouter(new Extensions());
 HttpRouter::AddRouter(new Controller());
-HttpRouter::AddRouter(new Glyphs());
-HttpRouter::AddRouter(new Icons());
 HttpRouter::AddRouter(new Api());
 HttpRouter::AddRouter(new Models());
 HttpRouter::AddRouter(new PageIncludes());
