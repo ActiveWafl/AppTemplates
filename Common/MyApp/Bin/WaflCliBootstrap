@@ -1,8 +1,8 @@
 #!/bin/bash
 SCRIPT_DIR=$( dirname "${BASH_SOURCE[0]}" )
-WAFL_PATH=$(php $SCRIPT_DIR/../Cli/GetWaflFolder.php $1)
-export WAFL_PATH=${WAFL_PATH}
-echo "ActiveWAFL environment is set to ${WAFL_PATH}"
-echo "environment variable set to $WAFL_PATH"
+
+WAFL_PATH=$(php "$SCRIPT_DIR/../Cli/GetWaflFolder.php")
+export WAFL_PATH="${WAFL_PATH}"
+
 errorlevel=0
-RUNPATH=${WAFL_PATH}
+RUNPATH="${WAFL_PATH}"

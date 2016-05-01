@@ -1,0 +1,4 @@
+#!/bin/bash
+SCRIPT_DIR=$( dirname "${BASH_SOURCE[0]}" )
+. "$SCRIPT_DIR/WaflCliBootstrap"
+php "$SCRIPT_DIR/../Cli/wapp.php" AppRoot="$SCRIPT_DIR/../../" "$@"

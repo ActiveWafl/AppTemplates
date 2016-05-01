@@ -1,4 +1,2 @@
 #!/bin/bash
-./WaflCliBootstrap $1
-SCRIPT_DIR=$( dirname "${BASH_SOURCE[0]}" )
-php "$SCRIPT_DIR/../../../Wafl/Cli/UpdateDataModel.php" AppRoot="$SCRIPT_DIR/../../" WaflEnvironment=$1
+./wapp UpdateDataModel 
