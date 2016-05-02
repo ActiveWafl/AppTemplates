@@ -38,14 +38,6 @@ switch ($scriptClass)
         die("USAGE: wapp <command|script> [<arg>, <arg>...]\n");
         break;
     default:
-        $appArgs = [];
-        foreach ($argv as $argIdx=>$argVal)
-        {
-            if ($argIdx > 1)
-            {
-                $appArgs[] = $argVal;
-            }
-        }
-        \Wafl\Scripts\ScriptUtil::ResolveAndRunScriptOrCliApp($scriptClass, $appArgs);
+        \Wafl\Scripts\ScriptUtil::ResolveAndRunScriptOrCliApp($scriptClass, $argv);
         break;
 }
