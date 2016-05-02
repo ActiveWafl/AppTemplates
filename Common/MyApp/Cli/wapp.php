@@ -16,23 +16,13 @@ if (!$goodUsage)
 {
     die("USAGE: wapp <command|script> [<arg>, <arg>...]\n");
 }
-$scriptClass = $argv[2];
-if (!class_exists("\\Wafl\\Cli\\$scriptClass"))
+
+if (!class_exists("\\Wafl\\Scripts\\ScriptUtil"))
 {
-    $scriptFile = realpath(__DIR__.DIRECTORY_SEPARATOR.$scriptClass.".php");
-    if (!$scriptFile || !file_exists($scriptFile))
-    {
-        $scriptFile = realpath($waflPath."Cli".DIRECTORY_SEPARATOR.$scriptClass.".php");
-        if (!$scriptFile || !file_exists($scriptFile))
-        {
-            die("ERROR: Cannot find the specified application script: $scriptClass\n");
-        } else {
-            require_once($scriptFile);
-        }
-    } else {
-        require_once($scriptFile);
-    }
+    require_once($waflPath . "Scripts".DIRECTORY_SEPARATOR."ScriptUtil.php");
 }
+$scriptClass = $argv[2];
+\Wafl\Scripts\ScriptUtil::ResolveAndIncludeScript($scriptClass);
 
 $appArgs = [];
 foreach ($argv as $argIdx=>$argVal)
@@ -43,5 +33,4 @@ foreach ($argv as $argIdx=>$argVal)
     }
 }
 
-require_once($waflPath . "Cli/Cli.php");
-Cli::RunAppScript("\\Wafl\\Cli\\$scriptClass", $appArgs, __DIR__);
+\Wafl\Scripts\ScriptUtil::RunScriptOrCliApp($scriptClass, $appArgs);
