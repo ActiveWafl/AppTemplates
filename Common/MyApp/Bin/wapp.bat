@@ -1,5 +1,6 @@
 @ECHO off
-call WaflCliBootstrap.bat
+set SCRIPT_DIR=%~dp0
+call "%SCRIPT_DIR%\\WaflCliBootstrap.bat"
 
 if not errorlevel 0 (
     @ECHO "There was an error ("
@@ -7,5 +8,4 @@ if not errorlevel 0 (
     @ECHO ") while running Wafl App Utilities."
     GOTO:EOF
 )
-set SCRIPT_DIR=%~dp0
 php.exe "%SCRIPT_DIR%\\..\\Cli\\wapp.php" AppRoot="%SCRIPT_DIR%\\..\\..\\" %*

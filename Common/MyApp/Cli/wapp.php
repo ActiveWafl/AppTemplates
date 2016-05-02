@@ -22,15 +22,30 @@ if (!class_exists("\\Wafl\\Scripts\\ScriptUtil"))
     require_once($waflPath . "Scripts".DIRECTORY_SEPARATOR."ScriptUtil.php");
 }
 $scriptClass = $argv[2];
-\Wafl\Scripts\ScriptUtil::ResolveAndIncludeScript($scriptClass);
-
-$appArgs = [];
-foreach ($argv as $argIdx=>$argVal)
+switch ($scriptClass)
 {
-    if ($argIdx != 2)
-    {
-        $appArgs[] = $argVal;
-    }
+    case "CommandListXml":
+        $xml = "<commands>";
+        $xml .= "<command name=\"UpdateDataModel\">";
+        $xml .= "<usage>wapp UpdateDataModel [SuperClasses] [TableNameMappings]</usage>";
+        $xml .= "<description>Create the data model files from a database connection</description>";
+        $xml .= "<help>SuperClasses can be used in place of the standard data model base class. TableNameMappings let you use custom names for the entity classes instead of the standard name.</help>";
+        $xml .= "</command>";
+        $xml .= "</commands>";
+        print $xml;
+        break;
+    case "Help":
+        die("USAGE: wapp <command|script> [<arg>, <arg>...]\n");
+        break;
+    default:
+        $appArgs = [];
+        foreach ($argv as $argIdx=>$argVal)
+        {
+            if ($argIdx > 1)
+            {
+                $appArgs[] = $argVal;
+            }
+        }
+        \Wafl\Scripts\ScriptUtil::ResolveAndRunScriptOrCliApp($scriptClass, $appArgs);
+        break;
 }
-
-\Wafl\Scripts\ScriptUtil::RunScriptOrCliApp($scriptClass, $appArgs);
