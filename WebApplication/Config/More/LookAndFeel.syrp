@@ -4,28 +4,28 @@ Skins
         Fonts
             BaseFont
                 Family      =   "Open Sans"
-                Provider    =   \\Wafl\\Extensions\\Fonts\\GoogleFonts
+                Provider    =   \\Wafl\\Extensions\\Fonts\\GoogleFonts\\GoogleFonts
                 Fallback    =   sans-serif
                 BaseSize    =   18px
                 Weight      =   normal
-                ProviderArgumentString  =   :400,700,400
+                ProviderArgumentString  =   :400,700,400italic
             HeadingFont
                 Family      =   "Ubuntu"
-                Provider    =   \\Wafl\\Extensions\\Fonts\\GoogleFonts
+                Provider    =   \\Wafl\\Extensions\\Fonts\\GoogleFonts\\GoogleFonts
                 Fallback    =   serif
                 BaseSize    =   20px
                 Weight      =   bold
-                ProviderArgumentString  =   :400,700,400
+                ProviderArgumentString  =   :400,700,400italic
             SubFont
-                Family      =   "Pt Sans"
-                Provider    =   \\Wafl\\Extensions\\Fonts\\GoogleFonts
+                Family      =   "PT Sans"
+                Provider    =   \\Wafl\\Extensions\\Fonts\\GoogleFonts\\GoogleFonts
                 Fallback    =   serif
                 BaseSize    =   14px
                 Weight      =   normal
-                ProviderArgumentString  =   :400,700,400
+                ProviderArgumentString  =   :400,700,400italic
             AccentFont
-                Family      =   "Pt Sans"
-                Provider    =   \\Wafl\\Extensions\\Fonts\\GoogleFonts
+                Family      =   "PT Sans"
+                Provider    =   \\Wafl\\Extensions\\Fonts\\GoogleFonts\\GoogleFonts
                 Fallback    =   serif
                 BaseSize    =   14px
                 Weight      =   normal
