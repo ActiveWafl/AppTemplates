@@ -16,6 +16,15 @@
         {display_condition isset($SKIN) && $SKIN->Get_MainFont() && $SKIN->Get_MainFont()->GetStylesheetUrl()}
             <link rel="stylesheet" type="text/css" href="{$SKIN->Get_MainFont()->GetStylesheetUrl()}">
         {/display_condition}
+        {display_condition isset($SKIN) && $SKIN->Get_HeadingFont() && $SKIN->Get_HeadingFont()->GetStylesheetUrl()}
+            <link rel="stylesheet" type="text/css" href="{$SKIN->Get_HeadingFont()->GetStylesheetUrl()}">
+        {/display_condition}
+        {display_condition isset($SKIN) && $SKIN->Get_SubFont() && $SKIN->Get_SubFont()->GetStylesheetUrl()}
+            <link rel="stylesheet" type="text/css" href="{$SKIN->Get_SubFont()->GetStylesheetUrl()}">
+        {/display_condition}
+        {display_condition isset($SKIN) && $SKIN->Get_AccentFont() && $SKIN->Get_AccentFont()->GetStylesheetUrl()}
+            <link rel="stylesheet" type="text/css" href="{$SKIN->Get_AccentFont()->GetStylesheetUrl()}">
+        {/display_condition}
         {foreach $STYLESHEETS as $SHEETOBJECT}
             {if $SHEETOBJECT->Get_SkinName() == ""}
                 <link id="{$SHEETOBJECT->GetUniqueId()}-Stylesheet" rel="stylesheet" type="text/css" href="{$SHEETOBJECT->Get_Filename()}" />
