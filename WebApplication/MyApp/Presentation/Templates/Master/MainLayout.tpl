@@ -35,7 +35,6 @@
             </div>
         </div>
     </footer>
-
     {nocache}
     <script type="text/javascript">
         {foreach $CURRENT_SITEPAGE->Get_JavascriptIncludesLib() as $JAVASCRIPT}
