@@ -2,6 +2,7 @@ Application
     GuestGroupId            =   1
     DefaultSiteAreaPermission   =   0
     DefaultSitePagePermission   =   0
+    AutoDownloadExtensions  =   1
 
 Debug
     SuppressErrors          =   0

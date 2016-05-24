@@ -1,5 +1,6 @@
 Application
     GuestGroupId            =   1
+    AutoDownloadExtensions  =   1
 
 Debug
     SuppressErrors          =   1
