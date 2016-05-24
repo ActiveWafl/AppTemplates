@@ -47,23 +47,6 @@ Paths
 Database
     DatabaseCreateScript        =    CreateScript
 
-DataStorage
-    Common
-        LoadBalanced            =    LoadBalanced
-    ConnectionTemplate
-        Uri                     =    Uri
-        Catalog                 =    Catalog
-        Username                =    Username
-        Password                =    Password
-        CreateScript            =    CreateScript
-        UpdateScript            =    UpdateScript
-        ReplicationRole         =    ReplicationRole
-        PersistModels           =    PersistModels
-        ModelGroup              =    ModelGroup
-        RequiredLocation        =    RequiredLocation
-        AccessScope             =    AccessScope
-        EngineDriverPath        =    EngineDriverPath
-        CharacterEncoding       =    CharacterEncoding
 Debug
     SuppressErrors              =    SuppressErrors
     DebugMode                   =    DebugMode

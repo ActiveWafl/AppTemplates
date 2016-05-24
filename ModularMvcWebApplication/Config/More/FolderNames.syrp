@@ -6,6 +6,7 @@ Paths
         FuncModelsClientFolder  =   "FunctionalModel/"
         FuncModelsServerFolder  =   "FunctionalModel/"
         ApiHandlerFolder        =   "Api/"
+        Logs                    =   "Logs/"
     Wafl
         Controls    =   "Controls/"
         Extensions  =   "Extensions/"
