@@ -1,5 +1,6 @@
 <?php
 namespace Wafl\Cli;
+
 $waflPath = getenv("WAFL_PATH");
 if (!$waflPath)
 {
