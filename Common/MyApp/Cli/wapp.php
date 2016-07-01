@@ -6,6 +6,11 @@ if (!$waflPath)
 {
     die("ERROR: The WAFL_PATH environment variable must be set in order to run CLI utilities\n");
 }
+$lastChar = substr($waflPath, strlen($waflPath) - 1);
+if ($lastChar != "/" && $lastChar != "\\")
+{
+    $waflPath .= DIRECTORY_SEPARATOR;
+}
 require_once($waflPath . "Cli/CliBase.php");
 
 $goodUsage = true;
