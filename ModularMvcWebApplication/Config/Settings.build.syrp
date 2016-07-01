@@ -21,6 +21,8 @@ Paths
     Wafl
         WaflFolder              =   "{BUILD_WAFL_FOLDER}"
         DblEjFolder             =   "{BUILD_DBLEJ_FOLDER}"
+        ExtensionsFolder        =   "{BUILD_WAFL_EXTENSIONS_FOLDER}"
+        ControlsFolder          =   "{BUILD_WAFL_CONTROLS_FOLDER}"
 
 Web
     DomainName              =   "b.{APPLICATION_DOMAIN}"

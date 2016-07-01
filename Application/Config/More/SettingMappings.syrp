@@ -19,7 +19,8 @@ Paths
     Wafl
         WaflFolder              =    WaflFolder
         DblEjFolder             =    DblEjFolder
-        Extensions              =    ExtensionsFolder
+        ControlsFolder          =    ControlsFolder
+        ExtensionsFolder        =    ExtensionsFolder
         Util                    =    UtilFolder
 
 Database

@@ -16,3 +16,5 @@ Paths
     Wafl
         WaflFolder              =   "{TEST_WAFL_FOLDER}"
         DblEjFolder             =   "{TEST_DBLEJ_FOLDER}"
+        ExtensionsFolder        =   "{TEST_WAFL_EXTENSIONS_FOLDER}"
+        ControlsFolder          =   "{TEST_WAFL_CONTROLS_FOLDER}"
