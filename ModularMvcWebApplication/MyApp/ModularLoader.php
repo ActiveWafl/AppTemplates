@@ -66,7 +66,7 @@ implements IModularLoader
         if (!$this->_resources)
         {
             $this->_resources      = new ResourceCollection();
-            $exampleRestrictedPage = new Resource("Restricted page", "ExamplePage", Resource::RESOURCE_TYPE_SITEPAGE);
+            $exampleRestrictedPage = new \DblEj\Resources\RestrictedResource("Restricted page", "ExamplePage", Resource::RESOURCE_TYPE_SITEPAGE);
             $this->_resources->AddResource($exampleRestrictedPage);
         }
         return $this->_resources;
