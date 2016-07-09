@@ -1,6 +1,2 @@
-@ECHO off
-call WaflCliBootstrap.bat
-if errorlevel 0 (
-    @ECHO Updating the data model...
-    wapp DeployDatabaseChanges
-)
+@echo off
+"%~dp0wapp" DeployDatabaseChanges

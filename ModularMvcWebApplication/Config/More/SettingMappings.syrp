@@ -9,6 +9,7 @@ Application
     DefaultUserClass        =    DefaultUserClass
     DefaultUserGroupClass   =    DefaultUserGroupClass
     DefaultUserGroupId      =    DefaultUsergroupId
+    AutoDownloadExtensions  =    AutoDownloadExtensions
 Web
     DomainName          =    DomainName
     WebUrl              =    WebUrl

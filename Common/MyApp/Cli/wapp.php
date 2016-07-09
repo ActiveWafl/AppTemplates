@@ -1,18 +1,8 @@
 <?php
 namespace Wafl\Cli;
 
-$waflPath = getenv("WAFL_PATH");
-if (!$waflPath)
-{
-    die("ERROR: The WAFL_PATH environment variable must be set in order to run CLI utilities\n");
-}
-$lastChar = substr($waflPath, strlen($waflPath) - 1);
-if ($lastChar != "/" && $lastChar != "\\")
-{
-    $waflPath .= DIRECTORY_SEPARATOR;
-}
-require_once($waflPath . "Cli/CliBase.php");
-
+require_once(__DIR__ . "/../../Application.php");
+require_once(WAFL_PATH . "Cli/CliBase.php");
 $goodUsage = true;
 if (!isset($argv[2]))
 {
@@ -26,9 +16,9 @@ if (!$goodUsage)
 
 if (!class_exists("\\Wafl\\Scripts\\ScriptUtil"))
 {
-    require_once($waflPath . "Scripts".DIRECTORY_SEPARATOR."ScriptUtil.php");
+    require_once(WAFL_PATH . "Scripts".DIRECTORY_SEPARATOR."ScriptUtil.php");
 }
-$scriptClass = $argv[2];
+$scriptClass = $argv[1];
 switch ($scriptClass)
 {
     case "CommandListXml":
@@ -49,6 +39,7 @@ switch ($scriptClass)
         {
             require_once(__DIR__.DIRECTORY_SEPARATOR.$scriptClass.".php");
         }
-         \Wafl\Scripts\ScriptUtil::ResolveAndRunScriptOrCliApp($scriptClass, $argv);
+
+        \Wafl\Scripts\ScriptUtil::ResolveAndRunScriptOrCliApp($scriptClass, array_slice($argv, 1));
         break;
 }

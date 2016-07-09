@@ -1,4 +1,5 @@
 Templating\\Smarty3
+    Version     =   0.0.1
     CompileFolder   =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_Temp().\"TemplateCompiles\"}
     CacheFolder     =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_Temp().\"TemplateCache\"}
     TemplateFolders =   //added in view engine currently
@@ -7,47 +8,60 @@ Templating\\Smarty3
     ErrorReporting  =   {E_ALL}
     ForceCompile    =   {false}
 
+//Storage\\MySql
+//    Version     =   0.0.1
+//    Connections
+//        Master
+//            Uri                     =    localhost
+//            Catalog                 =    mydb
+//            Username                =    myuser
+//            Password                =    mypw
+//            CreateScript            =    More/Build/DataStorage/CreateDatabase.sql
+//            UpdateScript            =    More/Build/DataStorage/NextUpdate.sql
+//            ReplicationRole         =    Master
+//            PersistModels           =    {true}
+//            ModelGroup              =    MyAppDatabase
+//            RequiredLocation        =    MyRequiredTable
+//            AccessScope             =    ReadWrite
+//            CharacterEncoding       =    utf8
+
 //Search\\Solr
+//  Version     =   0.0.1
 //  ServerAddress   =   http:\/\/localhost:8080/solr
 //  Indexes
 //      my_index1
 //      my_index2
 
-//Storage\\Predis
+//Search\\Predis\\Predis
+//  Version     =   0.0.1
 //  ServerAddress   =   127.0.0.1
 //  ServerPort      =   6379
-//  StoreId         =   MyAppMemCache
-//  Timeout         =   3600
 
-//Storage\\GenericDiskStore
-//  StoreId         =   MyAppDiskCache
-
-//Testing\\PhpUnit
+//Testing\\PhpUnit\\PhpUnit
+//  Version     =   0.0.1
 //  OutputLogFile   =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_Temp().\"{APPLICATION_NAME}-UnitTest-Output.xml\"}
 //  TestsFolder     =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot().\"{APPLICATION_NAME}/Tests/Unit\"}
 //  BootstrapFile   =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot().\"{APPLICATION_NAME}/Tests/Bootstrapper.php\"}
 //  EchoOutput      =   {true}
 
-//Users\\UserAuth
-    TablePrefix                             =    ""
-    NewUserGroupId                          =    99
-    UserClassName                           =    \\DjRapstar\\FunctionalModel\\User
-    UserGroupClassName                      =    \\DjRapstar\\FunctionalModel\\UserGroup
-    SessionClassName                        =    \\DjRapstar\\FunctionalModel\\Session
-    UsernameFormField                       =    EmailAddress
-    PasswordFormField                       =    UserPassword
-    ActionRequestVariable                   =    UserAuthAction
-    ActionRequestVariableNewUserValue       =    NewAccount
-    AllowTableOverwrite                     =    true
-    RequiresCaptcha                         =    true
-    ConfirmPasswordFormField                =    {null}
-    UsernameLabel                           =    email address
-    UserGroupTable                          =    UserGroups
-    UserGroupField                          =    UserGroupId
-    SessionIdField                          =    SessionId
-    UsernameColumn                          =    EmailAddress
+//Users\\UserAuthentication\\UserAuthentication
+//    Version     =   0.0.1
+//    FormField1                          =   Username
+//    FormField2                          =   Password
+//    ActionRequestVariable               =   UserAuthAction
+//    ActionRequestVariableNewUserValue   =   NewAccount
+//    ActionRequestVariableLogoutValue    =   Logout
+//    RequiresCaptcha                     =   false
+//    UserTable                           =   Users
+//    UsernameColumn                      =   Username
+//    PasswordColumn                      =   Password
+//    UserTableKeyField                   =   UserId
+//    LogoutRedirect                      =   /SomePostLogoutPage
+//    DataConnection                      =   Master
+//    UserClass                           =   \\{APPLICATION_NAMESPACE}\\FunctionalModel\\User
 
-//Testing\\Selenium
+//Testing\\Selenium\\Selenium
+//  Version     =   0.0.1
 //  OutputLogFile       =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_Temp().\"{APPLICATION_NAMESPACE}-IntegrationTest-Output.xml\"}
 //  TestsFolder         =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot().\"{APPLICATION_NAMESPACE}/Tests/Integration\"}
 //  EchoOutput          =   {true}

@@ -9,6 +9,7 @@ Application
     DefaultUserClass        =    DefaultUserClass
     DefaultUserGroupClass   =    DefaultUserGroupClass
     DefaultUserGroupId      =    DefaultUsergroupId
+    AutoDownloadExtensions  =    AutoDownloadExtensions
 Web
     DomainName          =    DomainName
     WebUrl              =    WebUrl
@@ -16,7 +17,7 @@ Web
     WebUrlRelative      =    WebUrlRelative
     SiteEmail           =    SiteEmail
     CookieLifetime      =    CookieLifetime
-    CookieDomainPrefix  =   CookieDomainPrefix
+    CookieDomainPrefix  =    CookieDomainPrefix
     SiteDisplayTitle    =    SiteDisplayTitle
     GlobalStylesheetHasTokens   =    GlobalStylesheetHasTokens
 Paths

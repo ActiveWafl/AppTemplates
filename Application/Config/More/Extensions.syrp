@@ -1,14 +1,34 @@
+//Storage\\MySql
+//    Version     =   0.0.1
+//    Connections
+//        Master
+//            Uri                     =    localhost
+//            Catalog                 =    mydb
+//            Username                =    myuser
+//            Password                =    mypw
+//            CreateScript            =    More/Build/DataStorage/CreateDatabase.sql
+//            UpdateScript            =    More/Build/DataStorage/NextUpdate.sql
+//            ReplicationRole         =    Master
+//            PersistModels           =    {true}
+//            ModelGroup              =    MyAppDatabase
+//            RequiredLocation        =    MyRequiredTable
+//            AccessScope             =    ReadWrite
+//            CharacterEncoding       =    utf8
+
 //Search\\Solr
+//  Version         =   0.0.1
 //  ServerAddress   =   http:\/\/localhost:8080/solr
 //  Indexes
 //      my_index1
 //      my_index2
 
 //Storage\\Predis
+//  Version         =   0.0.1
 //  ServerAddress   =   127.0.0.1
 //  ServerPort      =   6379
 
 //Testing\\PhpUnit
+//  Version         =   0.0.1
 //  OutputLogFile   =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_Temp().\"{APPLICATION_NAME}-UnitTest-Output.xml\"}
 //  TestsFolder     =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot().\"{APPLICATION_NAME}/Tests/Unit\"}
 //  BootstrapFile   =   {$app->Get_Settings()->Get_Paths()->Get_Application()->Get_LocalRoot().\"{APPLICATION_NAME}/Tests/Bootstrapper.php\"}
