@@ -2,6 +2,7 @@ DblEj
     JsIncludes
         Namespace.js
         Class.js
+        NativeExtensions/StringEx.js
         EventHandling/Events.js
         EventHandling/EventHandler.js
         Logging/Tracing.js
@@ -13,6 +14,7 @@ DblEj
         GlobalSelectors.js
         GlobalCollection.js
         GlobalStandards.js
+        DblEj.js
         NativeExtensions/ElementEx.js
         NativeExtensions/NodeEx.js
         NativeExtensions/FormEx.js
@@ -26,7 +28,6 @@ DblEj
         NativeExtensions/MathEx.js
         NativeExtensions/DateEx.js
         NativeExtensions/SelectEx.js
-        NativeExtensions/StringEx.js
         NativeExtensions/TableEx.js
         NativeExtensions/TableRowEx.js
         NativeExtensions/WindowEx.js
@@ -63,4 +64,3 @@ DblEj
         UI/ColorTransition.js
         Security/OAuth2/Client.js
         Mvc/ControllerBase.js
-        DblEj.js

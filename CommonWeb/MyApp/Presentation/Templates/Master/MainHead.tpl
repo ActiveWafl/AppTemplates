@@ -36,7 +36,6 @@
         {/foreach}
         {/nocache}
 
-        <link id="SitewideControls-Stylesheet" rel="stylesheet" type="text/css" href="{$WEB_ROOT_RELATIVE}SitewideControls.css" />
         <link id="WaflGlobal-Stylesheet" rel="stylesheet" type="text/css" href="{$WEB_ROOT_RELATIVE}Wafl.css" />
         {nocache}
         {if $CURRENT_SITEPAGE->HasControlCss()}
@@ -46,7 +45,6 @@
 
         <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}DblEj.js"></script>
         <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}Wafl.js"></script>
-        <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}SitewideControls.js"></script>
         <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}WaflAppConfig.js"></script>
         <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}GlobalScript.js"></script>
 

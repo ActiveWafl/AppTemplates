@@ -1,14 +1,14 @@
 Application
-    RootNameSpace           =    RootNameSpace
-    Name                    =    AppName
-    Skin                    =    ALL_SKINS
-    GuestGroupId            =    GuestGroupId
-    Timezone                =    Timezone
-    Guid                    =    Guid
-    SiteArea                =    SiteArea
-    DefaultUserClass        =    DefaultUserClass
-    DefaultUserGroupClass   =    DefaultUserGroupClass
-    DefaultUserGroupId      =    DefaultUsergroupId
+    RootNameSpace           =   RootNameSpace
+    Name                    =   AppName
+    Skin                    =   ALL_SKINS
+    GuestGroupId            =   GuestGroupId
+    Timezone                =   Timezone
+    Guid                    =   Guid
+    SiteArea                =   SiteArea
+    DefaultUserClass        =   DefaultUserClass
+    DefaultUserGroupClass   =   DefaultUserGroupClass
+    DefaultUserGroupId      =   DefaultUsergroupId
     AutoDownloadExtensions  =    AutoDownloadExtensions
 Web
     DomainName          =    DomainName
@@ -22,33 +22,32 @@ Web
     GlobalStylesheetHasTokens   =    GlobalStylesheetHasTokens
 Paths
     Application
-        Presentation            =    Presentation
-        Html                    =    Html           //relative to the Presentation folder defined above
-        Stylesheets             =    Stylesheets    //relative to the Presentation folder defined above
-        LocalRoot               =    LocalRoot
-        PublicWebFolder         =    PublicWeb
-        DefaultPage             =    DefaultPage
-        FuncModelsClientFolder  =    FunctionalModelsClient
-        FuncModelsServerFolder  =    FunctionalModelsServer
-        TemplateCompilesFolder  =    TemplateCompiles
-        TemplateCacheFolder     =    TemplateCache
-        TempFolder              =    Temp
-        ApiHandlerFolder        =    ApiHandlerFolder
-        UploadFolder            =    UploadFolder
-        GlobalEventHandlers     =    GlobalEventHandlers
-        GlobalScript            =    GlobalScript
-        ConfigFolder            =    Config
+        Presentation            =   Presentation
+        Html                    =   Html	//relative	to	the	Presentation folder	defined	above
+        Stylesheets             =   Stylesheets	//relative	to	the	Presentation folder	defined	above
+        LocalRoot               =   LocalRoot
+        PublicWebFolder         =   PublicWeb
+        DefaultPage             =   DefaultPage
+        FuncModelsClientFolder  =   FunctionalModelsClient
+        FuncModelsServerFolder  =   FunctionalModelsServer
+        TemplateCompilesFolder  =   TemplateCompiles
+        TemplateCacheFolder     =   TemplateCache
+        TempFolder              =   Temp
+        ApiHandlerFolder        =   ApiHandlerFolder
+        UploadFolder            =   UploadFolder
+        GlobalEventHandlers     =   GlobalEventHandlers
+        GlobalScript            =   GlobalScript
+        ConfigFolder            =   Config
     Wafl
-        WaflFolder              =    WaflFolder
-        DblEjFolder             =    DblEjFolder
-        ControlsFolder          =    ControlsFolder
-        ExtensionsFolder        =    ExtensionsFolder
-        Util                    =    UtilFolder
+        WaflFolder              =   WaflFolder
+        DblEjFolder             =   DblEjFolder
+        ControlsFolder          =   ControlsFolder
+        ExtensionsFolder        =   ExtensionsFolder
+        Util                    =   UtilFolder
 
 Database
-    DatabaseCreateScript        =    CreateScript
-
+    DatabaseCreateScript        =   CreateScript
 Debug
-    SuppressErrors              =    SuppressErrors
-    DebugMode                   =    DebugMode
-    AutoUpdateDb                =    AutoUpdateDb
+    SuppressErrors              =   SuppressErrors
+    DebugMode                   =   DebugMode
+    AutoUpdateDb                =   AutoUpdateDb
