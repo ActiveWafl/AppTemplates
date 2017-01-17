@@ -1,5 +1,5 @@
 //Storage\\MySql
-//    Version     =   0.0.1
+//    Version     =   0.0.2
 //    Connections
 //        Master
 //            Uri                     =    localhost
@@ -16,14 +16,14 @@
 //            CharacterEncoding       =    utf8
 
 //Search\\Solr
-//  Version         =   0.0.1
+//  Version         =   0.0.5
 //  ServerAddress   =   http:\/\/localhost:8080/solr
 //  Indexes
 //      my_index1
 //      my_index2
 
 //Storage\\Predis
-//  Version         =   0.0.1
+//  Version         =   0.0.4
 //  ServerAddress   =   127.0.0.1
 //  ServerPort      =   6379
 

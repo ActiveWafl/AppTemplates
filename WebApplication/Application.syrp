@@ -6,6 +6,7 @@ Application
     Timezone                =   "{APPLICATION_TIMEZONE}"
     DefaultUserClass        =   \\Wafl\\Users\\User
     DefaultUserGroupClass   =   \\Wafl\\Users\\UserGroup
+    Version                 =   0.1
 Paths
     Application
         ConfigFolder        =   "Config/"

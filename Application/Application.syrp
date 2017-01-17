@@ -3,6 +3,7 @@ Application
     Guid                    =   "{APPLICATION_GUID}"
     RootNameSpace           =   "{APPLICATION_NAMESPACE}"
     Timezone                =   "{APPLICATION_TIMEZONE}"
+    Version                 =   0.1
 Paths
     Application
         ConfigFolder        =   "Config/"

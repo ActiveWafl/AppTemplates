@@ -36,6 +36,8 @@ DblEj
         Communication/Ajax/HttpHeader.js
         Communication/Ajax/Utils.js
         Communication/Ajax/HttpHeader.js
+        Communication/WebSocket/Client.js
+        Communication/WebSocket/AppApi.js
         GlobalAjax.js
         Data/Model.js
         Data/ModelProperty.js

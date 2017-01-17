@@ -10,28 +10,28 @@ class Example
 
     /**
      * Do something and return an ajax result
-     * 
-     * @param array $args The arguments passed to this api call
-     * @param array $headers The http headers that came along with this api call or null if the call didn't come via http
-     * @param array $files Any binary stream arguments passed to this api call (such as file uploads)
-     * 
+     *
+     * @param \DblEj\Communication\Http\ApiRequest $apiRequest The api request object which includes methods for reading the request variables and headers.
+     * @param string $sourceFunctionName The name of the api call that was made by the client that resulted in this call.
+     * @param \DblEj\Application\IApplication $app The running app.
+     *
      * @return \DblEj\Communication\Ajax\AjaxResult
      */
-    public static function FirstExample($args, $headers, $files)
+    public function FirstExample(\DblEj\Communication\Http\ApiRequest $apiRequest, $sourceFunctionName, \DblEj\Application\IApplication $app)
     {
         //do something
-        if (isset($args["Arg1"]) && $args["Arg1"] == "SomeValue") //hypthetical logic
+        if ($apiRequest->IsInput("Arg1") && $apiRequest->GetInput("Arg1") == "SomeValue") //hypthetical logic
         {
-            
+
         }
+
+        $headers = $apiRequest->Get_RequestHeaders();
         if (isset($headers["some-header"]) && $args["some-arg"] == "some-value") //hypthetical logic
         {
-            
+
         }
-        if (count($files) == 0) //hypthetical logic
-        {
-            
-        }
+
+        $file = $apiRequest->GetUploadedFile("Arg2");
 
         //you can return an ajax result
         return new AjaxResult("Call completed!");
@@ -39,32 +39,31 @@ class Example
 
     /**
      * Do something and return a data model
-     * 
-     * @param array $args The arguments passed to this api call
-     * @param array $headers The http headers that came along with this api call or null if the call didn't come via http
-     * @param array $files Any binary stream arguments passed to this api call (such as file uploads)
-     * 
-     * @return \DblEj\Communication\Ajax\AjaxResult
+     *
+     * @param \DblEj\Communication\Http\ApiRequest $apiRequest The api request object which includes methods for reading the request variables and headers.
+     * @param string $sourceFunctionName The name of the api call that was made by the client that resulted in this call.
+     * @param \DblEj\Application\IApplication $app The running app.
+     *
+     * @return \DblEj\Data\ArrayModel
      */
-    public static function SecondExample($args, $headers, $files)
+    public function SecondExample(\DblEj\Communication\Http\ApiRequest $apiRequest, $sourceFunctionName, \DblEj\Application\IApplication $app)
     {
         //do something
-        if (isset($args["Arg1"]) && $args["Arg1"] == "SomeValue") //hypthetical logic
+        if ($apiRequest->IsInput("Arg1") && $apiRequest->GetInput("Arg1") == "SomeValue") //hypthetical logic
         {
-            
-        }
-        if (isset($headers["some-header"]) && $args["some-arg"] == "some-value") //hypthetical logic
-        {
-            
-        }
-        if (count($files) == 0) //hypthetical logic
-        {
-            
+
         }
 
-        //you can also return a model or an array of models
-        return new ArrayModel(["SomeProperty"    => "SomeValue",
-            "AnotherProperty" => "AnotherValue"]);
+        $headers = $apiRequest->Get_RequestHeaders();
+        if (isset($headers["some-header"]) && $args["some-arg"] == "some-value") //hypthetical logic
+        {
+
+        }
+
+        $file = $apiRequest->GetUploadedFile("Arg2");
+
+        //you can also return a model or an array of models, or an array of arbitrary data such as this example
+        return ["SomeProperty"=>"SomeValue", "AnotherProperty"=>"AnotherValue"];
     }
 
 }

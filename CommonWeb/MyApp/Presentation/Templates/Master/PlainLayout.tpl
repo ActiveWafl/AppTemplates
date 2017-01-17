@@ -10,6 +10,13 @@
             {/if}
         {/nocache}		
         {block name="PAGE_CONTENT"}Page Contents Go Here{/block}
+    <script type="text/javascript" src="/GlobalScript.js"></script>
+    {if $APP && isset($CURRENT_SITEPAGE) && $CURRENT_SITEPAGE->DoesClientLogicExist($APP)}
+        <script type="text/javascript" src="/{$CURRENT_SITEPAGE->GetClientLogicFile()}"></script>
+    {/if}
+    {if isset($CURRENT_SITEPAGE) && $CURRENT_SITEPAGE->HasClientControlObjects()}
+        <script type="text/javascript" src="/{$CURRENT_SITEPAGE->GetClientLogicFile()|replace:".js":"-Controls.js"}"></script>
+    {/if}
     {if isset($ADDITIONAL_RAW_FOOT_HTML)}{$ADDITIONAL_RAW_FOOT_HTML}{/if}
 
     {nocache}

@@ -1,13 +1,19 @@
 PreRegisterControls
     Docking
-    FullHeight
+        Version             =   0.0.1
     DropdownMenu
+        Version             =   0.0.2
+    DropdownButton
+        Version             =   0.0.2
     DatePicker
+        Version             =   0.0.2
     Spinner
-    Rotator
+        Version             =   0.0.1
     ModelList
+        Version             =   0.0.1
     ModelEditor
-    LoginForm
-    MicroLoginForm
+        Version             =   0.0.1
     FormValidator
-    Captcha
+        Version             =   0.0.1
+    FixedScroller
+        Version             =   0.0.1

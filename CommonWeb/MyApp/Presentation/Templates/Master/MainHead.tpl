@@ -1,12 +1,14 @@
 {extends file="./Html5.tpl"}
 {block "HTML_HEAD"}
     <head>
+        {nocache}
         {if isset($PAGE)}
-            <title>{block "HTML_HEAD_PAGE_AREA"}{$SITE_DISPLAY_TITLE}{/block} - {block "HTML_HEAD_PAGE_NAME"}{$PAGE->Get_FullTitle()}{/block}</title>
+            <title>{block name="PAGE_TITLE"}{$PAGE->Get_FullTitle()} - {$SITE_DISPLAY_TITLE}{/block}</title>
+            <meta name="description" content="{block name="PAGE_DESCRIPTION"}{$PAGE->Get_FullTitle()}{/block}">
         {else}
-            <title>{block "HTML_HEAD_PAGE_AREA"}{$SITE_DISPLAY_TITLE}{/block}</title>
+            <title>{block name="PAGE_TITLE"}{$SITE_DISPLAY_TITLE}{/block}</title>
         {/if}
-        <meta name="description" content="{block name="PAGE_DESCRIPTION"}{$PAGE->Get_FullTitle()}{/block}">
+        {/nocache}
         <meta charset='UTF-8'>
         <meta name="viewport" content="width=device-width">
         <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
@@ -14,47 +16,33 @@
 
         {nocache}
         {display_condition isset($SKIN) && $SKIN->Get_MainFont() && $SKIN->Get_MainFont()->GetStylesheetUrl()}
-            <link rel="stylesheet" type="text/css" href="{$SKIN->Get_MainFont()->GetStylesheetUrl()}">
+            <link rel="stylesheet" type="text/css" href="/{$SKIN->Get_MainFont()->GetStylesheetUrl()}">
         {/display_condition}
         {display_condition isset($SKIN) && $SKIN->Get_HeadingFont() && $SKIN->Get_HeadingFont()->GetStylesheetUrl()}
-            <link rel="stylesheet" type="text/css" href="{$SKIN->Get_HeadingFont()->GetStylesheetUrl()}">
+            <link rel="stylesheet" type="text/css" href="/{$SKIN->Get_HeadingFont()->GetStylesheetUrl()}">
         {/display_condition}
         {display_condition isset($SKIN) && $SKIN->Get_SubFont() && $SKIN->Get_SubFont()->GetStylesheetUrl()}
-            <link rel="stylesheet" type="text/css" href="{$SKIN->Get_SubFont()->GetStylesheetUrl()}">
+            <link rel="stylesheet" type="text/css" href="/{$SKIN->Get_SubFont()->GetStylesheetUrl()}">
         {/display_condition}
         {display_condition isset($SKIN) && $SKIN->Get_AccentFont() && $SKIN->Get_AccentFont()->GetStylesheetUrl()}
-            <link rel="stylesheet" type="text/css" href="{$SKIN->Get_AccentFont()->GetStylesheetUrl()}">
+            <link rel="stylesheet" type="text/css" href="/{$SKIN->Get_AccentFont()->GetStylesheetUrl()}">
         {/display_condition}
         {foreach $STYLESHEETS as $SHEETOBJECT}
             {if $SHEETOBJECT->Get_SkinName() == ""}
                 <link id="{$SHEETOBJECT->GetUniqueId()}-Stylesheet" rel="stylesheet" type="text/css" href="{$SHEETOBJECT->Get_Filename()}" />
             {elseif $CURRENT_SKIN_TITLE == $SHEETOBJECT->Get_SkinName()}
-                <link id="{$SHEETOBJECT->GetUniqueId()}-Stylesheet" rel="stylesheet" title="{$SHEETOBJECT->Get_SkinName()}" type="text/css" href="{$SHEETOBJECT->Get_Filename()}?WaflSkin={$SHEETOBJECT->Get_SkinName()}" />
+                <link id="{$SHEETOBJECT->GetUniqueId()}-Stylesheet" rel="stylesheet" title="{$SHEETOBJECT->Get_SkinName()}" type="text/css" hr/{$SHEETOBJECT->Get_Filename()ef="{$SHEETOBJECT->Get_Filename()}?WaflSkin={$SHEETOBJECT->Get_SkinName()}&amp;rev={$PLAZKO_REVISION}" />
             {else}
-                <link id="{$SHEETOBJECT->GetUniqueId()}-Stylesheet" rel="alternate stylesheet" title="{$SHEETOBJECT->Get_SkinName()}" type="text/css" href="{$SHEETOBJECT->Get_Filename()}?WaflSkin={$SHEETOBJECT->Get_SkinName()}" />
+                <link id="{$SHEETOBJECT->GetUniqueId()}-Stylesheet" rel="alternate stylesheet" title="{$SHEETOBJECT->Get_SkinName()}" type="text/css" href="{$SHEETOBJECT->Get_Filename()}?WaflSkin={$SHEETOBJECT->Get_SkinName()}&amp;rev={$PLAZKO_REVISION}" />
             {/if}
         {/foreach}
-        {/nocache}
-
-        <link id="WaflGlobal-Stylesheet" rel="stylesheet" type="text/css" href="{$WEB_ROOT_RELATIVE}Wafl.css" />
-        {nocache}
-        {if $CURRENT_SITEPAGE->HasControlCss()}
-            <link id="SitepageControls-Stylesheet" rel="stylesheet" type="text/css" href="{$WEB_ROOT_RELATIVE}{$CURRENT_SITEPAGE->GetClientLogicFile()|replace:".js":"-Controls.css"}" />
+        <link id="WaflGlobal-Stylesheet" rel="stylesheet" type="text/css" href="/Wafl.css" />
+        {if isset($CURRENT_SITEPAGE) && $CURRENT_SITEPAGE->HasControlCss()}
+            <link id="SitepageControls-Stylesheet" rel="stylesheet" type="text/css" href="{$CURRENT_SITEPAGE->GetClientLogicFile()|replace:".js":"-Controls.css"}" />
         {/if}
-        {/nocache}
-
-        <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}DblEj.js"></script>
-        <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}Wafl.js"></script>
-        <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}WaflAppConfig.js"></script>
-        <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}GlobalScript.js"></script>
-
-        {nocache}
-        {if $CURRENT_SITEPAGE->DoesClientLogicExist($APP)}
-            <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}{$CURRENT_SITEPAGE->GetClientLogicFile()}"></script>
-        {/if}
-        {if $CURRENT_SITEPAGE->HasClientControlObjects()}
-            <script type="text/javascript" src="{$WEB_ROOT_RELATIVE}{$CURRENT_SITEPAGE->GetClientLogicFile()|replace:".js":"-Controls.js"}"></script>
-        {/if}
+        <script type="text/javascript" src="/DblEj.js"></script>
+        <script type="text/javascript" src="/Wafl.js"></script>
+        <script type="text/javascript" src="/WaflAppConfig.js"></script>
         {if isset($ADDITIONAL_RAW_HEAD_HTML)}{$ADDITIONAL_RAW_HEAD_HTML}{/if}
         {block "APPEND_HEAD"}{/block}
         {/nocache}
