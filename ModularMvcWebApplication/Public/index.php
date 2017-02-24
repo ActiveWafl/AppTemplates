@@ -59,18 +59,45 @@ try
 }
 catch (\DblEj\Communication\Http\Exception $e)
 {
+    $reqExt = substr($_SERVER["REQUEST_URI"], strlen($_SERVER["REQUEST_URI"]) - 3);
+    $exMessage = "Unhandled HTTP exception: ".$e->getMessage();
+    while ($e->getPrevious())
+    {
+        $e = $e->getPrevious();
+        $exMessage.="\nInner Exception: ".$e->getMessage();
+    }
+    $exMessage .= "\n".$e->getTraceAsString();
+
     if (\Wafl\Core::$RUNNING_APPLICATION->Get_Settings()->Get_Debug()->Get_DebugMode() && !\Wafl\Core::$RUNNING_APPLICATION->Get_Settings()->Get_Debug()->Get_SuppressErrors())
     {
         throw $e;
     }
-    WebIndex::OutputHttpException($e, __DIR__.DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."Static".DIRECTORY_SEPARATOR."Errors".DIRECTORY_SEPARATOR);
+    else if (isset($_SERVER["HTTP_X_REQUESTED_WITH"]) && $_SERVER["HTTP_X_REQUESTED_WITH"] == "XMLHttpRequest")
+    {
+        die(\DblEj\Communication\JsonUtil::EncodeJson($e));
+    }
+    else
+    {
+        WebIndex::OutputHttpException($e, __DIR__.DIRECTORY_SEPARATOR);
+    }
 }
 catch (\Exception $e)
 {
-    if (class_exists("\\Wafl\\Core") && \Wafl\Core::$RUNNING_APPLICATION->Get_Settings()->Get_Debug()->Get_DebugMode() && !\Wafl\Core::$RUNNING_APPLICATION->Get_Settings()->Get_Debug()->Get_SuppressErrors())
+    if (class_exists("\\Wafl\\Core") && (!\Wafl\Core::$RUNNING_APPLICATION || (\Wafl\Core::$RUNNING_APPLICATION->Get_Settings()->Get_Debug()->Get_DebugMode() && !\Wafl\Core::$RUNNING_APPLICATION->Get_Settings()->Get_Debug()->Get_SuppressErrors())))
     {
         throw $e;
     }
-    WebIndex::OutputException($e, __DIR__.DIRECTORY_SEPARATOR."..".DIRECTORY_SEPARATOR."Static".DIRECTORY_SEPARATOR."Errors".DIRECTORY_SEPARATOR);
+    if (class_exists("\\Wafl\\AppSupport\\WebIndex"))
+    {
+        WebIndex::OutputException($e, __DIR__.DIRECTORY_SEPARATOR);
+    }
+    $exMessage = "Unhandled exception: ".$e->getMessage();
+    while ($e->getPrevious())
+    {
+        $e = $e->getPrevious();
+        $exMessage.="\nInner Exception: ".$e->getMessage();
+    }
+    $exMessage .= "\n".$e->getTraceAsString();
+    error_log($exMessage);
 }
 ?>
