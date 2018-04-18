@@ -92,10 +92,11 @@ catch (\Exception $e)
         WebIndex::OutputException($e, __DIR__.DIRECTORY_SEPARATOR);
     }
     $exMessage = "Unhandled exception: ".$e->getMessage();
-    while ($e->getPrevious())
+    $prevE = $e;
+    while ($prevE->getPrevious())
     {
-        $e = $e->getPrevious();
-        $exMessage.="\nInner Exception: ".$e->getMessage();
+        $prevE = $prevE->getPrevious();
+        $exMessage.="\nInner Exception: ".$prevE->getMessage();
     }
     $exMessage .= "\n".$e->getTraceAsString();
     error_log($exMessage);
