@@ -41,18 +41,18 @@
             </div>
         </footer>
         {block "ABSOLUTE_CONTENTS"}{/block}
-        <script type="text/javascript" src="/GlobalScript.js"></script>
+        <script src="/GlobalScript.js"></script>
         {if isset($CURRENT_SITEPAGE) && $CURRENT_SITEPAGE->DoesClientLogicExist($APP)}
-            <script type="text/javascript" src="/{$CURRENT_SITEPAGE->GetClientLogicFile()}"></script>
+            <script src="/{$CURRENT_SITEPAGE->GetClientLogicFile()}"></script>
         {/if}
         {if isset($CURRENT_SITEPAGE) && $CURRENT_SITEPAGE->HasClientControlObjects()}
-            <script type="text/javascript" src="/{$CURRENT_SITEPAGE->GetClientLogicFile()|replace:".js":"-Controls.js"}}"></script>
+            <script src="/{$CURRENT_SITEPAGE->GetClientLogicFile()|replace:".js":"-Controls.js"}}"></script>
         {/if}
         {if isset($ADDITIONAL_RAW_FOOT_HTML)}{$ADDITIONAL_RAW_FOOT_HTML}{/if}
         {block "HTML_BODY_POSTCONTENT"}{/block}
         {nocache}
             {block "SCRIPT_POST_BODY"}
-            <script type="text/javascript">
+            <script>
                 {if isset($CURRENT_SITEPAGE)}
                 {foreach $CURRENT_SITEPAGE->Get_JavascriptIncludesLib() as $JAVASCRIPT}
                 DblEj.SiteStructure.SitePage.SetFileIncluded("{$JAVASCRIPT}");
