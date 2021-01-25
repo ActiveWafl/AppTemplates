@@ -25,3 +25,5 @@ HttpRouter::AddRouter(new Models());
 HttpRouter::AddRouter(new PageIncludes());
 HttpRouter::AddRouter(new Wafl\Routers\Fonts());
 HttpRouter::AddRouter(new Api());
+HttpRouter::AddRouter(new \{APPLICATION_NAMESPACE}\Routers\ExampleInternalRouter());
+HttpRouter::AddUrlRewriter(new \{APPLICATION_NAMESPACE}\Routers\ExampleUrlRewriter());

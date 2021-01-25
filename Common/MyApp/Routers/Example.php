@@ -31,6 +31,4 @@ implements IRouter
         }
         return $returnRoute;
     }
-
 }
-?>

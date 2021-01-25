@@ -8,6 +8,9 @@ Templating\\Smarty3
     ErrorReporting  =   {E_ALL}
     ForceCompile    =   {false}
 
+Fonts\\GoogleFonts
+    Version     =   0.0.1
+
 //Storage\\MySql
 //    Version     =   0.0.2
 //    Connections

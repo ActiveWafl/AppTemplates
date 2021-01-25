@@ -1,7 +1,7 @@
 {extends file="./MainHead.tpl"}
 {block "HTML_BODY"}
     <body>
-		<header style="width: 100%; background-color: rgba(240,240,240,.95); position: fixed;z-index: 999;">
+		<header class="Dock Top">
 			<grid-layout auto>
 				<layout-row>
 					<layout-cell spans="2">
@@ -19,17 +19,20 @@
             {block name="MainLayoutSubMenuBar"}{/block}
 		</header>
 
-		{block name="MainLayoutErrorBox"}
-			{if count($GLOBAL_ERRORS)>0}
-				{include file="Parts/GeneralErrors.tpl"}
-			{/if}
-		{/block}
-		{block name="MainLayoutInfoBox"}
-			{if count($GLOBAL_INFO)>0}
-				{include file="Parts/GeneralInfo.tpl"}
-			{/if}
-		{/block}
-        {block "HTML_BODY_CONTENTS"}{/block}
+        {block "HTML_BODY_CONTENTS"}
+            {block name="MainLayoutErrorBox"}
+                {if count($GLOBAL_ERRORS)>0}
+                    {include file="Parts/GeneralErrors.tpl"}
+                {/if}
+            {/block}
+            {block name="MainLayoutInfoBox"}
+                {if count($GLOBAL_INFO)>0}
+                    {include file="Parts/GeneralInfo.tpl"}
+                {/if}
+            {/block}
+
+            {block name="PAGE_CONTENT"}Page Contents Go Here{/block}
+        {/block}
 
         <footer class="Bottom Dock">
             <div class="Auto Layout Grid">

@@ -6,7 +6,7 @@ use DblEj\Application\IMvcWebApplication,
     DblEj\Communication\Http\Request,
     DblEj\Mvc\ControllerBase;
 
-class LandingPage
+class ExamplePage1
 extends ControllerBase
 {
     public function DefaultAction(Request $request, IMvcWebApplication $app)

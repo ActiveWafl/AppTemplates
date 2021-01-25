@@ -23,4 +23,3 @@ implements IRequestHandler
     }
 
 }
-?>

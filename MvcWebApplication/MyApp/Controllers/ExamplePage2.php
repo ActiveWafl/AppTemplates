@@ -6,7 +6,7 @@ use DblEj\Application\IMvcWebApplication,
     DblEj\Communication\Http\Request,
     DblEj\Mvc\ControllerBase;
 
-class ExamplePage
+class ExamplePage2
 extends ControllerBase
 {
     public function DefaultAction(Request $request, IMvcWebApplication $app)
@@ -15,4 +15,3 @@ extends ControllerBase
         return $this->createResponseFromRequest($request, $app);
     }
 }
-?>

@@ -15,4 +15,3 @@ extends ControllerBase
         return $this->createResponseFromRequest($request, $app);
     }
 }
-?>

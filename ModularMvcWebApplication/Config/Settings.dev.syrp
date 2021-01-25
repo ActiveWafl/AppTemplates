@@ -29,6 +29,9 @@ Web
     WebUrl                  =   "http://d.{APPLICATION_DOMAIN}/"
     WebUrlSecure            =   "https://d.{APPLICATION_DOMAIN}/"
     WebUrlRelative          =   "/"
+    ApiUrl                  =   "http://d.{APPLICATION_DOMAIN}/api.php"
+    ApiUrlSecure            =   "https://d.{APPLICATION_DOMAIN}/api.php"
+    ApiUrlRelative          =   "//d.{APPLICATION_DOMAIN}/api.php"
     SiteEmail               =   "noreply@d.{APPLICATION_DOMAIN}"
     CookieLifetime          =   350000
     SiteDisplayTitle        =   {APPLICATION_NAME}

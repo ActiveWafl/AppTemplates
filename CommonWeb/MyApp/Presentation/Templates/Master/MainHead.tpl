@@ -31,9 +31,9 @@
             {if $SHEETOBJECT->Get_SkinName() == ""}
                 <link id="{$SHEETOBJECT->GetUniqueId()}-Stylesheet" rel="stylesheet" type="text/css" href="{$SHEETOBJECT->Get_Filename()}" />
             {elseif $CURRENT_SKIN_TITLE == $SHEETOBJECT->Get_SkinName()}
-                <link id="{$SHEETOBJECT->GetUniqueId()}-Stylesheet" rel="stylesheet" title="{$SHEETOBJECT->Get_SkinName()}" type="text/css" hr/{$SHEETOBJECT->Get_Filename()ef="{$SHEETOBJECT->Get_Filename()}?WaflSkin={$SHEETOBJECT->Get_SkinName()}&amp;rev={$PLAZKO_REVISION}" />
+                <link id="{$SHEETOBJECT->GetUniqueId()}-Stylesheet" rel="stylesheet" title="{$SHEETOBJECT->Get_SkinName()}" type="text/css" href="{$SHEETOBJECT->Get_Filename()}?WaflSkin={$SHEETOBJECT->Get_SkinName()}&amp;rev={$APP_VERSION}" />
             {else}
-                <link id="{$SHEETOBJECT->GetUniqueId()}-Stylesheet" rel="alternate stylesheet" title="{$SHEETOBJECT->Get_SkinName()}" type="text/css" href="{$SHEETOBJECT->Get_Filename()}?WaflSkin={$SHEETOBJECT->Get_SkinName()}&amp;rev={$PLAZKO_REVISION}" />
+                <link id="{$SHEETOBJECT->GetUniqueId()}-Stylesheet" rel="alternate stylesheet" title="{$SHEETOBJECT->Get_SkinName()}" type="text/css" href="{$SHEETOBJECT->Get_Filename()}?WaflSkin={$SHEETOBJECT->Get_SkinName()}&amp;rev={$APP_VERSION}" />
             {/if}
         {/foreach}
         <link id="WaflGlobal-Stylesheet" rel="stylesheet" type="text/css" href="/Wafl.css" />

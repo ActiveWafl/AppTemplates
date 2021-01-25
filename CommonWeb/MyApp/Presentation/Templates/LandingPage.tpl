@@ -1,5 +1,6 @@
 {extends file="Master/MainLayout.tpl"}
 {block name="PAGE_CONTENT"}
+    {nocache}
     <article>
         <div class="Panel Dock Left">
             <ul id="PageMenu" class="Menu">
@@ -203,4 +204,5 @@
         </div>
 
     </article>
+    {/nocache}
 {/block}
